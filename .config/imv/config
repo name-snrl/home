@@ -1,0 +1,24 @@
+[options]
+background = 1b1f26
+recursively = true
+scaling_mode = shrink
+
+width = 1280
+height = 960
+
+overlay = true
+overlay_font = monospace:16
+overlay_text_color = e5e9f0
+overlay_background_alpha = 00
+overlay_text = [${imv_width}x${imv_height}] [${imv_current_index}/${imv_file_count}] $(echo $imv_current_file | sed "s#$HOME#~#")
+
+[binds]
+<Escape> = quit
+<Ctrl+s> = exec cp $imv_current_file ~/Pictures/imv_`date +"%H:%M:%S_%d-%b-%Y"`.png
+<Ctrl+w> = exec sed -i "s@output.*fill@output \* bg $imv_current_file fill@g" ~/.config/sway/config
+<Ctrl+g> = exec gimp $imv_current_file > /dev/null 2>&1 &
+
+h = pan -50 0
+j = pan 0 -50
+k = pan 0 50
+l = pan 50 0

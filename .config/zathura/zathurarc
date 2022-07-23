@@ -1,0 +1,60 @@
+set guioptions  ""
+set zoom 1.25
+
+set font                  "monospace normal 14"
+#set guioptions            "cs"
+#set adjust-open           "best-fit"
+#set adjust_window         "best-fit"
+#set vertical-center       "true"
+#set scroll-hstep          "5"
+#set selection-clipboard   "clipboard"
+
+#
+# Color scheme
+#
+
+set notification-error-bg       "#2b323b"
+set notification-error-fg       "#bf616a"
+set notification-warning-bg     "#2b323b"
+set notification-warning-fg     "#d08770"
+set notification-bg             "#2b323b"
+set notification-fg             "#b5bfc9"
+
+set completion-bg               "#2b323b"
+set completion-fg               "#b5bfc9"
+set completion-group-bg         "#38424d"
+set completion-group-fg         "#b5bfc9"
+set completion-highlight-bg     "#88c0d0"
+set completion-highlight-fg     "#38424d"
+
+set index-bg                    "#2b323b"
+set index-fg                    "#8bc1c0"
+set index-active-bg             "#8bc1c0"
+set index-active-fg             "#2b323b"
+
+set inputbar-bg                 "#2b323b"
+set inputbar-fg                 "#d3d8df"
+
+set statusbar-bg                "#45515f"
+set statusbar-fg                "#d3d8df"
+
+set highlight-color             "#d08770"
+set highlight-active-color      "#bf616a"
+
+set default-bg                  "#2b323b"
+set default-fg                  "#b5bfc9"
+
+set render-loading              "true"
+set render-loading-bg           "#2b323b"
+set render-loading-fg           "#45515f"
+
+set recolor                     "true"
+set recolor-lightcolor          "#2b323b"
+set recolor-darkcolor           "#d3d8df"
+
+#
+# Binds
+#
+
+map d scroll half-down
+map u scroll half-up

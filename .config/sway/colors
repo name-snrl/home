@@ -1,0 +1,17 @@
+set $trans    #00000000
+set $white0   #d3d8df
+set $white1   #c4cbd4
+set $nord0    #2b323b
+set $nord1    #4c5866
+set $frost0   #8fbcbb
+set $frost1   #88c0d0
+set $frost2   #81a1c1
+set $frost3   #5e81ac
+set $red      #d36265
+
+# Set Decorations           border     background  text       indicator  child border
+client.focused              $trans     $frost2     $white0    $frost2
+client.focused_inactive     $trans     $nord1      $white0    $nord1
+client.focused_tab_title    $trans     $nord1      $white0    $nord1
+client.unfocused            $trans     $nord1      $white0    $nord1
+client.urgent               $trans     $red        $white0    $red

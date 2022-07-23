@@ -1,0 +1,19 @@
+#browser vbox#appcontent tabbrowser,
+#content,
+#tabbrowser-tabpanels,
+browser[type="content-primary"],
+browser[type="content"] > html {
+  background: #2e3440!important;
+}
+
+/* don't show a window with a microphone indicator
+ * or any other webrtc stuff */
+#webrtcIndicator {
+  display: none;
+}
+
+/* normal colors for the toolbar when switching to a dark theme
+ * https://bugzilla.mozilla.org/show_bug.cgi?id=1711275 */
+.browser-toolbar {
+  --toolbar-bgimage: none;
+}

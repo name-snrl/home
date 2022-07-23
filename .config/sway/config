@@ -1,0 +1,103 @@
+#------------------------------------ Base ------------------------------------#
+set $mod Mod4
+
+set $left  h
+set $down  j
+set $up    k
+set $right l
+
+set $menu wofi
+set $term $TERMINAL
+set $move $HOME/.config/sway/scripts/move.sh
+set $theme $HOME/.config/sway/scripts/theme.sh
+
+include mapping
+
+# WM configuration
+gaps                    inner 5
+popup_during_fullscreen leave_fullscreen
+
+default_border          pixel 2
+default_floating_border pixel 2
+
+focus_follows_mouse     no
+focus_wrapping          no
+
+# Displays
+#output DP-1 resolution 1920x1080@144Hz position 1920,0
+
+# Keyboards
+input "type:keyboard" {
+    xkb_layout lv3_us,lv3_ru
+    xkb_options grp:rctrl_toggle,lv3:ralt_switch
+    repeat_delay 200
+    repeat_rate 45
+}
+
+# Trackpoint
+input "2:10:TPPS/2_IBM_TrackPoint" {
+    accel_profile "flat"
+    pointer_accel 0.5
+}
+
+# TrackPad
+input "1739:0:Synaptics_tm2962-001" events disabled
+
+#------------------------------------ Apps ------------------------------------#
+### Autostart
+exec {
+    systemctl --user import-environment
+    systemctl --user start sway-session.target
+
+    QT_QPA_PLATFORMTHEME=xcb kotatogram-desktop -startintray
+    #kotatogram-desktop -startintray
+    firefox
+    #$term --class=zettel -e nvim ~/Desktop/snrlZettelkasten/
+    $HOME/.config/sway/scripts/bash_hist.sh
+
+    # lock on start
+    swaylock -f
+}
+
+### Workspace assignment
+assign {
+    [app_id="mpv"]       0:~
+    [app_id="firefox"]   1
+    [app_id="zettel"]    10
+}
+
+### Individual windows behavior
+no_focus {
+    [app_id="org.qutebrowser.qutebrowser" title="nvim-md-preview.html"]
+}
+for_window {
+
+    [app_id="imv"]                    floating enable
+    [app_id="authentication-agent-1"] floating enable
+    [app_id="xdg-desktop-portal-gtk"] floating enable, resize set 75 ppt 85 ppt 
+    [app_id="qbittorrent"]            floating enable, sticky enable
+    [app_id="floating_term"]          floating enable, sticky enable, resize set 50 ppt 50 ppt
+    [app_id="kotatogramdesktop"]      floating enable, sticky enable, resize set 930 px 740 px
+
+    [app_id="qbittorrent" title="^qBittorrent"]        resize set 80 ppt 90 ppt
+    [app_id="kotatogramdesktop" title="Media viewer"]  fullscreen disable, resize set 100 ppt 100 ppt
+
+    # xwayland
+    [window_role="task_dialog"]  floating enable
+    [window_role="Preferences"]  floating enable
+    [window_role="pop-up"]       floating enable
+    [window_role="bubble"]       floating enable
+    [window_role="dialog"]       floating enable
+    [window_type="menu"]         floating enable
+}
+
+#--------------------------------- Appearance ---------------------------------#
+include colors
+exec $theme startup
+#bar swaybar_command waybar
+
+# Wallpaper
+output * bg /home/name_snrl/Desktop/pictures/wp/wallhaven-e77oj8.png fill
+
+# Cursor 
+seat seat0 xcursor_theme 'Numix-Cursor-Light' 24

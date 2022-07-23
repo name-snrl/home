@@ -1,0 +1,126 @@
+* {
+  border:                  none;
+  border-radius:           0;
+  font-family:             monospace;
+  box-shadow:              none;
+  transition-duration:     0s;
+}
+
+window#waybar {
+  font-size:               15px;
+  color:                   #d3d8df;
+  border-bottom:           2px solid #4c5866;
+  border-left:             2px solid #4c5866;
+  border-right:            2px solid #4c5866;
+  background:              #2b323b;
+  opacity:                 0.90; 
+}
+
+#custom-label {
+  text-shadow:             0 0 2px Black;
+  margin:                  0 5px;
+  color:                   #4e72b9;
+  /* Arch label
+  color:                   #0088cc;*/
+}
+
+#custom-separator {
+  margin:                  0 10px;
+  color:                   #4c5866;
+}
+
+#workspaces button {
+  font-size:               13px;
+  color:                   #d3d8df;
+  padding:                 0 5px;
+}
+
+#workspaces button:hover {
+  font-size:               15px;
+  background:              transparent;
+}
+
+#workspaces button.focused {
+  font-size:               16px;
+  color:                   #81a1c1;
+  border-top:              2px solid #81a1c1;
+  border-bottom:           2px solid #81a1c1;
+}
+
+#workspaces button.urgent {
+  background:              Orange;
+}
+
+#mode {
+  background:              #d36265;
+  padding:                 0 5px;
+  margin:                  5px 0 5px 15px;
+  border-radius:           5px;
+}
+
+#pulseaudio,
+#backlight, 
+#battery,
+#temperature, 
+#custom-headphone_txt {
+  margin:                  0 12px 0 2px;
+}
+
+#backlight.icon, 
+#battery.icon, 
+#temperature.icon, 
+#custom-headphone_icon {
+  margin:                  0 2px 0 12px;
+}
+
+#pulseaudio.icon {
+  margin:                  0 2px 0 0;
+}
+
+#custom-headphone_icon {
+  color:                   #5297cf;
+}
+
+#temperature.icon {
+  color:                   #d36265;
+}
+
+#pulseaudio.icon {
+}
+
+#backlight.icon {
+  color:                   #e7e18c;
+}
+
+#battery.icon {
+  color:                   #5baebf;
+  margin:                  0 -2px 2px 8px;
+}
+
+@keyframes blink {
+  to {
+    background:          transparent;
+  }
+}
+
+#temperature.critical {
+  background:                  Red;
+  margin:                      5px 12px 5px 2px;
+  border-radius:               5px;
+
+  animation-name:              blink;
+  animation-duration:          1s;
+  animation-direction:         alternate;
+  animation-iteration-count:   infinite;
+}
+
+#battery.critical:not(.charging) {
+  background:                  Red;
+  margin:                      5px 12px 5px 2px;
+  border-radius:               5px;
+
+  animation-name:              blink;
+  animation-duration:          1s;
+  animation-direction:         alternate;
+  animation-iteration-count:   infinite;
+}

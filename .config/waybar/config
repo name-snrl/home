@@ -1,0 +1,169 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin-left": 5,
+    "margin-right": 5,
+    "height": 31,
+    // "width": 1280,
+
+    // Choose the order of the modules
+    "modules-left": [
+        "custom/label",
+        "sway/workspaces",
+        "sway/mode",
+        "custom/separator",
+        "sway/language",
+        "custom/separator",
+        "tray"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "custom/weather",
+        "custom/separator",
+        "pulseaudio#icon",
+        "pulseaudio",
+        "backlight#icon",
+        "backlight",
+        "custom/headphone_icon",
+        "custom/headphone_txt",
+        "temperature#icon",
+        "temperature",
+        "battery#icon",
+        "battery"
+    ],
+
+    // Modules configuration
+    "custom/label": {
+        "format": "<span weight='heavy' size='xx-large'></span>",
+        "tooltip": false
+    },
+
+    // Arch
+    //"custom/label": {
+    //    "format": "<span weight='heavy' size='xx-large'></span>",
+    //    "tooltip": false
+    //},
+
+    "custom/separator": {
+        "format": "|",
+        "tooltip": false
+    },
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "format": "{name}"
+    },
+
+    "sway/mode": {
+        "format": "{}",
+        "tooltip": false
+    },
+
+    "sway/language": {
+        "format": "{}",
+        "tooltip": false,
+        "on-click": "swaymsg input 'type:keyboard' xkb_switch_layout next"
+    },
+
+    "sway/window": {
+        "max-length": 70,
+        "tooltip": false,
+    },
+
+    "tray": {
+        "icon-size": 21,
+        "spacing": 5
+    },
+
+    "pulseaudio": {
+        "format": "{volume}%",
+        "format-muted": "off",
+        "tooltip": false
+    },
+
+    "pulseaudio#icon": {
+        "format": "{icon}",
+        "format-icons": ["奄", "奔", "墳"],
+        "format-muted": "婢",
+        "tooltip": false
+    },
+ 
+    "backlight": {
+        "format": "{percent}%",
+    },
+
+    "backlight#icon": {
+        "format": "{icon}",
+        "format-icons": ["", "", ""],
+        "tooltip": false
+    },
+
+
+    "battery": {
+        "bat": "BAT1",
+        "format": "{capacity}%",
+        "states": {
+            "critical": 15
+        },
+        "tooltip": false
+    },
+
+    "battery#icon": {
+        "bat": "BAT1",
+        "format": "{icon}",
+        "rotate": 90,
+        "format-icons": {
+            "default": ["", "", "", ""],
+            "plugged": "",
+            "charging": ""
+        },
+        "tooltip": false
+    },
+
+    "temperature": {
+        "thermal-zone": 0,
+        "interval": 1,
+        "format": "{temperatureC}°C",
+        "format-critical": "{temperatureC}°C",
+        "critical-threshold": 75,
+        "tooltip": false
+    },
+
+    "temperature#icon": {
+        "interval": 1,
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "{:%a %d %b • %I:%M:%S %p}",
+        "interval": 1,
+        "today-format": "<b><big>{}</big></b>",
+        "tooltip-format": "<big>{:%Y %B}</big>\n\n{calendar}"
+    },
+
+    "custom/weather": {
+        //"exec": "$HOME/.config/waybar/modules/weather.sh Chelyabinsk",
+        "exec": "$HOME/.config/waybar/modules/weather.sh",
+        "interval": 600,
+        "tooltip": false
+    },
+
+    "custom/headphone_icon": {
+        "exec": "upower -e | rg head",
+        "interval": 3,
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/headphone_txt": {
+        "exec-if": "upower -e | rg head",
+        "exec": "upower -d | rg -A 3 head | rg percent | awk '{print $2}'",
+        "interval": 3,
+        "format": "{}",
+        "tooltip": false
+    }
+}

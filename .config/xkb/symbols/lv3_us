@@ -1,0 +1,43 @@
+xkb_symbols {
+
+    include "us(basic)"
+    name[Group1]= "English (US)";
+
+    key <AE01> { [            1,      exclam,                    F1 ] };
+    key <AE02> { [            2,          at,                    F2 ] };
+    key <AE03> { [            3,  numbersign,                    F3 ] };
+    key <AE04> { [            4,      dollar,                    F4 ] };
+    key <AE05> { [            5,     percent,                    F5 ] };
+    key <AE06> { [            6, asciicircum,                    F6 ] };
+    key <AE07> { [            7,   ampersand,                    F7 ] };
+    key <AE08> { [            8,    asterisk,                    F8 ] };
+    key <AE09> { [            9,   parenleft,                    F9 ] };
+    key <AE10> { [            0,  parenright,                   F10 ] };
+    key <AE11> { [        minus,  underscore,                   F11 ] };
+    key <AE12> { [        equal,        plus,                   F12 ] };
+
+    key <AD01> { [            q,           Q,         XF86AudioMute ] };
+    key <AD02> { [            w,           W,  XF86AudioLowerVolume ] };
+    key <AD03> { [            e,           E,  XF86AudioRaiseVolume ] };
+    key <AD04> { [            r,           R,      XF86AudioMicMute ] };
+    key <AD07> { [            u,           U,      Home,       Home ] };
+    key <AD08> { [            i,           I, BackSpace,  BackSpace ] };
+    key <AD09> { [            o,           O,    Delete,     Delete ] };
+    key <AD10> { [            p,           P,       End,        End ] };
+    key <AD11> { [  bracketleft,   braceleft,                Escape ] };
+    key <AD12> { [ bracketright,  braceright,     Prior,      Prior ] };
+
+    key <AC01> { [            a,           A,         XF86AudioPrev ] };
+    key <AC02> { [            s,           S,         XF86AudioPlay ] };
+    key <AC03> { [            d,           D,         XF86AudioNext ] };
+    key <AC06> { [            h,           H,       Left,      Left ] };
+    key <AC07> { [            j,           J,       Down,      Down ] };
+    key <AC08> { [            k,           K,         Up,        Up ] };
+    key <AC09> { [            l,           L,      Right,     Right ] };
+    key <AC11> { [   apostrophe,    quotedbl,       Next,      Next ] };
+
+    key <AB01> { [            z,           Z, XF86MonBrightnessDown ] };
+    key <AB02> { [            x,           X,   XF86MonBrightnessUp ] };
+    key <AB03> { [            c,           C,              XF86WLAN ] };
+
+};
