@@ -5641,3 +5641,38 @@ usrcfg add -v .
 usrcfg add -vn .
 vi
 man git-add
+usrcfg add -u .
+usrcfg st
+usrcfg cm 'Add xdg-user-dirs'
+usrcfg push 
+usrcfg st
+j nixos
+git st
+j lu
+git st
+man git-config 
+vi .git_home/config 
+man git-add
+j snrl
+j sw
+vi config 
+j tra
+wf-recorder 
+firefox -v
+tldr wl-copy
+wl-copy -h
+wl-copy --help
+man wl-copy
+wl-copy < recording.mp4 
+en
+vi
+vi
+j .mozilla/
+rg russian
+htop 
+firefox --help
+firefox --ProfileManager 
+vi .mozilla/firefox/name_snrl/user.js 
+firefox --ProfileManager 
+vi .mozilla/firefox/name_snrl/user.js 
+usrcfg st
