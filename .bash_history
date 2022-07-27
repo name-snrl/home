@@ -387,11 +387,8 @@ sudo tlp fullcharge
 sudo tlp-stat -b
 sudo tlp fullcharge BAT1
 udisksctl unmount -b /dev/sdb1 
-sudo gdisk /dev/sdb
-udisksctl mount -b /dev/sdb1
 df
 mkfs.fat -F 32 -n FD /dev/sdb1
-sudo mkfs.fat -F 32 -n FD /dev/sdb1
 df -Th
 sysctl net.ipv4.ip_default_ttl 65
 sysctl net.ipv4.ip_default_ttl=65
@@ -4022,7 +4019,6 @@ sudo { cat arch.conf > arch-fallback.conf;}
 sudo { cat arch.conf > arch-fallback.conf; }
 udisksctl mount -b /dev/sda4
 sudo eject sdb
-sudo eject /dev/sdb
 git clone https://github.com/frabjous/knap
 sh nvim
 sioyek
@@ -4519,7 +4515,6 @@ te
 wev
 nix-shell -p wev
 nclear
-usrcfg add .
 usrcfg status 
 nswitch && diff .bash_history Desktop/.bash_history 
 nclear && exit
@@ -5290,7 +5285,6 @@ export GIT_PAGER=cat
 export GIT_PAGER=less
 nswitch && reboot 
 nupdate && reboot 
-kotatogram-desktop 
 export PAGER=less
 journalctl -b0
 less
@@ -5440,7 +5434,6 @@ luajit test.lua
 nix-shell -p luajit
 kill 1218558
 nswitch
-nboot && reboot 
 nclear && nboot && reboot 
 sctl --user restart waybar.service 
 git log --stat
@@ -5514,10 +5507,8 @@ usrcfg add profiles.ini
 usrcfg add name_snrl/user.js
 usrcfg add name_snrl/chrome/
 usrcfg cm 'init'
-usrcfg push 
 git branch 
 usrcfg branch 
-usrcfg push --set-upstream origin master
 usrcfg-ls
 usrcfg ls-tree
 usrcfg ls-tree -r
@@ -5535,25 +5526,17 @@ git cm 'init'
 git remote add origin git@github.com:name-snrl/nvim.git
 git push -u origin master
 git init --bare .git_home
-usrcfg config --local status.showUntrackedFiles no
 usrcfg add alacritty/ bat/ flameshot/ foot/ GIMP/2.10/gimprc gtk-3.0/ imv/ Kvantum/ light/ mako/ mpv/ pcmanfm-qt/ qBittorrent/ qt5ct/ qutebrowser/ sioyek/ sway* waybar/ wofi/ xkb/ zathura/
-usrcfg log
 usrcfg add KotatogramDesktop/tdata/*-custom.json
-usrcfg st
 usrcfg add qBittorrent/BT_backup/
 echo $HISTFILE
 git clone https://github.com/name-snrl/nvim .config/
 git clone https://github.com/name-snrl/nvim .config/nvim
 git clone https://github.com/name-snrl/nixos-configuration nixos
-ls
-lsblk 
 chown -R name_snrl desktop/
 sudo chown -R name_snrl desktop/
-j
 vi
 nixos-generate-config 
-git st
-git dt
 git add .
 git cm 'update'
 git commit --amend -m 'Update'
@@ -5561,20 +5544,100 @@ git log
 en
 git push 
 nboot
-reboot 
 kotatogram-desktop 
-usrcfg st
 usrcfg config --local status.showUntrackedFiles no
-usrcfg st
 usrcfg dt
-j sw
-vi config 
+usrcfg restore config mapping
+git add ../../.bash_history 
+usrcfg add ../../.bash_history 
+usrcfg restore --staged config mapping
+usrcfg cm 'Update'
+usrcfg add .
+usrcfg cm 'Fix/Kotato no longer needs XWayland'
+usrcfg log
+usrcfg push 
+usrcfg push --set-upstream origin master
+nclear && nswitch 
+sudo gdisk /dev/sdb
+sudo mkfs.fat -F 32 -n FD /dev/sdb1
+udisksctl mount -b /dev/sdb1
+lsblk 
+sudo dd if=downloads/Microsoft\ Windows\ 10\ Enterprise\ 2021\ LTSC\,\ Version\ 21H2\ -\ Оригинальные\ образы\ от\ Microsoft\ MSDN\ \[Ru\]/ of=/dev/sdb
+sudo dd if=downloads/Microsoft\ Windows\ 10\ Enterprise\ 2021\ LTSC\,\ Version\ 21H2\ -\ Оригинальные\ образы\ от\ Microsoft\ MSDN\ \[Ru\]/ru-ru_windows_10_enterprise_ltsc_2021_x64_dvd_5044a1e7.iso of=/dev/sdb
+sudo dd if=downloads/latest-nixos-minimal-x86_64-linux.iso of=/dev/sdb
+sudo eject /dev/sdb
+ls
+xdg-user-dirs
+xdg-user
+xdg-user-dir
+xdg-user-dirs-update --set DOWNLOAD ~/downloads
+xdg-user-dirs-update --set DESKTOP ~/desktop
+xdg-user-dirs-update
+nix-shell -p xdg-user-dirs
+git st
+usrcfg add .config/user-dirs.dirs
+j
+git dt
+usrcfg add ../.config/user-dirs.dirs
+usrcfg st
+reboot 
+nboot && reboot 
+nix-channel --liat
+nix-channel --list 
+sudo nix-channel --list 
 j nixos
 vi configuration.nix 
-vi mapping 
+rm -rf downloads/nixos-configuration-master.zip 
+git dt
+git log
 usrcfg st
+git dt .config/qt5ct/qt5ct.conf
+git dt
+usrcfg dt .config/qt5ct/qt5ct.conf
+vi .config/qt5ct/qt5ct.conf 
+usrcfg dt .config/qt5ct/qt5ct.conf
+vi configuration.nix 
+git st
+git dt
+git dt
+git st
+git add configuration.nix 
+git cm 'Minor changes related to the update'
+git log
+git log --help
+git dt
+git dt HEAD~
+ls downloads/
+usrcfg st
+usrcfg st
+vi
+usrcfg add !(".bash_history")
+usrcfg st
+usrcfg add . ':!.bash_history'
+usrcfg st
+usrcfg add --all -- ':!.bash_history'
+usrcfg st
+usrcfg add . ':exclude(.bash_history)'
+usrcfg add . ':exclude(~/.bash_history)'
+usrcfg add . :exclude(~/.bash_history)
+usrcfg add . :exclude\(~/.bash_history\)
+man git-add
+man git
+usrcfg add . ':exclude\(~/.bash_history\)'
+usrcfg add . ':!.config/qt5ct/qt5ct.conf'
 usrcfg add .
-usrcfg restore config mapping
-vi config 
 usrcfg st
-git add ../../.bash_history 
+usrcfg add --all
+usrcfg st
+usrcfg add *
+vi .git_home/config 
+man git-add
+usrcfg st
+man git-status 
+vi .bash_history 
+man git-status 
+git add -v .
+usrcfg add -v .
+usrcfg add -vn .
+vi
+man git-add
