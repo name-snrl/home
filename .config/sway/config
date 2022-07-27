@@ -49,8 +49,7 @@ exec {
     systemctl --user import-environment
     systemctl --user start sway-session.target
 
-    QT_QPA_PLATFORMTHEME=xcb kotatogram-desktop -startintray
-    #kotatogram-desktop -startintray
+    kotatogram-desktop -startintray
     firefox
     #$term --class=zettel -e nvim ~/Desktop/snrlZettelkasten/
     $HOME/.config/sway/scripts/bash_hist.sh
@@ -97,7 +96,7 @@ exec $theme startup
 #bar swaybar_command waybar
 
 # Wallpaper
-output * bg /home/name_snrl/Desktop/pictures/wp/wallhaven-e77oj8.png fill
+output * bg /home/name_snrl/desktop/pictures/wp/wallhaven-e77oj8.png fill
 
 # Cursor 
 seat seat0 xcursor_theme 'Numix-Cursor-Light' 24
