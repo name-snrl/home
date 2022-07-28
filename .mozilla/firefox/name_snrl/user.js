@@ -1,3 +1,4 @@
+// twitch addon - frankerfaces
 // search settings
 user_pref("browser.search.countryCode", "US");
 user_pref("browser.search.hiddenOneOffs", "Google,Amazon.com,Bing,DuckDuckGo,eBay,Wikipedia (en)");
@@ -34,6 +35,7 @@ user_pref("browser.urlbar.trimURLs", false);
 user_pref("browser.toolbars.bookmarks.visibility", "never");
 
 // appearance
+user_pref("layout.css.prefers-color-scheme.content-override", 2);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("browser.uiCustomization.state", "{\"placements\":{\"widget-overflow-fixed-list\":[],\"nav-bar\":[\"customizableui-special-spring11\",\"customizableui-special-spring19\",\"back-button\",\"forward-button\",\"stop-reload-button\",\"history-panelmenu\",\"home-button\",\"urlbar-container\",\"umatrix_raymondhill_net-browser-action\",\"fxa-toolbar-menu-button\",\"_4906d872-729c-407b-aa73-66ff39e35cdc_-browser-action\",\"sync-button\",\"customizableui-special-spring20\",\"customizableui-special-spring12\",\"_7c6d56ed-2616-48f2-bfde-d1830f1cf2ed_-browser-action\",\"vim-vixen_i-beam_org-browser-action\",\"save-to-pocket-button\",\"_d7742d87-e61d-4b78-b8a1-b469842139fa_-browser-action\",\"toggle-proxy-webext_defkev-browser-action\",\"downloads-button\"],\"toolbar-menubar\":[\"menubar-items\"],\"TabsToolbar\":[\"tabbrowser-tabs\",\"new-tab-button\",\"alltabs-button\"],\"PersonalToolbar\":[\"personal-bookmarks\"]},\"seen\":[\"developer-button\",\"ublock0_raymondhill_net-browser-action\",\"umatrix_raymondhill_net-browser-action\",\"_7c6d56ed-2616-48f2-bfde-d1830f1cf2ed_-browser-action\",\"vimium-c_gdh1995_cn-browser-action\",\"vim-vixen_i-beam_org-browser-action\",\"_d7742d87-e61d-4b78-b8a1-b469842139fa_-browser-action\",\"save-to-pocket-button\",\"addon_darkreader_org-browser-action\",\"_4906d872-729c-407b-aa73-66ff39e35cdc_-browser-action\",\"toggle-proxy-webext_defkev-browser-action\",\"7esoorv3_alefvanoon_anonaddy_me-browser-action\"],\"dirtyAreaCache\":[\"nav-bar\",\"toolbar-menubar\",\"TabsToolbar\",\"PersonalToolbar\",\"widget-overflow-fixed-list\"],\"currentVersion\":17,\"newElementCount\":46}");
 
@@ -43,6 +45,12 @@ user_pref("privacy.donottrackheader.enabled", true);
 // User agent
 // user_pref("general.useragent.override", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36");
 
+// Tor
+user_pref("network.proxy.http", "127.0.0.1");
+user_pref("network.proxy.http_port", "8118");
+user_pref("network.proxy.share_proxy_settings", true);
+user_pref("network.proxy.socks_remote_dns", true);
+
 // DNS
 user_pref("network.trr.mode", 2);
 user_pref("network.trr.custom_uri", "https://dns.nextdns.io/168f8d");
@@ -50,7 +58,15 @@ user_pref("network.trr.custom_uri", "https://dns.nextdns.io/168f8d");
 
 // spellchecking
 user_pref("layout.spellcheckDefault", 2);
-user_pref("spellchecker.dictionary", "ru-English");
+user_pref("spellchecker.dictionary", "ru_RU"); // TODO
+// Almost done. Since firefox 100.0a1 supports multi-language
+// spellchecker. All we need is the best behavior for the
+// spellchecker.dictionary option, which should using both dict.
+//
+// e.g. on habr spellchecker.dictionary works well.
+// what cannot be said about github.
+//
+// Bugzilla #69687 #1773802 #1402822
 
 // dark mode and fullscreen opening without delay
 user_pref("full-screen-api.transition-duration.enter", "0");
