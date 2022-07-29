@@ -10,8 +10,10 @@ user_pref("browser.link.open_newwindow.restriction", 0);
 // Disable alt key toggling the menu bar
 user_pref('ui.key.menuAccessKeyFocuses', false);
 
-// calculator in urlbar
-user_pref("browser.urlbar.suggest.calculator", true);
+// Misc
+user_pref("browser.download.improvements_to_download_panel", false); // old behavior for downloads
+user_pref("browser.urlbar.suggest.calculator", true); // calculator in urlbar
+user_pref("findbar.highlightAll", true); // highlight all matches when searching the page
 
 // hardware acceleration
 user_pref("gfx.webrender.all", true);
