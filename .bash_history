@@ -428,7 +428,6 @@ sudo vi .config/alacritty/alacritty.yml
 exa /nix/store/00aiz38xfskfjl3ygpiqjngh5b76xcdr-libffi-3.4.2-dev/include/
 nix-env -e foot 
 journalctl -b 188
-nix-channel --list 
 nix-env -iA nixos.ouch
 nix-env -e ouch 
 nix-env -iA nixos.du-dust
@@ -827,7 +826,6 @@ export PAGER='nvim -'
 journalctl -b 314 > nvim -
 export PAGER=page
 nix-shell -p page
-nixos-option services.privoxy.enable
 nixos-option services.privoxy.enableTor
 journalctl -b 321 | rg wlr
 journalctl -b 320 | rg wlr
@@ -1161,7 +1159,6 @@ btmon --helo
 btmon
 sudo btmon
 sudo btmon-logger 
-sudo nix-channel --list 
 alacritty -e nnn
 sudo alacritty -e nnn
 sudo -E alacritty -e nnn
@@ -5394,7 +5391,6 @@ git cm 'my patch'
 git diff 45ba2e147f7b7d17acb489d64acc257ceded0887 ab03a2ca3b193743e43371d256752c92be525e70 > my.patch
 git log -n 2
 diff -Naur diagnostic.lua patch.lua > nvim.patch
-nboot 
 diff -Naur orig.lua patched.lua > nvim_virt_text.patch 
 reboot o
 reboot
@@ -5428,7 +5424,6 @@ sudo -i
 sudo rm bashrc 
 git clone https://github.com/neovim/neovim
 git diff
-nclear 
 sctl --user status flameshot.service 
 luajit test.lua 
 nix-shell -p luajit
@@ -5472,7 +5467,6 @@ tail -1 st3.log
 zoxide query -ls
 busctl --json=pretty --system call org.freedesktop.UPower /org/freedesktop/UPower org.freedesktop.UPower EnumerateDevices | jq -r '.data[0] | map(match("[^/]+$").string)[]'
 k
-wf-recorder 
 vim
 nix-shell -p vim
 sctl --user start swayidle.service
@@ -5488,7 +5482,6 @@ git log
 git clone https://github.com/phaazon/hop.nvim
 git clone https://github.com/justinmk/vim-sneak
 tmux
-htop 
 nixos-option hardware.cpu.intel.updateMicrocode
 nixos-option hardware.enableRedistibutableFirmware
 nixos-option hardware.enableRedistributableFirmware
@@ -5516,7 +5509,6 @@ usrcfg ls-tree -r .
 usrcfg ls-tree --full-tree
 usrcfg ls-tree -r master
 usrcfg ls
-usrcfg show
 usrcfg ls-tree --name-only -r HEAD
 git show
 git branch -M master
@@ -5535,27 +5527,19 @@ git clone https://github.com/name-snrl/nvim .config/nvim
 git clone https://github.com/name-snrl/nixos-configuration nixos
 chown -R name_snrl desktop/
 sudo chown -R name_snrl desktop/
-vi
 nixos-generate-config 
 git add .
 git cm 'update'
 git commit --amend -m 'Update'
-git log
-en
-git push 
 nboot
 kotatogram-desktop 
 usrcfg config --local status.showUntrackedFiles no
-usrcfg dt
 usrcfg restore config mapping
 git add ../../.bash_history 
 usrcfg add ../../.bash_history 
 usrcfg restore --staged config mapping
 usrcfg cm 'Update'
-usrcfg add .
 usrcfg cm 'Fix/Kotato no longer needs XWayland'
-usrcfg log
-usrcfg push 
 usrcfg push --set-upstream origin master
 nclear && nswitch 
 sudo gdisk /dev/sdb
@@ -5566,7 +5550,6 @@ sudo dd if=downloads/Microsoft\ Windows\ 10\ Enterprise\ 2021\ LTSC\,\ Version\ 
 sudo dd if=downloads/Microsoft\ Windows\ 10\ Enterprise\ 2021\ LTSC\,\ Version\ 21H2\ -\ Оригинальные\ образы\ от\ Microsoft\ MSDN\ \[Ru\]/ru-ru_windows_10_enterprise_ltsc_2021_x64_dvd_5044a1e7.iso of=/dev/sdb
 sudo dd if=downloads/latest-nixos-minimal-x86_64-linux.iso of=/dev/sdb
 sudo eject /dev/sdb
-ls
 xdg-user-dirs
 xdg-user
 xdg-user-dir
@@ -5574,105 +5557,170 @@ xdg-user-dirs-update --set DOWNLOAD ~/downloads
 xdg-user-dirs-update --set DESKTOP ~/desktop
 xdg-user-dirs-update
 nix-shell -p xdg-user-dirs
-git st
 usrcfg add .config/user-dirs.dirs
-j
-git dt
 usrcfg add ../.config/user-dirs.dirs
-usrcfg st
-reboot 
-nboot && reboot 
 nix-channel --liat
 nix-channel --list 
 sudo nix-channel --list 
-j nixos
-vi configuration.nix 
-rm -rf downloads/nixos-configuration-master.zip 
-git dt
-git log
-usrcfg st
 git dt .config/qt5ct/qt5ct.conf
-git dt
 usrcfg dt .config/qt5ct/qt5ct.conf
-vi .config/qt5ct/qt5ct.conf 
-usrcfg dt .config/qt5ct/qt5ct.conf
-vi configuration.nix 
-git st
-git dt
-git dt
-git st
 git add configuration.nix 
 git cm 'Minor changes related to the update'
-git log
-git log --help
-git dt
 git dt HEAD~
-ls downloads/
-usrcfg st
-usrcfg st
-vi
 usrcfg add !(".bash_history")
-usrcfg st
 usrcfg add . ':!.bash_history'
-usrcfg st
 usrcfg add --all -- ':!.bash_history'
-usrcfg st
 usrcfg add . ':exclude(.bash_history)'
 usrcfg add . ':exclude(~/.bash_history)'
 usrcfg add . :exclude(~/.bash_history)
 usrcfg add . :exclude\(~/.bash_history\)
-man git-add
-man git
 usrcfg add . ':exclude\(~/.bash_history\)'
 usrcfg add . ':!.config/qt5ct/qt5ct.conf'
 usrcfg add .
-usrcfg st
 usrcfg add --all
-usrcfg st
 usrcfg add *
-vi .git_home/config 
-man git-add
-usrcfg st
-man git-status 
-vi .bash_history 
-man git-status 
 git add -v .
 usrcfg add -v .
 usrcfg add -vn .
-vi
-man git-add
-usrcfg add -u .
-usrcfg st
 usrcfg cm 'Add xdg-user-dirs'
-usrcfg push 
-usrcfg st
-j nixos
-git st
-j lu
-git st
-man git-config 
-vi .git_home/config 
-man git-add
-j snrl
-j sw
-vi config 
-j tra
 wf-recorder 
 firefox -v
-tldr wl-copy
-wl-copy -h
-wl-copy --help
-man wl-copy
-wl-copy < recording.mp4 
-en
-vi
-vi
-j .mozilla/
-rg russian
 htop 
-firefox --help
 firefox --ProfileManager 
-vi .mozilla/firefox/name_snrl/user.js 
-firefox --ProfileManager 
-vi .mozilla/firefox/name_snrl/user.js 
+usrcfg add -u .
+git log
+git push 
+usrcfg cm 'Remove the deprecated option from the firefox configuration'
+nix-build jb-get.nix 
+nclear 
+nixos-option services.tor.client.enable
+nixos-option services.privoxy.enable
+nboot && reboot 
+git st
+ls
+en
+usrcfg add .mozilla/firefox/name_snrl/user.js
+usrcfg dt
+usrcfg diff .mozilla/firefox/name_snrl/user.js
+usrcfg cm 'Add tor settings +minor changes to user.js'
+usrcfg dt .mozilla/firefox/name_snrl/user.js
+usrcfg diff HEAD~
+usrcfg log
+usrcfg dt 241a5f688c1ccbd339f9bfe13adf0a5249c8fe93
+usrcfg dt ad1f388a01b7dcee4a367558f2228681794aa488
+usrcfg show
+usrcfg push 
 usrcfg st
+vi
+sha256sum sioyek-1.4.0.zip 
+sha256sum sioyek-1.2.0.zip 
+sha256sum sioyek-1.2.0\(1\).zip 
+j
+nboot 
+git dt
+reboot 
+nclear 
+j nixos
+vi .mozilla/firefox/name_snrl/user.js 
+j lu
+vi core/mapping.lua 
+j tra
+vi configuration.nix 
+git dt
+git st
+git add .
+git cm 'Override sioyek to version 1.4.0'
+git push 
+usrcfg dt .mozilla/firefox/name_snrl/user.js
+usrcfg st
+usrcfg dt .config/flameshot/flameshot.ini
+usrcfg add -u .mozilla/firefox/name_snrl/user.js
+usrcfg st
+usrcfg dt .mozilla/firefox/name_snrl/user.js
+en
+usrcfg commit 
+usrcfg commit 
+usrcfg push 
+sioyek --help
+j snrl
+sioyek /tmp/nvim-md-preview.html 
+j snrl
+sioyek summarySyntaxGFM.md 
+sioyek -v
+sioyek --version
+vi .config/sioyek/prefs_user.config 
+vi summarySyntaxGFM.md 
+htop
+j snrl
+vi .config/sioyek/prefs_user.config 
+ls .local/state/nvim/swap/
+rm .local/state/nvim/swap//%home%name_snrl%.config%sioyek%prefs_user.config.sw*
+j lu
+sioyek /tmp/nvim-md-preview.html 
+vi summarySyntaxGFM.md 
+man sioyek 
+vi .config/sioyek/prefs_user.config 
+usrcfg st
+usrcfg add .config/sioyek/*
+usrcfg st
+usrcfg cm 'Update sioyek configs'
+usrcfg push 
+vi colors/dark.lua 
+man sioyek 
+vi .config/sioyek/prefs_user.config 
+man sioyek 
+j lu
+vi .config/sioyek/prefs_user.config 
+vi colors/dark.lua 
+git st
+git add summarySyntaxGFM.md 
+git cm 'Add summarySyntaxGFM'
+git st
+vi synopsisGFM.md 
+git add synopsisGFM.md 
+git cm 'Add synopsisGFM'
+git log
+git st
+j /etc/
+vi tor/torsocks.conf 
+fd torrc
+cd /
+df -h
+fd torrc
+man fd
+fd --no-follow torrc
+j .config/
+vi .config/sioyek/prefs_user.config 
+vi
+j lu
+git st
+j .local/share/nvim/site/pack/packer/start/
+j telescope.nvim/
+tree 
+fd map
+vi lua/telescope/mappings.lua 
+vi lua/telescope/mappings.lua 
+vi plugins/telescope.lua 
+git st
+en
+j tele
+vi lua/telescope/mappings.lua 
+en
+j nixos
+vi configuration.nix 
+j d w
+j The\ Man\ In\ The\ High\ Castle\ 3\ -\ LostFilm.TV\ \[1080p\]/
+mpv .
+vi
+git log
+git st
+usrcfg st
+usrcfg dt ../../.config/sioyek/prefs_user.config
+usrcfg log
+usrcfg add -u .
+usrcfg cm 'Update'
+usrcfg st
+git log
+usrcfg log
+man git-add 
+usrcfg add -uA
