@@ -19,6 +19,7 @@ defaults () {
 
 dark_theme () {
     # Dark theme
+    gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
     # GTK
     eval "$write gtk-theme 'Nordic-darker'"
@@ -36,6 +37,7 @@ dark_theme () {
 
 light_theme () {
     # Light theme
+    gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
 
     # GTK
     eval "$write gtk-theme 'Nordic-Polar'"
