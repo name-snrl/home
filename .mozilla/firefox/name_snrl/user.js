@@ -10,10 +10,17 @@ user_pref("browser.link.open_newwindow.restriction", 0);
 // Disable alt key toggling the menu bar
 user_pref('ui.key.menuAccessKeyFocuses', false);
 
-// Misc
+// behavior
 user_pref("browser.download.improvements_to_download_panel", false); // old behavior for downloads
 user_pref("browser.urlbar.suggest.calculator", true); // calculator in urlbar
 user_pref("findbar.highlightAll", true); // highlight all matches when searching the page
+
+user_pref("full-screen-api.transition-duration.enter", "0");
+user_pref("full-screen-api.transition-duration.leave", "0");
+user_pref("full-screen-api.warning.timeout", 0);
+
+user_pref("browser.aboutConfig.showWarning", false);
+user_pref("browser.warnOnQuitShortcut", false);
 
 // hardware acceleration
 user_pref("gfx.webrender.all", true);
@@ -55,7 +62,7 @@ user_pref("network.proxy.socks_remote_dns", true);
 
 // DNS
 user_pref("network.trr.mode", 2);
-user_pref("network.trr.custom_uri", "https://dns.nextdns.io/168f8d");
+user_pref("network.trr.uri", "https://dns.nextdns.io/168f8d");
 // user_pref("network.security.esni.enabled", true);
 
 // spellchecking
@@ -69,12 +76,6 @@ user_pref("spellchecker.dictionary", "ru_RU"); // TODO
 // what cannot be said about github.
 //
 // Bugzilla #69687 #1773802 #1402822
-
-// dark mode and fullscreen opening without delay
-user_pref("full-screen-api.transition-duration.enter", "0");
-user_pref("full-screen-api.transition-duration.leave", "0");
-user_pref("full-screen-api.warning.timeout", 0);
-user_pref("browser.aboutConfig.showWarning", false);
 
 // disable tour of novelties
 user_pref("browser.uitour.enabled", false);
