@@ -13,7 +13,7 @@ local o = {
     target_dir = "~/clips",
     overwrite = false, -- whether to overwrite exist files
     vcodec = "copy",
-    acodec = "copy",
+    acodec = "mp3",
     ffmt = "mp4",
 }
 
