@@ -11,8 +11,6 @@ jmtpfs mnt/mtp/
 fastboot flash --slot all boot Downloads/magisk_patched-23000_lUgyT.img 
 fastboot reboot
 adb sideload magisk.zip 
-git clone https://github.com/etircopyh/arch.conf/tree/supreme/dotfiles/user/.config
-git clone https://github.com/etircopyh/arch.conf
 gio info config 
 diff .config/sway/config work/arch.conf/dotfiles/user/.config/sway/swaynag 
 gio info .config/sway/config work/arch.conf/dotfiles/user/.config/sway/swaynag
@@ -24,9 +22,6 @@ gio info work/config.in
 gio info work/config
 gio info .config/sway/config 
 gio info /etc/nixos/configuration.nix 
-git clone https://github.com/matthewsot/docs-vim.git
-git submodule init
-git submodule update
 udisksctl mount --block-device /dev/sda4
 udisksctl unmount --block-device /dev/sda4
 foot > /dev/null 2>&1 &
@@ -66,7 +61,6 @@ echo mem
 exec echo mem
 exec echo mem && sleep 5
 sleep 5
-git clone /dev/null
 stty -a
 stty -e
 stty
@@ -75,7 +69,6 @@ echo Hello > /dev/pts/3
 ps -a
 dmesg
 nconfiguration 
-git clone https://github.com/NixOS/nixpkgs
 lsmod
 lsmod | rg thinkpad
 tlp-stat --battery 
@@ -88,7 +81,6 @@ nixos-option boot.kernelModules
 modprobe -c | rg thinkpad
 acpi
 ping youtube.com
-nixos-option networking.firewall.enable
 firefox ; chromium
 firefox && chromium
 firefox & chromium &
@@ -133,13 +125,6 @@ mem
 test1
 test283
 lspci
-swaymsg input "*" xkb_switch_layout toggle
-swaymsg input "*" xkb_switch_layout 0
-swaymsg input "*" xkb_switch_layout 1
-swaymsg input "*" xkb_switch_layout 2
-swaymsg input "*" xkb_switch_layout -1
-swaymsg input "*" xkb_switch_layout t
-swaymsg input "*" xkb_switch_layout next
 gio info .bash_history 
 diff gio info .bash_history  gio info Desktop/.bash_history 
 diff "gio info .bash_history" "gio info Desktop/.bash_history"
@@ -166,11 +151,9 @@ echo $HISTCONTROL
 history | rg n
 echo "rofl mai"
 sudo nixos-rebuild switch --rollback 
-git clone https://github.com/daaniiieel/nord-firefox
 grim -help
 gimp
 b
-ifconfig 
 gio open resources:///chrome/
 xdg-open resources:///chrome/
 n resources:///chrome/
@@ -241,7 +224,6 @@ journalctl -r -b 94
 journalctl -b 94
 journalctl -b 95
 journalctl -b 96
-cpupower frequency-info 
 $XDG_DATA_DIRS 
 journalctl -b 97
 journalctl -b 98
@@ -273,7 +255,6 @@ export LIBVA_DRIVER_NAME='i965'
 vainfo 
 nix-shell -p vdpauinfo
 nix-shell -p vdpauinfo libva-utils
-git clone https://github.com/NixOS/nixpkgs/tree/nixos-21.05
 export VDPAU_DRIVER="va_gl"
 vdpauinfo 
 export LIBVA_DRIVER_NAME=''
@@ -359,8 +340,6 @@ nix-store -q --requisites /run/current-system/sw/bin/codium | rg qt
 nix-store -q --requisites /run/current-system/sw/bin/codium | rg QT
 nix-store -q --requisites /run/current-system/sw/bin/codium | rg gtk
 journalctl -b 159
-swaymsg -t get_tree 
-swaymsg -t get_tree | less
 pulseaudio 
 apvlv Desktop/books/1be4514c_devops.pdf 
 apvlv Desktop/books/Linux_Bible-Wiley_\(2020\)_Christopher_Negus.pdf 
@@ -394,9 +373,7 @@ sysctl net.ipv4.ip_default_ttl 65
 sysctl net.ipv4.ip_default_ttl=65
 sudo mkfs.fat -F 32 -n FD2 /dev/sdb2
 udisksctl unmount -b /dev/sdb1
-udisksctl mount -b /dev/sdb2
 sysctl net.ipv4.ip_default_ttl
-udisksctl unmount -b /dev/sdb2
 sudo mkfs.fat -F 32 -n FD1 /dev/sdb1
 foot exit
 exit
@@ -409,7 +386,6 @@ nix-env -iA nixos.kitty
 kitty
 nix-env -iA nixos.alacritty
 nix-env -e
-swaymsg -t get_tree | rg test
 wofi nnn
 wofi 
 alacritty --class test
@@ -472,19 +448,10 @@ keepassxc
 keepass
 nix-shell -p keepass
 nix-shell -p keepassxs
-nix-shell -p keepassxc
 echo $XDG_CONFIG_HOME
 mankotatogram-desktop
 dex
 nix-shell -p dex
-swaymsg -t get_tree | rg con_id
-swaymsg -t get_tree | rg mark
-swaymsg -t get_tree | rg id
-swaymsg -t get_tree | rg dino
-swaymsg swap dino firefox
-swaymsg swap [app_id="dino"] [app_id="firefox"]
-swaymsg swap conteiner with [app_id="dino"] [app_id="firefox"]
-swaymsg swap conteiner with dino firefox
 ffmpeg -i https://www.twitch.tv/reira
 ffmpeg -i www.twitch.tv/reira
 ffmpeg -i https://www.twitch.tv/videos/1220973202
@@ -695,7 +662,6 @@ bluemoon
 blueman-manager 
 dconf list
 dconf list /
-dconf list /org/
 sudo dconf list /org/
 dconf read /org/freedesktop/UPower/devices/battery_BAT1
 gsettings get /org/freedesktop/UPower/devices/battery_BAT1
@@ -804,7 +770,6 @@ journalctl -b 314 | nvim -
 journalctl -b 314 | rg wlr | wl-copy -
 journalctl -b 314 | rg wlr | wl-copy
 journalctl -b 314 | rg wlr
-swaymsg -t get_outputs 
 nix-shell -p libsForQt5.xdg-desktop-portal-kde
 journalctl -b 314 | rg display
 journalctl -b 313 -u xdg-desktop-portal-wlr
@@ -890,7 +855,6 @@ journalctl -b 305 | rg wlr | vi -
 history | rg journ
 journalctl -b 334 | rg wlr
 journalctl -b 334 | rg wlr | vi -
-swaymsg -t get_tree | vi -
 journalctl -b 336 | rg wlr
 journalctl -b 335 | rg portal
 journalctl -b 334 | rg portal
@@ -1174,7 +1138,6 @@ dbus-send --print-reply=literal --system --dest=org.bluez "/org/bluez/hci0/dev_8
 bluetoothctl info | head -1 | awk '{print $2}'
 bluetoothctl info | head -1 | awk '{print $2}' | sed 's/:/_/g'
 dbus-send --print-reply=literal --system --dest=org.bluez "/org/bluez/hci0/dev_88_D0_39_65_46_85" org.freedesktop.DBus.Properties.Get string:"org.bluez.Battery1" string:"Percentage" | awk '{print $3}' | awk '{print $0"%"}'
-git clone https://github.com/edrosten/bluez
 nupdate
 sudo nix-store --optimise 
 sudo nixos-rebuild boot --upgrade 
@@ -1271,7 +1234,6 @@ journalctl | page -q 9000
 journalctl | page
 export SYSTEMD_PAGER="vi"
 export SYSTEMD_EDITOR="nvim"
-git clone https://github.com/systemd/systemd
 elinks nixos.org
 journalctl -b0 | page
 iwctl adapter list
@@ -1283,21 +1245,6 @@ journalctl -rb0
 upower -e 1
 upower -i /org/freedesktop/UPower/devices/
 systemctl --system status bluetooth.service
-swaymsg input '*' xkb_switch_layout toggle
-swaymsg input '*' xkb_switch_layout 1
-swaymsg input '*' xkb_switch_layout 0
-swaymsg input '*' xkb_switch_layout next
-swaymsg input '*' xkb_switch_layout prev
-swaymsg input '*' xkb_switch_layout n
-swaymsg input '*' xkb_switch_layout
-swaymsg input "type:keyboard" xkb_switch_layout next
-swaymsg -t get_inputs 
-swaymsg input "type:keyboard" xkb_switch_layout 1
-swaymsg input "type:keyboard" xkb_switch_layout -1
-swaymsg input "type:keyboard" xkb_switch_layout 2
-swaymsg input "type:keyboard" xkb_switch_layout 3
-swaymsg input "type:keyboard" xkb_switch_layout 0
-swaymsg input "1:1:AT_Translated_Set_2_keyboard" xkb_switch_layout next
 setxkbmap toggle
 setxkbmap ru
 setxkbmap
@@ -1318,12 +1265,6 @@ setxkbmap -layout
 setxkbmap -layout ru
 sudo setxkbmap -layout ru
 sudo setxkbmap -layout 1
-swaymsg -m input '*' xkb_switch_layout next
-swaymsg -m
-swaymsg --monitor 
-swaymsg -mt
-swaymsg -t -m
-swaymsg -m -t
 xneur
 nix-shell -p xneur
 nix-env -iA nixos.xkb-switch-i3
@@ -1362,7 +1303,6 @@ dotnet dz_arishi.csproj
 dotnet new --list
 dotnet run dz_arishi.csproj 
 nixos-rebuild build
-alias nupdate
 systemctl status tor.service
 systemctl stop tor.service 
 sudo tor
@@ -1415,7 +1355,6 @@ innoextract gtwo47ww.exe
 innoextract nz0wo01w.exe 
 7z x code\$GetExtractPath\$/SierraWirelessEM73454GLTESoftware.exe *FirmwareDatabase* -r
 mbimcli
-7z
 innoextract
 nix-shell -p innoextract p7zip
 sudo mbimcli -d /dev/cdc-wdm0 --query-device-caps
@@ -1487,7 +1426,6 @@ journalctl -u ModemManager -b -8
 systemctl restart ModemManager.service
 systemctl status ModemManager.service
 journalctl -u ModemManager -b -1
-git clone https://github.com/NixOS/nixos-artwork
 nix -v
 nix -V
 sudo nix-collect-garbage --delete-old && reboot 
@@ -1516,7 +1454,6 @@ nix-channel --add https://nixos.org/channels/nixos-21.11 forTest
 nix-channel --remove forTest
 nboot && exit 
 journalctl -xe NM_CONNECTION=6be70ea9-63a2-44e4-a409-5d92d6b5bfe6 + NM_DEVICE=wlan0
-sudo sysctl net.ipv4.ip_default_ttl=64
 adb devices 
 discord 
 sudo sysctl net.ipv6.
@@ -1547,7 +1484,6 @@ busctl status
 sudo busctl monitor > bus_mon
 midori 
 firefox --new-instance --kiosk http://www.world-art.ru/animation/img/9000/8406/1.jpg
-git clone https://github.com/dracula/zathura ~/.config/zathura/
 exec zathura 
 screenfetch 
 screenfetch
@@ -1559,7 +1495,6 @@ sudo nixos-rebuild switch && nclear && nboot
 echo of Moscow
 fg 1
 qt5ct 
-git clone https://github.com/rtlewis88/rtl88-Themes/tree/Nord-Black-Frost/Material-Black-Frost
 gsettings set org.gnome.desktop.interface 'Material-Black-Frost'
 gsettings set org.gnome.desktop.interface gtk-theme 'Material-Black-Frost'
 gsettings set org.gnome.desktop.interface gtk-theme 'Nordic-darker'
@@ -1611,14 +1546,11 @@ nix-env -e themechanger
 nix-env -iA nixos.libsForQt5.qtstyleplugins
 nix-env -iA nixos.qtstyleplugin-kvantum-qt4
 nix-env -e qt5ct qtstyleplugins-unstable qtstyleplugin-kvantum-qt4 
-anki 
 /nix/store/l72r41qqxxn9wxkp27sxzz8md8nhjamp-anki-2.1.15/bin/anki 
 nix-env -iA nixos.anki
 nix-env -e anki
 gsettings get org.gnome.desktop.inerface gtk-theme
-gsettings get org.gnome.desktop.interface gtk-theme
 GTK2_RC_FILES=$HOME/.gtkrc-2.0 anki
-echo $ANKI_WAYLAND 
 /nix/store/z8bdgqr4qkqh3zwamzq0k8fyba8m8qw2-anki-bin-2.1.49/bin/anki 
 /nix/store/5s91vwfnka6m82z04wx6r30wp6zpqqj9-anki-bin-2.1.49/share/anki/bin/Anki 
 /nix/store/avd85j8af0ik94x6dkcfg8c845kar283-anki/bin/anki 
@@ -1885,7 +1817,6 @@ gsettings list-schmas
 gsettings-desktop-schemas
 gsettings list-relocatable-schemas
 gsettings list-recursively
-dconf list /org/gnome/desktop/interface/
 dconf read /org/gnome/desktop/interface/icon-theme 
 nix-env -iA nixos.nautilus
 dconf list /org/gnome/
@@ -1945,7 +1876,6 @@ sudo traceroute6 ya.ru
 sudo traceroute ya.ru
 tracepath ya.ru
 zgrep -e CONFIG_FB_EFI -e CONFIG_FB_SIMPLE -e CONFIG_DRM= -e CONFIG_SYSFB_SIMPLEFB /proc/config.gz
-which sway
 s -a
 history | rg ls
 history
@@ -2074,7 +2004,6 @@ systemctl -l
 systemctl -l --system 
 systemctl -l --user 
 sudo nixos-rebuild build
-swaymsg "output * dpms off" && sleep 30 && swaymsg "output * dpms on"
 nix-env -iA nixos.obs-studio
 nix-env -e obs-studio 
 coredumpctl list
@@ -2172,7 +2101,6 @@ sudo cp -r /boot/ .
 sudo rm -r Desktop/trash/boot/
 nix-channel 
 /nix/store/kw1mfjzlay9yrnwl358i7bd3c40g0687-element-desktop-wayland 
-git config --global user.name name_snrl
 compgen -c cur
 lathers are usually made from sulfates
 flameshot -c gui
@@ -2201,17 +2129,9 @@ zxc
 ed
 history | rg VBox
 stty -ixon
-nupdate 
 nclear && nboot && beep || beep 
 nboot ; beep 
-swaymsg input '*' xkb_layout
 echo $XKB_DEFAULT_LAYOUT
-swaymsg -t get_inputs '*'
-swaymsg -t get_inputs 'type:keyboard'
-swaymsg -t get_inputs | rg layout
-swaymsg -t get_inputs | rg US
-swaymsg -t get_inputs | jq '.[0].xkb_active_layout_name'
-swaymsg -t get_tree | page
 VBoxManage startvm work && exit 
 ps aux
 ps auxs
@@ -2237,12 +2157,6 @@ nix-shell -p qutebrowser
 free 
 tcptraceroute
 traceroute
-git clone https://github.com/cab404/nixos-config/blob/master/modules/default.nix
-git clone https://github.com/cab404/nixos-config
-git clone https://github.com/cab404/nixos-config/blob/master/configuration.nix
-git clone https://github.com/kanashimia/nixos-config
-git clone https://github.com/setser/nixos-config
-git clone https://github.com/wiedzmin/nixos-config
 tracert
 route ya.ru
 route -n
@@ -2277,7 +2191,6 @@ find -name ettel
 find -iname *zettel
 find -iname *.zettel
 find -iname *zettel*
-git clone https://github.com/vimwiki/testwikis
 nix-env -iA nixos.brightnessctl
 brightnessctl i
 brightnessctl -n
@@ -2305,19 +2218,14 @@ apostrophe
 retext 
 nix-shell -p marker
 nix-shell -p ghostwriter marktext apostrophe retext
-swaymsg -t get_inputs | grep -m1 "xkb_active_layout_index" | grep -oP "\d+"'
-swaymsg -t get_inputs | grep -m1 "xkb_active_layout_index"
 zkvim 
 zkvim snrlZettelkasten/synopsisMyZettelkasten.md 
 kitty 
 nix-shell -p kitty
 alias zkvim
 zkvim synopsisMyZettelkasten.md 
-git clone https://github.com/norcalli/nvim-base16.lua
-git clone https://github.com/RRethy/nvim-base16/
 nix-shell -p nodePackages.live-server
 nix-env -iA nixos.nodePackages.live-server
-git clone https://github.com/davidgranstrom/nvim-markdown-preview
 nix-shell -p flow mdcat mdr
 nix-shell -p glow mdcat mdr
 glow synopsisMyZettelkasten.md
@@ -2367,13 +2275,11 @@ date +%d-%m-%Y
 file youAreCrazy.png 
 compgen -c
 et
-git clone https://github.com/EliverLara/firefox-nordic-theme
 ps aux | grep portal
 dino
 nix-shell -p dino
 nix-env -iA nixos.dino
 nix-env -e dino 
-git clone https://github.com/LunarVim/Neovim-from-scratch/tree/22-autocommands
 echo $testcolor
 export test123="#123"
 compgen -c color
@@ -2387,7 +2293,6 @@ ln -s /home/name_snrl/Desktop/trash/askub/ /home/name_snrl/Desktop/trash/nvim
 ln -s test34t/ nvim
 uname -s
 nixos-options
-git clone https://github.com/LunarVim/LunarVim
 ln -s LunarVim/ nvim/
 ln -s nvim LunarVim/
 ln -s nvim/ LunarVim/
@@ -2398,18 +2303,11 @@ ln -s realNvimPath/ nvim
 nixos-option fonts.fontconfig.defaultFonts.sansSerif
 nixos-option programs.bash.enableCompletion
 nixos-option  fonts.fontconfig.defaultFonts.serif
-git clone https://github.com/NvChad/NvChad
 ln -s NvChad/ nvim
 gcc
 nix-shell -p gcc
 sudo nvim /etc/nixos/configuration.nix 
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-git restore lua/colors/init.lua
 file Downloads/Клондайк\ \(1080p\).\ Сезон\ 1/Klondike.S01E01.1080p.BluRay.x264-HANDJOB.mkv
-git status lua/core/default_config.lua 
-git status help
-git status --long
-git status --short
 gimp & exit 
 file Downloads/Kotatogram\ Desktop/2022-03-04_09-53.png 
 history | rg ln -s
@@ -2487,11 +2385,6 @@ echo $QML2_IMPORT_PATH >> withModule
 export QML2_IMPORT_PATH=""
 export QT_PLUGIN_PATH="/home/name_snrl/.nix-profile/lib/qt4/plugins:/home/name_snrl/.nix-profile/lib/kde4/plugins:/etc/profiles/per-user/name_snrl/lib/qt4/plugins:/etc/profiles/per-user/name_snrl/lib/kde4/plugins:/nix/var/nix/profiles/default/lib/qt4/plugins:/nix/var/nix/profiles/default/lib/kde4/plugins:/run/current-system/sw/lib/qt4/plugins:/run/current-system/sw/lib/kde4/plugins"
 nclear && nboot && exit 
-git clone https://github.com/ymatsiuk/nixos-config/tree/main
-git clone https://github.com/ymatsiuk/nixos-config/
-git checkout wip
-git clone https://github.com/etircopyh/nixos.conf
-exec sway
 systemctl --user status sway.service 
 history | rg shs
 history | rg ssh
@@ -2513,11 +2406,8 @@ dconf write /org/gnome/desktop/interface/monospace-font-name "'JetBrains Mono 12
 dconf write /org/gnome/desktop/interface/monospace-font-name "'monospace 12'"
 dconf read  /org/gnome/desktop/interface/monospace-font-name
 dconf write org/gnome/desktop/interface/monospace-font-name "'JetBrains Mono 12'"
-ip a
 gsettings --schemadir /nix/store/psmby2cfmhafcly52kcfid1k2cjbv9n5-gsettings-desktop-schemas-41.0/share/gsettings-schemas/gsettings-desktop-schemas-41.0/glib-2.0/schemas/ get org.gnome.desktop.interface icon-theme
 elope
-git clone https://github.com/GNOME/gsettings-desktop-schemas
-git clone https://github.com/GNOME/glib
 ping https://www.instagram.com/
 ping instagram.com
 mdr snrlZettelkasten/projectFatherMentalHealth.md 
@@ -2531,10 +2421,6 @@ dd if=Downloads/latest-nixos-minimal-x86_64-linux.iso of=/dev/sdb
 sudo mkfs.fat -v -n Windows USB /dev/sdb1
 sudo mkfs.fat -v -n win /dev/sdb1
 rockyou
-git clone nvim/[200~https://github.com/williamboman/nvim-lsp-installer~
-git clone https://github.com/williamboman/nvim-lsp-installer
-git clone https://github.com/kraftwerk28/dotfiles/tree/master/.config/nvim
-git clone https://github.com/kraftwerk28/dotfiles
 ln -s ~/Desktop/trash/nvim/ nvim
 systemctl --version 
 sudo mv Downloads/Kotatogram\ Desktop/process.patch /etc/nixos/
@@ -2543,10 +2429,6 @@ lua --versi
 lua -v
 ln -s ~/Desktop/trash/dotfiles/.config/nvim/lua/ nvim
 ln -s ~/Desktop/trash/dotfiles/.config/nvim/ nvim
-git clone https://github.com/nvim-lua/popup.nvim
-git clone https://github.com/nvim-lua/plenary.nvim
-git clone https://github.com/wbthomason/packer.nvim --depth=1 ./1
-git clone https://github.com/wbthomason/packer.nvim --depth=20 ./20
 echo 'some/path/to/pic' | cut -d / -f1-
 echo 'some:path:to:pic' | cut -d':' -f1-
 echo 'some:path:to:pic' | cut -d':' -f2
@@ -2618,17 +2500,7 @@ nice
 nice1
 echo test | vw 1 -
 nswitch && nclear && nboot && exit 
-git clone https://github.com/GoldsteinE/dotfiles maksDots/
 test.lua
-git restore *
-git restore all
-git clone https://github.com/r4v3n6101/dotfiles slava/
-git clone https://github.com/etircopyh/arch.conf ivan/
-git checkout wip 
-git clone https://github.com/LunarVim/Neovim-from-scratch
-git checkout 01-options 
-git checkout HEAD 
-git checkout 02-keymaps 
 rename Super.Pumped.S01E0*.WEB-DLRip.RGzsRutracker.[Wentworth_Miller].srt Super.Pumped.S01E0*.1080p.rus.LostFilm.TV.mkv Super.Pumped.S01E0?.WEB-DLRip.RGzsRutracker.[Wentworth_Miller].srt
 rename WEB-DLRip.RGzsRutracker.[Wentworth_Miller] 1080p.rus.LostFilm.TV Super.Pumped.S01E0*
 rename 1080p.rus.LostFilm.TV WEB-DLRip.RGzsRutracker.[Wentworth_Miller] Super.Pumped.S01E0*
@@ -2670,7 +2542,6 @@ re
 nix-shell -p swaylock
 
 echo "     " > ttyChars
-git clone https://github.com/kassio/neoterm
 /home/name_snrl/bin/pager 
 bin/pager 
 sed -i 's#ComPort=9#ComPort=67#g' sashaTest 
@@ -2708,9 +2579,7 @@ rsync -aR .local/share/KotatogramDesktop/tdata/shortcuts-* .local/share/Kotatogr
 # Install Arch Linux
 ping vimeo.com
 ping 1.1.1.1
-git clone https://github.com/numToStr/Comment.nvim
 alacritty msg create-window
-git checkout 03-plugins 
 \
 tre nvim/site/pack/
 env | sort
@@ -2725,7 +2594,6 @@ export > greetdAutologin
 sway-move-to left
 sudo systemd-run -P echo '$PATH'
 systemd-run -P --uid=name_snrl -p PAMName=login echo '$PATH'
-git clone https://github.com/alacritty/alacritty
 export TERM='xterm-256color'
 exec alacritty/
 alacritty &
@@ -2733,7 +2601,6 @@ alacritty --version
 nupdate && nboot && reboot 
 history | rg rg
 history rg
-git clone https://github.com/alacritty/alacritty ; cd alacritty ; rg -uu term
 systemctl --user import-environment 
 echo $SWAYSOCK 
 export | rg sway
@@ -2749,19 +2616,14 @@ sh
 tre
 vipw
 sudo vipw
-git clone https://github.com/wbthomason/packer.nvim'
 make
 locate -r /\.git$ -l 2
 nix-env -iA nixos.plocate
 nix-env -e plocate 
 zoxide init bash
-git clone https://github.com/ajeetdsouza/zoxide#environment-variables
-git clone https://github.com/ajeetdsouza/zoxide
 alias l
 alias ll
-l
 history | rg fd
-git clone https://gitlab.com/interception/linux/tools
 traceroute 1.1.1.1
 traceroute -m 2 1.1.1.1
 traceroute -m 2 ya.ru
@@ -2771,13 +2633,9 @@ sudo traceroute 1.1.1.1
 sudo traceroute -m 2 87.250.250.242
 sudo traceroute -q 30 -m 2 87.250.250.242
 sudo traceroute -q 10 -m 2 87.250.250.242
-git clone https://github.com/NTBBloodbath/galaxyline.nvim
-git clone https://github.com/adelarsq/neoline.vim
-git clone https://github.com/beauwilliams/statusline.lua
 mdr snrlZettelkasten/projectLinuxDesktop.md 
 mdr ~/snrlZettelkasten/projectLinuxDesktop.md 
 mdr ~/snrlZettelkasten/projectFatherMentalHealth.md 
-git clone https://github.com/rmehri01/onenord.nvim
 nix-shell -p nnn
 nclear && exit 
 export TERM='linux-direct'
@@ -2823,11 +2681,7 @@ bind "\C-w:unix-filename-rubout"
 bind \C-w:unix-filename-rubout 
 stty werase undef
 bind -p | rg kill
-swaymsg -t get_tree | jq '[recurse(.nodes[], floating_nodes[]) | select((.name//"") | test("gram"; "i"))]' | curl -F file=@- 0x0.st
-swaymsg -t get_tree | jq '[recurse(.nodes[], .floating_nodes[]) | select((.name//"") | test("gram"; "i"))]' | curl -F file=@- 0x0.st
-swaymsg -t get_tree | jq '[recurse(.nodes[], floating_nodes[]) | select((.name//"") | test("gram"; "i"))]'
 echo test >> synopsisVi.md 
-git clone https://github.com/nathom/filetype.nvim
 export MANPAGER="page -C -e 'au User PageDisconnect sleep 100m|%y p|enew! |bd! #|pu p|set ft=man'"
 export MANPAGER="page -t man"
 export MANPAGER="page -e set ft=man"
@@ -2846,7 +2700,6 @@ export MANPAGER="vi"
 journalctl | less
 status
 nix-shell -p obs-studio
-git man
 diff -y anotherttylist.log ttylist.log 
 dmesg -E
 sudo dmesg -E
@@ -2898,48 +2751,20 @@ bemenu -c
 bemenu
 bemenu-run 
 bemenu-run -c
-git clone https://hg.sr.ht/~scoopta/wofi
 nix-shell -p rofi-wayland
 nix-shell -p bemenu
 flameshot
 flameshot-gui
 flameshot config
 makoctl set-mode dark
-swaymsg gaps
-swaymsg -t get_config
-swaymsg -t get_config | rg gaps
-swaymsg -t get_config gaps
-swaymsg -t get_tree | rg gaps
-swaymsg -t get_tree | rg --context-separator / gaps
-swaymsg -t get_config | rg --context-separator / gaps
-swaymsg -t get_config | rg --context-separator \ gaps
-swaymsg client.focused #ff0000 #ff0000 #ff0000 #ff0000
-swaymsg client.focused "#ff0000 #ff0000 #ff0000 #ff0000"
 $HOME/bin/beep
-git clone https://github.com/PapirusDevelopmentTeam/arc-kde
 dconf write /org/gnome/desktop/interface/gtk-theme "'Arc'"
 dconf write /org/gnome/desktop/interface/gtk-theme "'Arc-Lighter'"
 dconf write /org/gnome/desktop/interface/gtk-theme "'Arc-Darker'"
 dconf write /org/gnome/desktop/interface/gtk-theme "'Arc-Dark'"
-swaymsg seat seat0 xcursor_theme 'Numix-Cursor-Light'
-swaymsg seat seat0 xcursor_theme 'Numix-Cursor'
-swaymsg seat seat0 xcursor_theme 'Numix-Cursor' 24
-swaymsg seat seat0 xcursor_theme 'Numix-Cursor-Light' 24
-swaymsg seat seat0 xcursor_theme Numix-Cursor-Light 24
-swaymsg seat seat0 xcursor_theme "Numix-Cursor-Light 24"
-swaymsg seat "seat0 xcursor_theme Numix-Cursor-Light 24"
-swaymsg seat
-swaymsg seat "seat0 xcursor_theme 'Numix-Cursor-Light' 24"
-swaymsg seat seat0 xcursor_theme Numix-Cursor 24
-swaymsg seat "seat0 xcursor_theme Numix-Cursor 24"
 dconf write /org/gnome/desktop/interface/cursor-theme "'Numix-Cursor'"
 dconf write /org/gnome/desktop/interface/cursor-theme "'Numix-Cursor-Light'"
 dconf write /org/gnome/desktop/interface/cursor-theme Numix-Cursor
-git clone https://gitlab.com/jomada/edna
-git clone https://github.com/openmindead/materia-kde
-git clone https://github.com/EliverLara/Juno/tree/ocean
-git clone https://github.com/EliverLara/Juno/
-git clone https://github.com/EliverLara/Ant
 lazpaint 
 nix-shell -p lazpaint
 magick
@@ -2954,36 +2779,14 @@ nix-shell -p imagemagick
 rename Nordic-Darker-Solid. Nordic-Solid. *
 gimp Nordic-Solid.svg 
 gimp Arc/Arc.svg 
-swaymsg seat * xcursor_theme Numix-Cursor 24
-swaymsg seat - xcursor_theme Numix-Cursor 24
-swaymsg -t get_seats 
-swaymsg include colors
-swaymsg include
-swaymsg floating toggle
 new_y=3
 print $new_y
 echo $new_y
-swaymsg "move position $new_y"
 new_x=30
-swaymsg "move position $new_y + $new_x 0"
-swaymsg "move position $(new_y + new_)x 0"
-swaymsg "move position $(new_y + new_x) 0"
-swaymsg "move position $new_y 0"
-swaymsg "move position $new_y+$new_x 0"
-swaymsg "move position $($new_y+$new_x) 0"
-swaymsg "move position $(echo $new_y+$new_x) 0"
 echo $new_y + $new_x
 echo $((new_y + new_x))
-swaymsg "move position $((new_y+new_x)) 0"
-swaymsg -t get_tree | jq -r '.. | select(.type?) | select(.focused?)|.rect.x, .rect.y, .rect.width, .rect.height, .deco_rect.height, .type'
-swaymsg "move position 0 0"
-swaymsg "move position x y"
-swaymsg "move position 5 556"
-swaymsg "move position 5 0"
-swaymsg "move absolute position 0 0"
 sleep 5 && swaymsg -t get_tree | jq -r '.. | select(.focused?)|.rect.x, .rect.y, .rect.width, .rect.height, .deco_rect.height, .type'
 sleep 5 && swaymsg -t get_tree | jq -r '.. | select(.type?) | select(.focused?)|.rect.x, .rect.y, .rect.width, .rect.height, .deco_rect.height, .type'
-swaymsg -t get_tree | jq -r '.. | select(.focused?)|.rect.x, .rect.y, .rect.width, .rect.height, .deco_rect.height, .type'
 echo 5/n36
 echo "5/n36"
 echo "5\n36"
@@ -3002,22 +2805,13 @@ new_x=$((${win_param[0]} - ${worksp[0]}))
 echo $new_x
 new_x=$(${win_param[0]} - ${worksp[0]})
 ./scripts/move.sh -hf
-swaymsg -t get_outputs |     jq -r '.. | select(.focused?) | .current_mode | "\(.width)x\(.height)"'
-swaymsg -t get_tree | jq -r '.. | select(.type?)
 '
-swaymsg -t get_tree | jq -r '.. | select(.type?)' | pager
-swaymsg -t get_tree | jq -r '.. | select(.type?) | .rect.x, .rect.y, .rect.width, .rect.height'
-swaymsg move position 0 0
-swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect.x, .rect.y, .rect.width, .rect.height, .deco_rect.height, .type'
 x=$( swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect.x' )
 echo $x
-swaymsg "move absolute position $x 0"
-swaymsg "move absolute position $x 36"
 y=5
 x=y
 echo x
 x=$y
-swaymsg move position center
 return 
 tree=$( swaymsg -t get_tree )
 echo tree
@@ -3026,21 +2820,6 @@ tree=$(swaymsg -t get_tree)
 echo $tree 
 $tree | jq -r '.. | select(.focused?) | .rect.x, .rect.y, .rect.width, .rect.height, .type'
 echo $tree | jq -r '.. | select(.focused?) | .rect.x, .rect.y, .rect.width, .rect.height, .type'
-swaymsg -t get_tree
-swaymsg -t get_tree | jq -r 'select'
-swaymsg -t get_tree | jq -r 'select()'
-swaymsg -t get_tree | jq -r 'select(..)'
-swaymsg -t get_tree | jq -r '.. | select(..)'
-swaymsg -t get_tree | jq -r '..'
-swaymsg -t get_tree | jq -r '.. | select(.type?) |.rect.x, .rect.y, .rect.width, .rect.height, .deco_rect.height, .type'
-swaymsg -t get_tree | jq -r '.. | select(workspace) |.rect.x, .rect.y, .rect.width, .rect.height, .deco_rect.height, .type'
-swaymsg -t get_tree | jq -r '.. | select(.workspace?) | .rect.x, .rect.y, .rect.width, .rect.height, .deco_rect.height, .type'
-swaymsg -t get_tree | jq -r '.. | select(.type=workspace?) | .rect.x, .rect.y, .rect.width, .rect.height, .deco_rect.height, .type'
-swaymsg -t get_tree | jq -r '.. | select(.type?) | select(.focused?)|.rect.x, .rect.y, .rect.width, .rect.height, .deco_rect.height, .type, .current_workspace'
-swaymsg -t get_tree | jq -r '.. | select(.type?) | select(.current_workspace?)|.rect.x, .rect.y, .rect.width, .rect.height, .deco_rect.height, .type, .current_workspace'
-swaymsg -t get_tree | jq -r '.. | select(.current_workspace?) | .current_workspace'
-swaymsg -t get_tree | jq '[paths|join(".")]'
-swaymsg -t get_tree | jq '[paths|join(".")]' | pager
 tre=$( swaymsg -t get_tree )
 cur=$(
 echo $tre |
@@ -3061,46 +2840,11 @@ tre=$(swaymsg -t get_tree)
 echo $tre
 cur_ws=$(echo $tre | jq -r '.. | select(.current_workspace?) | .current_workspace')
 echo $cur_ws 
-swaymsg -t get_tree | rg selec
-swaymsg -t get_tree | jq -r '.. | select(if .type == "con") | select(.focused?)|.rect.x, .rect.y, .rect.width, .rect.height'
-swaymsg -t get_tree | jq -r '.. | select(.type == "con"?) | select(.focused?)|.rect.x, .rect.y, .rect.width, .rect.height'
-swaymsg -t get_tree | jq -r '.. | select(.type == "con"?) |.rect.x, .rect.y, .rect.width, .rect.height'
-swaymsg -t get_tree | jq -r '.. | select(.type == "work"?) |.rect.x, .rect.y, .rect.width, .rect.height'
-swaymsg -t get_tree | jq -r '.. | select(.type == "workspace"?) |.rect.x, .rect.y, .rect.width, .rect.height'
-swaymsg -t get_tree | jq -r '.. | select(.type == "workspace"?) | select(.name == ""?) | .rect.x, .rect.y, .rect.width, .rect.height'
 cur=8
-swaymsg -t get_tree | jq -r '.. | select(.type == "workspace"?) | select(.name == "$cur"?) | .rect.x, .rect.y, .rect.width, .rect.height'
-swaymsg -t get_tree | jq -r 'select(.type == "workspace"?) |.rect.x, .rect.y, .rect.width, .rect.height'
-swaymsg -t get_tree | jq -r '. | select(.type == "workspace"?) |.rect.x, .rect.y, .rect.width, .rect.height'
-swaymsg -t get_tree | jq -r ".. | select(.type == 'workspace'?) | select(.name == '8'?) | .rect.x, .rect.y, .rect.width, .rect.height"
-swaymsg -t get_tree | jq -r ".. | select(.type == workspace?) | select(.name == 8?) | .rect.x, .rect.y, .rect.width, .rect.height"
-swaymsg -t get_tree | jq -r '.. | select(.current_ws?)' pager
-swaymsg -t get_tree | jq -r '.. | select(.current_ws?) |' pager
-swaymsg -t get_tree | jq -r '.. | select(.current_ws?) | {}' pager
-swaymsg -t get_tree | jq -r '.. | select(.current_ws?) | .' pager
-swaymsg -t get_tree | jq -r '.. | select(.current_ws?) | ..' pager
-swaymsg -t get_tree | jq -r '.. | select(.current_ws?) | .current_ws' | pager
-swaymsg -t get_tree | jq -r '.. | select(.current_workspace?)' pager
-swaymsg -t get_tree | jq -r '.. | select(.current_workspace?) | .' pager
-swaymsg -t get_tree | jq -r '.. | select(.current_workspace?) | .current_workspace' pager
-swaymsg -t get_tree | jq -r '.. | select(.current_workspace?) | .current_workspace' | pager
-swaymsg -t get_tree |     jq -r '.. | select(.current_workspace?) | .current_workspace' | pager
-swaymsg -t get_tree | jq -r '.. | select(.type == "workspace"?) | select(.name == "8"?) | .rect.x, .rect.y, .rect.width, .rect.height'
-swaymsg -t get_tree | jq -r '.. | select(.type == "workspace"?) | select(.name == "$(echo $cur)"?) | .rect.x, .rect.y, .rect.width, .rect.height'
-swaymsg -t get_tree | jq -r --arg foo 8 '.. | select(.type == "workspace"?) | select(.name == "$foo"?) | .rect.x, .rect.y, .rect.width, .rect.height'
-swaymsg -t get_tree | jq -r --arg foo 8 '.. | select(.type == "workspace"?) | select(.name == $foo?) | .rect.x, .rect.y, .rect.width, .rect.height'
-swaymsg -t get_tree | jq -r --arg foo $cur '.. | select(.type == "workspace"?) | select(.name == $foo?) | .rect.x, .rect.y, .rect.width, .rect.height'
-swaymsg -t get_tree | pager
-swaymsg -t get_tree | rg current_workspace
-swaymsg -t get_tree | rg current_workspace | jq -r '.current_workspace'
-swaymsg -t get_tree | rg current_workspace | jq -r '.. | .current_workspace'
-swaymsg -t get_tree | rg current_workspace | sed 's/*.*/{*.*}/'
-swaymsg -t get_tree | rg current_workspace | sed 's/*.*/\{*.*\}/'
 echo $(swaymsg -t get_tree | rg current_workspace)
 echo {$(swaymsg -t get_tree | rg current_workspace)} | jq
 echo {$(swaymsg -t get_tree | rg current_workspace)} | jq -r '.. | .current_workspace'
 echo {$(swaymsg -t get_tree | rg current_workspace)}
-swaymsg -t get_tree | pager 
 jq '[paths|join(".")]' test.json 
 jql '"laptops"|"laptop"' test.json 
 jql -r '"laptops"|"laptop"' test.json 
@@ -3120,49 +2864,9 @@ jql '"nodes"|"orientation"' test.json
 jql '"nodes"|"percent"' test.json 
 jql '"nodes"|"urgent"' test.json 
 jql '"nodes"|"max"' test.json 
-swaymsg -t get_tree | jql -r | pager
-swaymsg -t get_tree | jql -r '"type"' | pager
-swaymsg -t get_tree | jql -rs '"type"' | pager
-swaymsg -t get_tree | jql -r '"workspace"' | pager
-swaymsg -t get_tree | jql -r '."type"' | pager
-swaymsg -t get_tree | jql -r '.. | "type"' | pager
-swaymsg -t get_tree | jql -r '. | "type"' | pager
-swaymsg -t get_tree | jql -r '..'
-swaymsg -t get_tree | jql -sr '..'
-swaymsg -t get_tree | jql -sr '..' | pager
-swaymsg -t get_tree | jql -r '.."type"' | pager
-swaymsg -t get_tree | jql -r '.."rect"' | pager
-swaymsg -t get_tree | jql -r '.."rect"|{[0]}' | pager
-swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect.x, .rect.y, .rect.width, .rect.height, .type'
-swaymsg -t get_tree | jq -r '.. | select(.focused?) |'
-swaymsg -t get_tree | jq -r '.. | select(.focused?)'
-swaymsg -t get_tree | jq -r '.. | select(.focused?)' '.. | select(.type == "workspace"?)'
-swaymsg -t get_tree | jq -r '.. | select(.focused?) | .. | select(.type == "workspace"?)'
-swaymsg -t get_tree | jql -r '"type"'
-swaymsg -t get_tree | jql '"type"'
-swaymsg -t get_tree | gql -r '"nodes"."current_workspace"'
-swaymsg -t get_tree | jql -r '"nodes"."current_workspace"'
-swaymsg -t get_tree | jql -r '"nodes"|"modes"."width"'
 jql -r '"nodes"|"modes"."width"' <(swaymsg -t get_tree)
-swaymsg -t get_tree > test.json
 jql -r '"nodes"|"modes"."width"' test.json 
-swaymsg -t get_tree | jql -r '"nodes"|"current_workspace"'
 nix-shell -p jshon
-swaymsg -t get_tree | json_pp 
-swaymsg -t get_tree | jshon 
-swaymsg -t get_tree | jshon '..|"current_workspace"'
-swaymsg -t get_tree | jshon -n "current_workspace"
-swaymsg -t get_tree | jshon -k current_workspace
-swaymsg -t get_tree | jshon -t
-swaymsg -t get_tree | jshon -l
-swaymsg -t get_tree | jshon -k name
-swaymsg -t get_tree | jshon -n current_workspace
-swaymsg -t get_tree | jshon -n nodes
-swaymsg -t get_tree | jshon -e current_workspace
-swaymsg -t get_tree | jshon -i current_workspace
-swaymsg -t get_tree | jshon -e nodes -e current_workspace
-swaymsg -t get_tree | jshon -i nodes
-swaymsg -t get_tree | jshon -e nodes
 jshon -n []
 jshon -n aoidsfu
 jshon -n string
@@ -3171,12 +2875,8 @@ tre=$(echo 5) - 1
 tre=5
 $tre -gt 0
 ./test.sh
-swaymsg -t get_tree | jshon -e nodes -e 1 -e current_workspace
 history | rg jql
 nix-shell -p jshon jql
-swaymsg move right
-swaymsg move 50 ppt 50 ppt
-swaymsg move position 50 ppt 50 ppt
 zxc=`swaymsg -t get_tree`
 echo $zxc
 zxc="$(swaymsg -t get_tree)"
@@ -3189,16 +2889,8 @@ head -- test.sh
 head -- vsevolod/init.vim 
 printf $zxc
 printf "$zxc"
-swaymsg -t get_binding_modes 
-swaymsg -t get_marks 
-swaymsg -t get_workspaces 
 echo $tre | rg -A current_work
 echo $tre | rg -A 3 current_work
-swaymsg -t get_tree | rg -A 9 -F "focused": true
-swaymsg -t get_tree | rg -A 9 -F '"focused": true'
-swaymsg -t get_tree | rg -A 9 '"focused": true'
-swaymsg -t get_tree | rg -A 9 -B 6 '"focused": true'
-swaymsg -t get_tree | rg -A 8 -B 6 '"focused": true'
 echo $tre | rg --no-crlf -A 8 -B 6 '"focused": true'
 echo $tre | rg --crlf -A 8 -B 6 '"focused": true'
 echo $tre | rg -U -A 8 -B 6 '"focused": true'
@@ -3207,12 +2899,6 @@ echo %tre
 echo $tre | rg --context-separator , -A 8 -B 6 '"focused": true'
 echo $tre | rg --field-context-separator , -A 8 -B 6 '"focused": true'
 echo $tre | rg --field-match-separator , -A 8 -B 6 '"focused": true'
-swaymsg -t get_workspaces | rg focused
-swaymsg -t get_workspaces | rg focused*.* true
-swaymsg -t get_workspaces | rg focused*.*true
-swaymsg -t get_workspaces | rg focuse
-swaymsg -t get_workspaces | pager
-swaymsg -t get_workspaces
 echo $(swaymsg -t get_workspaces)
 zxc=$(swaymsg -t get_workspaces)
 echo "$zxc"
@@ -3220,7 +2906,6 @@ echo "$zxc" | jq -r '.. | select(.focused?)' | rg focused
 echo "$zxc" | jq -r '.. | select(.focused?) | .rect.x, .rect.y, rect.width, rect.height''
 echo "$zxc" | jq -r '.. | select(.focused?) | .rect.x, .rect.y, rect.width, rect.height'
 echo "$zxc" | jq -r '.. | select(.focused?) | .rect.x, .rect.y, rect.width'
-swaymsg move position 5 36
 echo "$zxc" | jq -r '.. | select(.focused?)'
 echo "$zxc" | jq -r '.. | select(.focused?) | .rect.x, .rect.y'
 echo "$zxc" | jq -r '.. | select(.focused?) | .rect'
@@ -3298,42 +2983,6 @@ echo "[{$( echo "$zxc" | rg -U --multiline-dotall -A 8 'focused": true,*.*"layou
 echo "[{$( echo "$zxc" | rg -U --multiline-dotall -A 8 'focused": true,*.*"layout": "none"' | sed 's/},/}/') }]" | jq '.. | select(.focused?) | .rect.x, .rect.y, .rect.width, .rect.height'
 echo "$zxc" | pager
 echo "[{$( echo "$zxc" | rg -U --multiline-dotall -A 8 -B 6 'focused": true,*.*"layout": "none"' | sed 's/},/}/') }]" | jq '.. | select(.focused?) | .rect.x, .rect.y, .rect.width, .rect.height, .type'
-swaymsg -t get_tree | rg current_work
-swaymsg -t get_tree | rg current_work | awk '{print $2}'
-swaymsg -t get_tree | rg current_work | awk '{print $2}' | sed 's/"//'
-swaymsg -t get_tree | rg current_work | awk '{print $2}' | sed 's/"//g'
-swaymsg -t get_tree | rg current_work | awk '{print $2}' | sed 's/"//g' | sed 's/$,//'
-swaymsg -t get_tree | rg current_work | awk '{print $2}' | sed 's/"//g' | sed 's/,//'
-swaymsg layout toggle tabbed
-swaymsg layout toggle tabbed stacking
-swaymsg layout toggle stacking tabbed
-swaymsg -t get_workspaces | jq -r '..| select(.focused?) | select(.type != "workspace"?)|.rect.x, .rect.y, .rect.width, .rect.height, .deco_rect.height, .type'
-swaymsg -t get_workspaces | fx .rect
-swaymsg -t get_workspaces | fx .x
-swaymsg -t get_workspaces | fx -r
-swaymsg -t get_workspaces | fx
-swaymsg -t get_workspaces | fx ?
-swaymsg -t get_workspaces | fx '.. | select(.focused?)'
-swaymsg -t get_workspaces | fx 'groupBy("commit.committer.name")'
-swaymsg -t get_workspaces | fx 'groupBy("name")'
-swaymsg -t get_workspaces | fx 'groupBy("id")'
-swaymsg -t get_tree | fx 'groupBy("id")'
-swaymsg -t get_tree | fx 'mapValues(_.size)'
-swaymsg -t get_tree | fx ?
-swaymsg -t get_tree | fx
-swaymsg -t get_tree | fx '.nodes
-swaymsg -t get_tree | fx '.nodes[1].nodes' | rg focused": tr
-swaymsg -t get_tree | fx '.nodes[1].nodes' | rg 'focused": tr'
-swaymsg -t get_tree | fx '.nodes[1].nodes'
-swaymsg -t get_tree | fx '.nodes[1].nodes[5]'
-swaymsg -t get_tree | fx '.nodes[1].nodes[6]'
-swaymsg -t get_tree | fx '.nodes[1].nodes[7]'
-swaymsg -t get_tree | fx '.nodes[1].nodes[7].nodes'
-swaymsg -t get_tree | fx '.nodes[1].nodes[7].nodes[1]'
-swaymsg -t get_tree | fx '..focused?'
-swaymsg -t get_tree | fx '.nodes[1].nodes[7].nodes[1].nodes[0]'
-swaymsg -t get_tree | fx '.nodes[1].nodes[7].nodes[1].nodes[0].rect.x'
-swaymsg -t get_workspaces | jq -r '..| select(.focused?) |.rect.x, .rect.y, .rect.width, .rect.height, .deco_rect.height, .type'
 perl --version
 perldoc 
 perldoc perl
@@ -3391,7 +3040,6 @@ with super.lib;
 let
 in
 sudo rm -rf /etc/nixos/overlays-compat/
-nclear && nupdate && reboot 
 nixos-option hardware.trackpoint.enable
 nixos-option hardware.trackpoint.speed
 nixos-option hardware.trackpoint.sensitivity
@@ -3428,7 +3076,6 @@ top
 nix-shell -p sakura havoc wezterm
 nix-shell -p sakura havoc wezterm alacritty
 foot --server=foot.sock
-git clone https://codeberg.org/dnkl/foot
 footclient 
 footclient -s .local/share/nvim/foot.sock
 lua
@@ -3437,9 +3084,6 @@ wl-copy
 apropos man
 apropos bash
 nixos-option documentation.man.generateCaches
-swaymsg move up
-swaymsg move up 9999
-swaymsg move bottom
 modules/weather.sh 
 apropos way
 echo test987 
@@ -3456,13 +3100,6 @@ jshon -F modules/geo -e 0 -e lon | cut -d. -f-2
 jshon -F modules/geo -e 0 -e lon | cut -d. -f1
 nmli d s
 echo $0
-swaymsg client.focused $fff $fff $fff $fff
-swaymsg client.focused $ffffff $ffffff $ffffff $ffffff
-swaymsg client.focused "$ffffff $ffffff $ffffff $ffffff"
-swaymsg client.focused #ffffff #ffffff #ffffff #ffffff
-swaymsg client.focused "#ffffff #ffffff #ffffff #ffffff"
-swaymsg client.focused "#00000000 #5e81ac #dfeaf5 #5e81ac"
-swaymsg client.focused "#00000000 #81a1ac #dfeaf5 #81a1c1"
 ./test.sh -t lol omg
 ./test.sh -t lol omg wtf
 ./test.sh -t lol omg wtf rjomba
@@ -3499,12 +3136,7 @@ help fc
 fc -l
 last
 ./test.sh bottom
-swaymsg "move up"
 ./test.sh up
-swaymsg -t get_workspaces | jq -r '..| select(.focused?)'
-swaymsg -t get_workspaces | jq -r '..| select(.focused?) | select(.rect?)'
-swaymsg -t get_workspaces | jq -r '..| select(.focused?) | .rect'
-swaymsg -t get_workspaces | jq -r '..| select(.focused?) | .rect.x, .rect.y, .rect.width, .rect.height, .deco_rect.height, .type'
 pager /etc/nixos/configuration.nix 
 ./theme.sh 
 ./theme.sh startup
@@ -3553,45 +3185,6 @@ curl -s "https://location.services.mozilla.com/v1/geolocate?key=geoclue" | jshon
 curl -s "https://location.services.mozilla.com/v1/geolocate?key=geoclue" | jshon -e location -e lon
 curl -s "https://location.services.mozilla.com/v1/geolocate?key=geoclue" | jshon -e location -e lng
 geo="$(curl -s "https://location.services.mozilla.com/v1/geolocate?key=geoclue")"
-swaymsg -t get_workspaces | jshon -e focused
-swaymsg -t get_workspaces | jshon -i
-swaymsg -t get_workspaces | jshon -k
-swaymsg -t get_workspaces | jshon -e 0 -k
-swaymsg -t get_workspaces | jshon -e 0 -k -e focused -e rect
-swaymsg -t get_workspaces | jshon -e 0 -k -e focused -e id
-swaymsg -t get_workspaces | jshon -e 0 -k -e focused -t
-swaymsg -t get_workspaces | jshon -e 0 -k -e focused -t 0
-swaymsg -t get_workspaces | jshon -e 0 -k -e focused -l
-swaymsg -t get_workspaces | jshon -e 0 -k -e focused -e 0
-swaymsg -t get_workspaces | jshon -e 0 -k -e focused -e 1
-swaymsg -t get_workspaces | jshon -e 0 -k -e focused -e 2
-swaymsg -t get_workspaces | jshon -e 0 -k -e focused -k
-swaymsg -t get_workspaces | jshon -e 0 -k -e focused
-swaymsg -t get_workspaces | jshon -e 1 -k -e focused
-swaymsg -t get_workspaces | jshon -e 6 -k -e focused
-swaymsg -t get_workspaces | jshon -e 6 -k -e focused -a
-swaymsg -t get_workspaces | jshon -e 6 -a
-swaymsg -t get_workspaces | jshon -l
-swaymsg -t get_workspaces | jshon -e 6 -e focused
-swaymsg -t get_workspaces | jq '.. | select(.location?) | .rect'
-swaymsg -t get_workspaces | jq '.. | select(.focused?) | .rect'
-swaymsg -t get_workspaces | jshon -e 7 -k
-swaymsg -t get_workspaces | jshon -e 7 -e nodes -k
-swaymsg -t get_workspaces | jshon -e 7 -e nodes
-swaymsg -t get_workspaces | jshon -e 7 -e nodes -e 0 -k
-swaymsg -t get_workspaces | jshon -e 7 -e rect
-swaymsg -t get_workspaces | jq '.'
-swaymsg -t get_workspaces | jq '.0'
-swaymsg -t get_workspaces | jq '.{0}'
-swaymsg -t get_workspaces | jq '.[{0}]'
-swaymsg -t get_workspaces | jq '.[{0}].'
-swaymsg -t get_workspaces | jq '.[{id}].'
-swaymsg -t get_workspaces | jq '.[{id}]'
-swaymsg -t get_workspaces | jq '.[]'
-swaymsg -t get_workspaces | jq '.[].0'
-swaymsg -t get_workspaces | jq '.[].id'
-swaymsg -t get_workspaces | jq '.[].focused.rect'
-swaymsg -t get_workspaces | jq '.[].focused'
 test=kek
 echo $test wtf
 echo not exist
@@ -3716,10 +3309,6 @@ echo "kek" | wl-copy
 echo "kek" | { wl-copy; echo "i have a quiestion" }
 echo 'kek' | cat -
 ./test.sh | jq '.'
-git clone https://github.com/timsofteng/nvim
-git clone https://github.com/timsofteng/nvim Val_Leont
-git clone https://codeberg.org/xyzrgb123/nvim mva
-git pull 
 curl -Lo bin/theme.sh 'https://git.io/JM70M'
 theme.sh gruvbox
 cset 0
@@ -3915,47 +3504,17 @@ sh -c swaymsg reload
 imv
 ( swaymsg reload )
 sudo dd if=Downloads/nixos-minimal-21.11.337526.8b3398bc758-x86_64-linux.iso of=/dev/sdb
-swaymsg -t get_tree | jq '.. | select(.name?)'
 file .local/share/zoxide/db.zo 
 nboot && beep 
-swaymsg -t get_tree | jq '.. | select(.id)'
-swaymsg -t get_tree | jq '.. | select(.app-id)'
-swaymsg -t get_tree | jq '.. | select(.app_id)'
-swaymsg -t get_tree | jq '.' | rg app_id
-swaymsg -t get_tree | jq '.' | rg -A 10 -B 10 kotatogram
-swaymsg -t get_tree | jq '.' | rg -A 20 -B 20 kotatogram
-swaymsg -t get_tree | jq '.' | rg -B 30 kotatogram
-swaymsg -t get_tree | jq '.. | select(.name?) | .id''
 ${NVIM:-nvim}
 pager bash
 MAN_PAGER="pager" man bash
 seq 1 20
-git clone https://github.com/jarun/nnn.wiki.git
 lua test.lua
-bluetoothctl 
-git clone https://github.com/kraftwerk28/dotfiles vsev
-git clone https://github.com/PapirusDevelopmentTeam/adapta-kde
-git clone https://github.com/adapta-project/adapta-gtk-theme
 dconf write /org/gnome/desktop/interface/gtk-theme "'adapta-gtk-theme'"
-git clone https://github.com/rtlewis88/rtl88-Themes/tree/Nord-Black-Frost .
-git clone https://github.com/rtlewis88/rtl88-Themes .
-git checkout Arc-Black
-git checkout 1.0
-git checkout Abyss-Desktop-Theme-Icons-and-Folders 
-git checkout agua-negra 
-git checkout Arc-BLACK-ICE 
-git checkout Arc-Dark-SLATE 
-git checkout Avidity
-git checkout BWnB-GTK 
-git checkout ChromeOS-Dark 
-git checkout COBA 
-git checkout LAVA-Complete-Desktop 
 dconf write /org/gnome/desktop/interface/gtk-theme "'LAVA-BLACK-Blue'"
-git checkout Material-Holiday 
 dconf write /org/gnome/desktop/interface/gtk-theme "'Holiday-Holiday-Night'"
 dconf write /org/gnome/desktop/interface/gtk-theme "'Holiday-Night-Numix'"
-git checkout Material-Solarized 
-git checkout Nord-Black-Frost 
 dconf write /org/gnome/desktop/interface/gtk-theme "'Black-Frost-Frost'"
 dconf write /org/gnome/desktop/interface/gtk-theme "'Material-Black-Frost'"
 dconf write /org/gnome/desktop/interface/gtk-theme "'Material-Black-Frost-3.38'"
@@ -3983,9 +3542,6 @@ nix-shell -p [200~gnome.dconf-editor~
 dconf-editor 
 nix-shell -p gnome.dconf-editor
 dconf write /org/gnome/desktop/interface/gtk-theme "'GTKdark'"
-git clone https://github.com/EliverLara/Nordic .
-git clone https://github.com/EliverLara/Nordic
-git checkout v2.1.0 
 dconf write /org/gnome/desktop/interface/gtk-theme "'Nordic-bluish-accent-standard-buttons'"
 dconf write /org/gnome/desktop/interface/gtk-theme "'Nordic-darker-standard-buttons'"
 sudo gdisk /dev/sda
@@ -4016,7 +3572,6 @@ sudo { cat arch.conf > arch-fallback.conf;}
 sudo { cat arch.conf > arch-fallback.conf; }
 udisksctl mount -b /dev/sda4
 sudo eject sdb
-git clone https://github.com/frabjous/knap
 sh nvim
 sioyek
 pandoc -f markdown -t pdf projectFatherMentalHealth.md 
@@ -4059,11 +3614,6 @@ pandoc --eol=lf --standalone projectFatherMentalHealth.md -o tmp.html
 pandoc --eol=native --standalone projectFatherMentalHealth.md -o tmp.html
 pandoc --standalone projectFatherMentalHealth.md -o tmp.html
 pandoc --standalone -f commonmark projectFatherMentalHealth.md -o tmp.html
-swaymsg focus prev
-swaymsg focus parent
-swaymsg -t get_tree | jq '.. | select(.name?) | .app_id'
-swaymsg -t get_tree | jq '..' | rg knap
-swaymsg -t get_tree | jq '..' | rg sio
 sioyek --qwindowtitle knap synopsisMyZettelkasten.pdf 
 mysqlshow sioyek/local.db 
 mysql sioyek/local.db 
@@ -4144,7 +3694,6 @@ sioyek --page 2 --zoom 3 tmp.pdf
 okular tmp.pdf 
 zathura tmp.pdf 
 echo "one.md" >> *.md
-git clone --depth=1 https://github.com/neovim/neovim
 echo "one.md" | tee *.md > /dev/null
 zathura --find "MarkDown - простой язык разметки. К сожалению не имеет единой спецификации." tmp.pdf 
 sioyek --forward-search-line "MarkDown - простой язык разметки. К сожалению не имеет единой спецификации." tmp.pdf 
@@ -4185,12 +3734,9 @@ GDK_BACKEND=x11 surf synopsisMyZettelkasten.html
 pandoc -sf gfm synopsisMyZettelkasten.md -o tmp.html
 nix-shell -p surf
 pandoc -D
-pandoc -D html
 pandoc --css
 pandoc -D html > style/dark.html
 pandoc -D html > style/temp.html
-git clone --depth=1 git clone git://git.suckless.org/surf
-git clone --depth=1 git://git.suckless.org/surf
 firefox tmp.html 
 qutebrowser --nowindow
 nix-shell -p luakit
@@ -4226,7 +3772,6 @@ qutebrowser ":reload; scroll-to-perc 35"
 qutebrowser ":reload;scroll-to-perc 35"
 qutebrowser ":reload;;scroll-to-perc 35"
 qutebrowser ":reload;;scroll-to-perc 65"
-uname -a
 uname -m
 getconf LONG_BIT
 echo "two.md" | tee *.md > /dev/null
@@ -4254,10 +3799,6 @@ qutebrowser :reload;;scroll-to-perc 15
 qutebrowser :reload
 nclear && beep && exit
 sleep 40m && pkill mpv
-sudo tlp setcharge 75 80 BAT1
-sudo tlp setcharge 45 55 BAT1
-swaymsg -t get_tree | jq '.. | select(.name?) | .name'
-nheko 
 sleep 40m; pkill mpv
 emacs
 emacs -nw
@@ -4277,7 +3818,6 @@ flameshot -v
 lua test.lua 
 mako &
 info bash
-git clone https://github.com/balsoft/nixos-config balsoft
 udevmon 
 intercept -g $DEVNODE
 intercept -g /dev/input/by-path/platform-i8042-serio-0-event-kbd 
@@ -4288,84 +3828,16 @@ nix-shell -p interception-tools
 [A
 i
 bi ../config 
-git add all
 nix-tree
 nix-tree 
 nix-shell -p nix-tree
-git commit
-git config --global user.email "Demogorgon-74@ya.ru"
-git config --global user.name "name_snrl"
-git commit -m 1st
-git commit -m now it's an arch branch
-git commit -m "now it's an arch branch"
 difft label 
-git diff label
-git diff master label
-git diff master
-git add -a
-git commit -m "changes in theme"
-git add -A
-git commit -m "change theme"
-git checkout arch
-git reset --soft HEAD~1
-git reset --soft arch~1
-git reset --hard HEAD~1
-git reset --hard arch~1
-git stage
-git restore 
-git merge -e master
-git restore :/
 cd
-git config --global init.defaultBranch "master"
-git clone --bare https://github.com/hrsh7th/nvim-cmp bare
-git clone https://github.com/hrsh7th/nvim-cmp non-bare
-git commit -m 'add files'
-git branch -c arch
-git commit -m 'make it arch'
-git checkout master 
-git commit -m 'some changes in conf'
-git diff arch 
-git checkout arch 
-git merge master 
-git commit -m 'who cares'
-git deff mas
-git diff master 
 nboot --rollback
 nclear && beep
-git init --bare .cfg
-git --local status.showUntrackedFiles no
-git --git-dir=.cfg/ --local status.showUntrackedFiles no
-git --git-dir=.cfg/ --work-tree=. --local status.showUntrackedFiles no
-git config --local status.showUntrackedFiles no
-git --git-dir=.cfg/ config --local status.showUntrackedFiles no
-git --git-dir=.cfg/ --work-tree=. add .config/nvim/
-git --git-dir=.cfg/ --work-tree=. commit -m 'add nvim'
-git clone --separate-git-dir=.cloned .cfg/ test/
-git --git-dir=.cfg/ --work-tree=. status 
-git --git-dir=.cfg/ --work-tree=. show
-git clone --separate-git-dir=.cfg ../.cfg/
-git clone --separate-git-dir=.clon ../
-git clone --separate-git-dir=.clon ../.cfg/
-git --git-dir=.cfg/ --work-tree=. ls-tree
-git --git-dir=.cfg/ --work-tree=. ls-tree -r
-git --git-dir=.cfg/ --work-tree=. ls-tree -r --name-only HEAD
-git clone ../.cfg/
-git clone --bare --separate-git-dir=.cfg ../.cfg/ .
-git clone --separate-git-dir=.cfg ../.cfg/ .
-git clone --bare https://bitbucket.org/durdn/cfg.git .
-git --git-dir=.cfg/ --work-tree=. restore --staged .
-git --git-dir=.cfg/ --work-tree=. restore .
-git clone --bare https://bitbucket.org/durdn/cfg.git .cfg
-git --git-dir=.cfg/ --work-tree=. restore :/
 shopt -s extglob
 shopt -s
 shopt -s dotglob
-git --git-dir=.cfg/ --work-tree=. restore -W
-git --git-dir=.cfg/ --work-tree=. restore -W .test
-git ls-tree
-git ls-tree -d
-git ls-tree master
-git ls-files master 
 echo '$HOME'
 echo "$HOME"
 echo ~
@@ -4375,11 +3847,8 @@ alias testzxc='echo $HOME'
 alias testzxc="echo $HOME"
 testzxc 
 gh
-git config --global user.name
-git commit -m 'hui'
 gh search nixos
 gh search repos nixos
-git clone https://github.com/wbthomason/packer.nvim
 d ..
 curl https://gist.github.com/bonsaiviking/8845871 > lua.vim
 curl https://gist.github.com/bonsaiviking/8845871/raw > lua.vim
@@ -4393,14 +3862,6 @@ nix-shell -p fontconfig
 font-manager 
 nix-shell -p font-manager
 nclear && j gi te
-git add fileA 
-git init --bare
-git init --bare .conf
-git --git-dir=.conf/ --work-tree=. config --local status.showUntrackedFiles no
-git --git-dir=.conf/ --work-tree=. add .config/nvim
-git --git-dir=.conf/ --work-tree=. status
-git --git-dir=.conf/ --work-tree=. commit -m 'add nvim config'
-git --git-dir=.conf/ --work-tree=.config/ status
 nswitch && nclear && beep;clear;alias usrcfg
 usrcfg add profiles.ini name_snrl/user.js name_snrl/chrome/
 usrcfg add scripts/ mnt/ bin/ .gtkrc-2.0 .bash_history 
@@ -4412,12 +3873,6 @@ usrcfg add alacritty/ bat/ flameshot/ foot/ GIMP/2.10/gimprc gtk-3.0/ htop/ imv/
 usrcfg rm -r .config/mpv/watch_later/
 usrcfg rm -rf .config/mpv/watch_later/
 usrcfg add .bash_history .local/share/zoxide/db.zo && usrcfg commit -m 'init'
-git clone --bare ~/.git_home/ .cfg/
-git --git-dir=.cfg/ --work-tree=. status
-git --git-dir=.cfg/ --work-tree=. restore -W all
-git --git-dir=.cfg/ --work-tree=. restore -W bin
-git --git-dir=.cfg/ --work-tree=. restore -W .
-git --git-dir=.cfg/ --work-tree=. restore -WS .
 echo test | wl-copy 
 flameshot gui | wl-copy 
 flameshot gui -r | wl-copy 
@@ -4448,7 +3903,6 @@ which complete_alias
 nix-shell -p complete-alias
 export SYSTEMD_PAGER='pager'
 journalctl -b 0
-alias usrcfg
 tree
 echo "Load'lspconfig'.sumneko_lua.setup {
   settings = {
@@ -4471,7 +3925,6 @@ echo "Load'lspconfig'.sumneko_lua.setup {
 " > plugins/lspconfig/sumneko_lua.lua
 bash-language-server --version
 alias nupdate 
-git clone https://github.com/anuvyklack/dotfiles
 echo test && echo $:1
 echo test && echo ${@[1]}
 echo test && echo $1
@@ -4504,7 +3957,6 @@ curl -F f:1=@~/.config/alacritty/alacritty.yml ix.io
 nix eval nixpkgs#bash --raw
 nix --extra-experimental-features nix-command eval nixpkgs#bash --raw
 nix eval nixpkgs.bash
-et-status 
 export PS1q="$ "
 export PS1="$ "
 te
@@ -4524,21 +3976,13 @@ alias rg
 sudo man bash
 ./scripts/test.sh 
 which complete_alias 
-nix repl 
 nvimpager -v
 export MANPAGER=nvimpager
 export NVIM=''
 ln -s ~/.config/nvim/nvimpager.sh less
 echo "" > test.lua 
-git -C .local/share/nvim/site/pack/packer/opt/nvimpager/* describe
-git -C .local/share/nvim/site/pack/packer/opt/nvimpager describe
-git -C .local/share/nvim/site/pack/packer/opt/nvimpager commit
-git -C .local/share/nvim/site/pack/packer/opt/nvimpager show
-git -C .local/share/nvim/site/pack/packer/opt/nvimpager status
 systemctl restart tor.service 
 systemctl status tor.service 
-git clone https://github.com/nvim-lualine/lualine.nvim
-git clone https://github.com/lewis6991/gitsigns.nvim
 kbdrate -pr
 kbdrate -p
 kbdrate -r
@@ -4546,17 +3990,14 @@ sudo kbdrate -p
 nswitch --rollback
 /nix/store/nappgq5wxjs2pwpdb3ypk5i129xfnbpb-interception-tools-0.6.8/bin/intercept -g \$DEVNODE | /nix/store/lajmi9b6yzhf953bw75pklhl1npw028v-dual-function-keys-1.4.0/bin/dual-function-keys -c /etc/interception-tools/no_double_tap.yaml | /nix/store/nappgq5wxjs2pwpdb3ypk5i129xfnbpb-interception-tools-0.6.8/bin/uinput -d \$DEVNODE
 nswitch && systemctl restart interception-tools.service 
-git clone https://github.com/balsoft/nixos-config
 nix-shell -p     nur.repos.ilya-fedin.silver
 nix-shell -p nur.repos.ilya-fedin.silver
-nix repl
 nix-shell -p starship
 nix-shell zsh
 alacritty -e zsh
 alacritty -e fish
 alacritty -e fish exit
 nix-shell -p fish starship
-git clone https://github.com/GoldsteinE/dotfiles maks
 systemctl list-units --type --all target 
 systemctl status polkit.service 
 systemctl --user restart polkit-agent.service 
@@ -4565,7 +4006,6 @@ systemctl list-units --type target
 systemctl --user list-units --type target 
 systemctl --user list-units --type --all target 
 systemctl --user list-units --all --type target 
-gsettings get org.gnome.desktop.interface
 gsettings list-keys
 gsettings --schemadir /nix/store/xn9qwnffcaf7s9sqmglynkvxkjl8r5qk-gsettings-desktop-schemas-42.0/share/gsettings-schemas/gsettings-desktop-schemas-41.0/glib-2.0/schemas/ get org.gnome.desktop.interface icon-theme
 gsettings --schemadir /nix/store/xn9qwnffcaf7s9sqmglynkvxkjl8r5qk-gsettings-desktop-schemas-42.0/share/gsettings-schemas/gsettings-desktop-schemas-42.0/glib-2.0/schemas/ get org.gnome.desktop.interface icon-theme
@@ -4635,8 +4075,6 @@ gsettings
 nix-shell -p sway-launcher-desktop
 swappy -f Pictures/IMG_3570.PNG 
 nix-shell -p swappy
-virt-manager 
-nix-shell -p virt-manager
 gsettings 
 gsettings help
 gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
@@ -4688,7 +4126,6 @@ if [ "$(eval "gsettings get org.gnome.desktop.interface gtk-theme")" == "'Nordic
 if [[ $(eval "gsettings get org.gnome.desktop.interface gtk-theme") == "'Nordic-darker'" ]]; then echo true; fi
 sf
 gsettings set org.gnome.desktop.interface font-name hui
-gsettings get org.gnome.desktop.interface font-name
 journalctl --user -b0 -r
 journalctl --user -b0 -e
 sctl status systemd-logind.service 
@@ -4712,10 +4149,7 @@ diff -u 10 src/history.go
 diff -u src/history.go 
 printf "str1\tstr2" 
 diff -u src/history.go src/core.go
-git clone https://github.com/fatih/vim-go
-git clone https://github.com/junegunn/fzf
 code
-sctl restart tor.service 
 sctl stop polkit.service 
 sctl status polkit.service 
 sctl --user stop polkit-agent.service 
@@ -4727,7 +4161,6 @@ isdlkfjlksdjflkfj
 nix-shell -p hwinfo
 nclear && reboot 
 nix-store -q --requisites /run/current-system/sw/bin/kotatogram-desktop 
-sudo sysctl net.ipv4.ip_default_ttl=65
 wf-recorder -a
 nix-shell -p pactl
 pactl
@@ -4790,11 +4223,9 @@ curl "https://thisdavej.azurewebsites.net/api/weather/current?loc=adak&deg=C"
 curl "https://thisdavej.azurewebsites.net/api/weather/current?loc=Anchorage&deg=C"
 ni
 echo $PS2
-git clone https://github.com/starship/starship
 echo hui
 ldr tail
 echo lo
-fg
 nix-shell -p zathura
 echo lol
 sleep 30m; kill 902170
@@ -4805,9 +4236,7 @@ nix-shell -p fish
 alias nclear
 sudo nix-collect-garbage --delete-old
 which nvim
-neofetch 
 sctl 
-anki --version
 nix-store -q --requisites /run/current-system/sw/bin/anki 
 nix-store -q --requisites /run/current-system/sw/bin/anki | rg qt
 nix-store -q --requisites /run/current-system/sw/bin/anki | rg 5
@@ -4856,7 +4285,6 @@ sctl --user list-units
 sctl --user --type target
 sctl list-units
 journalctl -b-2
-journalctl -b-1
 journalctl -b-3
 pwd
 qt5-virt-manager 
@@ -4871,8 +4299,6 @@ busctl
 swaylock -f
 swaylock
 sctl --user restart swayidle.service 
-ping ya.ru
-git clone --depth=1 https://github.com/teto/home
 file Z\ –\ значит\ Захария_1080.mp4 
 ffmpeg -i Z\ –\ значит\ Захария_1080.mp4 
 /home/name_snrl/.local/state/nvim/nvim.121647.0 
@@ -4886,42 +4312,22 @@ nvimpager
 echo lol |nvimpager
 echo lol | unset NVIM;nvimpager
 echo lol | { unset NVIM; nvimpager }
-sctl status tor.service 
 NVIM="nvim -u .config/nvim/init.lua" man bash
 NVIM="nvim -u ~/.config/nvim/init.lua" man bash
 echo ${XDG_CONFIG_HOME:-$HOME/.config}
 echo ${XDG_CONFIG_HOME:-HOME/.config}
 which visudo
 visudo --version
-git clone --depth=1 https://github.com/NixOS/nixpkgs
 echo test
-git restore .
 echo $XDG_CONFIG_DIRS 
 nix-shell -p nvim
 nvimpager -- -u ~/.config/nvim/pager_init.lua core/mapping.lua 
-git clone --depth=1 https://github.com/ajeetdsouza/zoxide
 eval "$(zoxide init --cmd j bash)"
 nix-shell -p fzf
-git init 
-git commit -m 'init'
 :q
 alias fd
-git rm projectFatherMentalHealth.md 
 ./modules/weather.sh york
-swaymsg reload
 ./modules/weather.sh Chelyabinsk
-swaymsg input 'type:keyboard' xkb_switch_layout first
-swaymsg input 'type:keyboard' xkb_switch_layout 1
-swaymsg input 'type:keyboard' xkb_switch_layout 0
-swaymsg input 'type:keyboard' xkb_switch_layout toggle
-swaymsg input 'type:keyboard' xkb_switch_layout -1
-swaymsg input 'type:keyboard' xkb_switch_layout 10
-swaymsg input 'type:keyboard' xkb_switch_layout
-swaymsg -t get_inputs
-swaymsg input 'type:keyboard' xkb_switch_layout next
-swaymsg input 'type:keyboard' xkb_switch_layout prev
-swaymsg input 'Identifier:keyboard' xkb_switch_layout prev
-swaymsg input 'Identifier:*.*keyboard*.*' xkb_switch_layout prev
 sctl --user status waybar.service 
 qutebrowser ":reload;;scroll-to-perc 26"
 qutebrowser ":reload;;scroll-to-perc 0"
@@ -4938,19 +4344,12 @@ nix-shell -p chromium --run=chromium
 chromium
 pandoc
 nix-shell -p chromium --run chromium
-swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"'
-swaymsg -t get_tree | jq '.'
-swaymsg -t get_tree | jq '..'
-swaymsg -t get_tree | jshon -k
-swaymsg -t get_tree > test.log
-swaymsg -t get_tree | jq -j --stream '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"'
 echo $QT_QPA_PLATFORMTHEME 
 pandoc --list-highlight-languages 
 pandoc --print-highlight-style 
 pandoc --print-highlight-style pygments
 pandoc --print-highlight-style all
 pandoc --list-highlight-styles 
-sioyek --version
 nix-shell -p code
 export NIXPKGS_ALLOW_UNFREE=1
 code test.go
@@ -4963,7 +4362,6 @@ echo /sys/class/graphics/fbcon/cursor_blink
 echo 1 > /sys/class/graphics/fbcon/cursor_blink 
 sudo echo 1 > /sys/class/graphics/fbcon/cursor_blink 
 sudo "echo 1 > /sys/class/graphics/fbcon/cursor_blink"
-swaymsg -t get_tree | jq -jnc --stream '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"'
 MAX_PARSING_DEPTH=2048 swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"'
 nix-store -q --requisites /run/current-system/sw/bin/qutebrowser 
 nix-store -q --requisites /run/current-system/sw/bin/qutebrowser | rg qt
@@ -4974,18 +4372,10 @@ MAX_PARSING_DEPTH=2048 swaymsg -t get_tree | jql -r '. | select(.type?) | select
 nix-shell -p jql
 MAX_PARSING_DEPTH=2048 swaymsg -t get_tree | jojq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"'
 MAX_PARSING_DEPTH=2048 swaymsg -t get_tree | gojq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"'
-swaymsg -t get_workspaces | jq -r '..| select(.focused?) | .rect.x, .rect.y, .rect.width, .rect.height, .deco_rect.height'
 nix-shell -p gojq
-swaymsg -t get_tree | jq -j '..'
 qutebrowser -C qute.py 
-qutebrowser 
 nix-shell -p libsForQt5.falkon --run falkon
-git clone https://github.com/name-snrl/py
-git add synopsisGFM.md 
 alacritty 
-git restore --staged synopsisGFM.md 
-git restore --staged .
-git add summarySyntaxGFM.md 
 nix-shell -p python310Packages.grip --run grip
 grip
 grip .
@@ -5027,7 +4417,6 @@ pandoc --include-before-body=https://0 -sf gfm summarySyntaxGFM.md -o pandoc2.ht
 pandoc --include-in-header=https://0x0.st/oSWI.css -sf gfm summarySyntaxGFM.md -o pandoc2.html
 pandoc --css=viewer/viewer.css --mathjax -sf gfm summarySyntaxGFM.md -o pandoc2.html
 pandoc --css=viewer/viewer.css -sf gfm summarySyntaxGFM.md -o pandoc2.html
-git sta
 pandoc --css=viewer/viewer.css -sf gfm summarySyntaxGFM.md -o pandoc.html
 pandoc --css=viewer/viewer.css --template=template.html -sf gfm summarySyntaxGFM.md -o pandoc.html
 pandoc --css=viewer/viewer.css --template=template.html --mathml -sf gfm summarySyntaxGFM.md -o pandoc.html
@@ -5068,7 +4457,6 @@ qutebrowser data:,"$(cat pandoc.html)"
 nix-shell -p md4c
 upower -d
 pandoc --css=viewer/viewer.css --template=template.html --mathjax math.md -o pandoc.html
-git clone  https://github.com/redox-os/redox
 tokei redox/
 xkb-console-keymap
 pandoc --mathjax --template=template.html math.md -o pandoc.html 
@@ -5118,12 +4506,10 @@ history | rg linkcolor
 pandoc --template=template.html -V document-css="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@main/github-markdown.css" -f gfm+tex_math_dollars --mathjax math.md -o pandoc.html
 pandoc --template=template.html -V document-css=viewer/viewer.css -f gfm+tex_math_dollars --mathjax math.md -o pandoc.html
 pandoc --template=template.html --css="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@main/github-markdown.css" -f gfm+tex_math_dollars --mathjax math.md -o pandoc.html 
-git clone https://github.com/iamcco/markdown-preview.nvim
 qutebrowser "data:text/html;base64,$(pandoc --template=template.html --css=viewer/viewer.css -f gfm+tex_math_dollars --mathjax --no-highlight math.md | base64 -w 0)"
 qutebrowser "data:text/html;base64,$(pandoc --template=template.html --css=~/Desktop/snrlZettelkastenviewer/viewer.css -f gfm+tex_math_dollars --mathjax --no-highlight math.md | base64 -w 0)"
 qutebrowser "data:text/html;base64,$(pandoc --template=template.html --css=~/Desktop/snrlZettelkasten/viewer/viewer.css -f gfm+tex_math_dollars --mathjax --no-highlight math.md | base64 -w 0)"
 qutebrowser "data:text/html;base64,$(pandoc --template=template.html --css=/home/name_snrl/Desktop/snrlZettelkasten/viewer/viewer.css -f gfm+tex_math_dollars --mathjax --no-highlight math.md | base64 -w 0)"
-git restore projectObsidian.md 
 qutebrowser "data:text/html;base64,$(pandoc --template=template.html --css="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@main/github-markdown.css" -f gfm+tex_math_dollars --mathjax --no-highlight math.md | base64 -w 0)"
 qutebrowser "data:text/html;base64,$(pandoc --template=template.html --css="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@main/github-markdown.css" -f gfm+tex_math_dollars --mathjax --no-highlight summarySyntaxGFM.md | base64 -w 0)"
 history | rg document-css
@@ -5141,7 +4527,6 @@ pandoc -sf gfm+tex_math_dollars --mathjax --no-highlight summarySyntaxGFM.md -o 
 pandoc --css="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@main/github-markdown.css" -sf gfm+tex_math_dollars --mathjax --no-highlight summarySyntaxGFM.md -o pandoc.html
 pandoc --css="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@main/github-markdown.css" --css=viewer/viewer.css -f gfm+tex_math_dollars --mathjax --no-highlight summarySyntaxGFM.md -o pandoc.html
 pandoc --css="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@main/github-markdown.css" --css=viewer/viewer.css -sf gfm+tex_math_dollars --mathjax --no-highlight summarySyntaxGFM.md -o pandoc.html
-echo $XDG_DATA_HOME 
 pandoc -B start.html -A end.html --css="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@main/github-markdown.css" --css=viewer/viewer.css -f gfm+tex_math_dollars --mathjax --no-highlight summarySyntaxGFM.md -o pandoc.html
 history | rg backgroundco
 pandoc -B start.html -A end.html --css="https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@main/github-markdown.css" --css=viewer/viewer.css -V backgroundcolor=red -sf gfm+tex_math_dollars --mathjax --no-highlight summarySyntaxGFM.md -o pandoc.html
@@ -5167,15 +4552,11 @@ pandoc --data-dir=/home/name_snrl/.config/nvim/ftplugin/markdown -B brfore-body.
 btd
 btc
 echo $LESS
-set
 set -a
 shop
-shopt 
 set show-all-if-ambiguous on
 set -o
 bind TAB
-git clone https://github.com/dense-analysis/ale
-git clone https://github.com/mfussenegger/nvim-lint
 pylsp -V
 python parser.py 
 python parser.py > file.txt
@@ -5197,10 +4578,8 @@ nix-shell -p "python3.withPackages (ps: with ps; [ requests beautifulsoup4 ])"
 nix-shell -p gnome.pomodoro man
 nix-shell -p nvimpager man
 unset XDG_CONFIG_HOME 
-git ls
 git-ls
 git-ls-files
-git ls-files
 sudo htop
 usrcfg status
 flameshot launcher 
@@ -5252,11 +4631,7 @@ sudo nixos-generate-config
 sudo ln -s /home/name_snrl/nixos /etc/nixos
 sudo rm -r /etc/nixos
 sudo ln -s /home/name_snrl/nixos /etc
-git config --global diff.external difft
-git diff --tool-help
-git diff --tool-help | rg tool
 git-diff --tool-help
-git difftool --tool-help
 nix-shell -p delta --run delta -s test1.js test2.js
 history | rg --run
 history | rg -- --run
@@ -5264,26 +4639,20 @@ nix-shell -p delta --run "delta -s test1.js test2.js"
 nix-shell -p delta
 delta -s test1.js test2.js 
 nix-shell -p delta man
-git dt summarySyntaxGFM.md | less -r
 env > usr_env.log
 echo $PAGER 
-git clone https://github.com/sharkdp/bat
 journalctl -b0 > usr_env.log 
 export TERM=linux
 export GIT_EXTERNAL_DIFF="dt --color always"
 export GIT_EXTERNAL_DIFF="difft --color always"
 unset GIT_EXTERNAL_DIFF 
-git clone https://github.com/Wilfred/difftastic
-git clone --depth=1 https://github.com/Wilfred/difftastic
 export GIT_PAGER_IN_USE=1
-git difftool summarySyntaxGFM.md
 export LESS=a
 export GIT_PAGER=cat
 export GIT_PAGER=less
 nswitch && reboot 
 nupdate && reboot 
 export PAGER=less
-journalctl -b0
 less
 echo $PAGER
 which nvimpager 
@@ -5294,8 +4663,6 @@ nix-store -qR $(nix-store -r (nix-instantiate -A nur.repos.ilya-fedin.kotatogram
 nix-store -qR $(nix-store -r $(nix-instantiate -A nur.repos.ilya-fedin.kotatogram-desktop '<nixpkgs>'))
 nix-store -qR $(nix-store -r $(nix-instantiate -A nur.repos.ilya-fedin.kotatogram-desktop-with-webkit '<nixpkgs>'))
 nix-instantiate -A nur.repos.ilya-fedin.kotatogram-desktop-with-webkit '<nixpkgs>'
-nclear && nboot 
-nix-store -q --requisites /run/current-system/sw/bin/kotatogram-desktop
 export PAGER="nvim -R -u ~/.config/nvim/pager_init.lua --cmd 'set rtp+=$RUNTIME | lua nvimpager = require('nvimpager')' \"$@\" --cmd 'lua nvimpager.stage1()' -c 'lua nvimpager.stage2()'"
 export PAGER="nvim -R -u ~/.config/nvim/pager_init.lua --cmd 'set rtp+=~/.local/share/nvim/site/pack/packer/opt/nvimpager/ | lua nvimpager = require('nvimpager')' \"$@\" --cmd 'lua nvimpager.stage1()' -c 'lua nvimpager.stage2()'"
 export PAGER="nvim -R -u ~/.config/nvim/pager_init.lua --cmd 'set rtp+=~/.local/share/nvim/site/pack/packer/opt/nvimpager/ | lua nvimpager = require('nvimpager')' \"$@\" --cmd 'lua nvimpager.stage1()' -c 'set rtp+=~/.local/share/nvim/site/pack/packer/opt/nvimpager/ -c 'lua nvimpager.stage2()'"
@@ -5309,7 +4676,6 @@ zgrep ZSTD /proc/config.gz
 en assemble
 lsblk -l
 qutebrowser core/mapping.lua.html 
-git clone https://github.com/lucc/nvimpager
 mktemp foo_bar
 mktemp -d foo_bar
 mktemp
@@ -5318,7 +4684,6 @@ pg
 ln -s ~/trash/nvimpager/nvimpager less
 RUNTIME=foo/bar ./test.sh 
 ./test.sh 
-git diff summarySyntaxGFM.md > tmp.log
 RUNTIME=~/trash/nvimpager nvim -R -u /home/name_snrl/.config/nvim/pager_init.lua --cmd "set rtp+=$RUNTIME | lua nvimpager = require('nvimpager')" tmp.log --cmd "lua nvimpager.stage1()" -c "lua nvimpager.stage2()"
 exec -a nvimpager nvim -R -u /home/name_snrl/.config/nvim/pager_init.lua --cmd "set rtp+=$RUNTIME | lua nvimpager = require('nvimpager')" tmp.log --cmd "lua nvimpager.stage1()" -c "lua nvimpager.stage2()"
 ln -s ~/trash/nvimpager/nvimpager les
@@ -5328,43 +4693,18 @@ echo $RUNTIME
 export RUNTIME=~/trash/nvimpager
 if [[ for_push ]]; then echo true; fi
 nswitch --rollback 
-git clone https://github.com/name-snrl/nvimpager fork_nvimpager
-git branch git_diff_external
-git branch git_diff_external 
-git checkout git_diff_external 
-git diff lua/nvimpager.lua
 scdoc trash/fork_nvimpager/nvimpager.md 
 nix-shell -p scdoc
-git push --set-upstream origin git_diff_external
 which pkill
 exec exit 25
 bash --version
-git status
-git branch main
-git branch main 
-git branch feature/git_colors
-git checkout feature/git_colors 
 mkdit test
-git commit -m 'Add git_colors option'
-git branch -m git_colors
 history | rg git.*-v
-git status -v
-git remote show
-git config --list
-git config --list --show-origin
-git config core.autocrlf
-git config --global core.autocrlf
-git config core.safecrlf
 ssh-keygen -o
-git remote set-url origin git@github.com:name-snrl/nvimpager.git
-git push --set-upstream origin git_colors
-git clone git@github.com:name-snrl/nvimpager.git
-git merge origin/git_colors 
 which less
 which xterm
 nswitch && nclear 
 nboot && nclear && reboot 
-git push
 nswitch && exit
 gh pr status
 gh issue status
@@ -5382,71 +4722,35 @@ gh auth
 gh extension list
 gh status
 gh auth login
-git clone https://github.com/brymer-meneses/grammar-guard.nvim
-git remote -v
-git clone https://github.com/akinsho/toggleterm.nvim
 curl -s "https://location.services.mozilla.com/v1/geolocate?key=geoclue"
-nboot --rollback 
-git cm 'my patch'
-git diff 45ba2e147f7b7d17acb489d64acc257ceded0887 ab03a2ca3b193743e43371d256752c92be525e70 > my.patch
-git log -n 2
 diff -Naur diagnostic.lua patch.lua > nvim.patch
 diff -Naur orig.lua patched.lua > nvim_virt_text.patch 
 reboot o
 reboot
-git clone https://github.com/name-snrl/nvimpager
-git diff --git
-git checkout git_colors 
-git diff main
-git diff git_colors..main lua/nvimpager.lua
-git show > ~/nixos/nvimpager.patch
 ps -eo 45751
 ps eo 45751
 ps -eo args 45751
-git dt summarySyntaxGFM.md
 echo $TERM
 se /root/.config/nvim/lua/core/diagnostic.lua
-git diff summarySyntaxGFM.md > test.log
-git diff summarySyntaxGFM.md | tee test.log
-git config --global core.pager=cat
-git config --global core.pager cat
-git diff summarySyntaxGFM.md
-git diff summarySyntaxGFM.md > log.log
 diff -Naur diagnostic.lua patched.lua > nvim_virt_text.patch 
-git clone  https://github.com/th33xitus/kiauh
 curl https://0x0.st/o1Km.log
 curl https://0x0.st/o1Km.log > ~/klipper_config/moonraker.conf
-git clone https://github.com/th33xitus/kiauh
 ~/bin/sf 
 sudo rm root_env 
 sudo curl https://0x0.st/o1Ky.log | tee ~/bashrc
-sudo -i
 sudo rm bashrc 
-git clone https://github.com/neovim/neovim
-git diff
 sctl --user status flameshot.service 
 luajit test.lua 
 nix-shell -p luajit
 kill 1218558
 nswitch
-nclear && nboot && reboot 
-sctl --user restart waybar.service 
-git log --stat
-git log --oneline --graph
-git log --graph
 log --graph --decorate --color=auto --oneline --all
-git log --graph --decorate --color=auto --oneline --all
-git commit 
-git log -n 5
-git diff > ~/nixos/nvim_virt_text.patch
-git pull
 htoo
 sudo kill 970909
 sk
 ln -s ~/.config/nvim/lua/core/options.lua .hidden
 sed 's/leap/hop/' hop.lua 
 sed -i 's/leap/hop/' hop.lua 
-git clone https://github.com/anoma/taiga
 sctl --user status mako.service 
 df -hf
 df -ht
@@ -5454,7 +4758,6 @@ df -th
 df -h -t
 df -hT
 info
-nswitch 
 tail st* -3
 tail st.log -3
 tail -3 st.log
@@ -5470,38 +4773,17 @@ k
 vim
 nix-shell -p vim
 sctl --user start swayidle.service
-git log -5
-git restore --staged summarySyntaxGFM.md 
-git commit -a
-git commit -a --allow-empty-message
-git reset
-git reset HEAD 
-git reset HEAD~
-git status 
-git log 
-git clone https://github.com/phaazon/hop.nvim
-git clone https://github.com/justinmk/vim-sneak
 tmux
 nixos-option hardware.cpu.intel.updateMicrocode
 nixos-option hardware.enableRedistibutableFirmware
 nixos-option hardware.enableRedistributableFirmware
 nixos-option hardware.enableAllFirmware
-lsblk -f
-sctl --user stop swayidle.service 
 python
-sctl --user start swayidle.service 
-alias 
-htop
-git clone --bare https://github.com/name-snrl/home $HOME/.git_home/
-usrcfg checkout 
-git add KotatogramDesktop/tdata/*-custom.json
 usrcfg add .bash_history .gtkrc-2.0 bin/
 usrcfg add profiles.ini
 usrcfg add name_snrl/user.js
 usrcfg add name_snrl/chrome/
 usrcfg cm 'init'
-git branch 
-usrcfg branch 
 usrcfg-ls
 usrcfg ls-tree
 usrcfg ls-tree -r
@@ -5510,46 +4792,25 @@ usrcfg ls-tree --full-tree
 usrcfg ls-tree -r master
 usrcfg ls
 usrcfg ls-tree --name-only -r HEAD
-git show
-git branch -M master
-git remote add origin git@github.com:name-snrl/nixos-configuration.git
-git init
-git cm 'init'
-git remote add origin git@github.com:name-snrl/nvim.git
-git push -u origin master
-git init --bare .git_home
 usrcfg add alacritty/ bat/ flameshot/ foot/ GIMP/2.10/gimprc gtk-3.0/ imv/ Kvantum/ light/ mako/ mpv/ pcmanfm-qt/ qBittorrent/ qt5ct/ qutebrowser/ sioyek/ sway* waybar/ wofi/ xkb/ zathura/
 usrcfg add KotatogramDesktop/tdata/*-custom.json
 usrcfg add qBittorrent/BT_backup/
 echo $HISTFILE
-git clone https://github.com/name-snrl/nvim .config/
-git clone https://github.com/name-snrl/nvim .config/nvim
-git clone https://github.com/name-snrl/nixos-configuration nixos
 chown -R name_snrl desktop/
 sudo chown -R name_snrl desktop/
 nixos-generate-config 
-git add .
-git cm 'update'
-git commit --amend -m 'Update'
-nboot
-kotatogram-desktop 
 usrcfg config --local status.showUntrackedFiles no
 usrcfg restore config mapping
-git add ../../.bash_history 
 usrcfg add ../../.bash_history 
 usrcfg restore --staged config mapping
-usrcfg cm 'Update'
 usrcfg cm 'Fix/Kotato no longer needs XWayland'
 usrcfg push --set-upstream origin master
 nclear && nswitch 
 sudo gdisk /dev/sdb
 sudo mkfs.fat -F 32 -n FD /dev/sdb1
-udisksctl mount -b /dev/sdb1
-lsblk 
 sudo dd if=downloads/Microsoft\ Windows\ 10\ Enterprise\ 2021\ LTSC\,\ Version\ 21H2\ -\ Оригинальные\ образы\ от\ Microsoft\ MSDN\ \[Ru\]/ of=/dev/sdb
 sudo dd if=downloads/Microsoft\ Windows\ 10\ Enterprise\ 2021\ LTSC\,\ Version\ 21H2\ -\ Оригинальные\ образы\ от\ Microsoft\ MSDN\ \[Ru\]/ru-ru_windows_10_enterprise_ltsc_2021_x64_dvd_5044a1e7.iso of=/dev/sdb
 sudo dd if=downloads/latest-nixos-minimal-x86_64-linux.iso of=/dev/sdb
-sudo eject /dev/sdb
 xdg-user-dirs
 xdg-user
 xdg-user-dir
@@ -5561,12 +4822,7 @@ usrcfg add .config/user-dirs.dirs
 usrcfg add ../.config/user-dirs.dirs
 nix-channel --liat
 nix-channel --list 
-sudo nix-channel --list 
-git dt .config/qt5ct/qt5ct.conf
 usrcfg dt .config/qt5ct/qt5ct.conf
-git add configuration.nix 
-git cm 'Minor changes related to the update'
-git dt HEAD~
 usrcfg add !(".bash_history")
 usrcfg add . ':!.bash_history'
 usrcfg add --all -- ':!.bash_history'
@@ -5579,148 +4835,498 @@ usrcfg add . ':!.config/qt5ct/qt5ct.conf'
 usrcfg add .
 usrcfg add --all
 usrcfg add *
-git add -v .
 usrcfg add -v .
 usrcfg add -vn .
 usrcfg cm 'Add xdg-user-dirs'
-wf-recorder 
 firefox -v
-htop 
 firefox --ProfileManager 
-usrcfg add -u .
-git log
-git push 
 usrcfg cm 'Remove the deprecated option from the firefox configuration'
 nix-build jb-get.nix 
-nclear 
 nixos-option services.tor.client.enable
 nixos-option services.privoxy.enable
-nboot && reboot 
-git st
-ls
-en
 usrcfg add .mozilla/firefox/name_snrl/user.js
 usrcfg dt
 usrcfg diff .mozilla/firefox/name_snrl/user.js
 usrcfg cm 'Add tor settings +minor changes to user.js'
-usrcfg dt .mozilla/firefox/name_snrl/user.js
 usrcfg diff HEAD~
-usrcfg log
 usrcfg dt 241a5f688c1ccbd339f9bfe13adf0a5249c8fe93
 usrcfg dt ad1f388a01b7dcee4a367558f2228681794aa488
-usrcfg show
-usrcfg push 
-usrcfg st
-vi
 sha256sum sioyek-1.4.0.zip 
 sha256sum sioyek-1.2.0.zip 
 sha256sum sioyek-1.2.0\(1\).zip 
-j
-nboot 
-git dt
-reboot 
-nclear 
-j nixos
-vi .mozilla/firefox/name_snrl/user.js 
-j lu
-vi core/mapping.lua 
-j tra
-vi configuration.nix 
-git dt
-git st
-git add .
-git cm 'Override sioyek to version 1.4.0'
-git push 
-usrcfg dt .mozilla/firefox/name_snrl/user.js
-usrcfg st
 usrcfg dt .config/flameshot/flameshot.ini
-usrcfg add -u .mozilla/firefox/name_snrl/user.js
-usrcfg st
-usrcfg dt .mozilla/firefox/name_snrl/user.js
-en
 usrcfg commit 
-usrcfg commit 
-usrcfg push 
-sioyek --help
-j snrl
-sioyek /tmp/nvim-md-preview.html 
-j snrl
 sioyek summarySyntaxGFM.md 
 sioyek -v
 sioyek --version
-vi .config/sioyek/prefs_user.config 
-vi summarySyntaxGFM.md 
-htop
-j snrl
-vi .config/sioyek/prefs_user.config 
-ls .local/state/nvim/swap/
-rm .local/state/nvim/swap//%home%name_snrl%.config%sioyek%prefs_user.config.sw*
-j lu
 sioyek /tmp/nvim-md-preview.html 
-vi summarySyntaxGFM.md 
-man sioyek 
-vi .config/sioyek/prefs_user.config 
-usrcfg st
 usrcfg add .config/sioyek/*
-usrcfg st
 usrcfg cm 'Update sioyek configs'
-usrcfg push 
-vi colors/dark.lua 
-man sioyek 
-vi .config/sioyek/prefs_user.config 
-man sioyek 
-j lu
-vi .config/sioyek/prefs_user.config 
-vi colors/dark.lua 
-git st
-git add summarySyntaxGFM.md 
-git cm 'Add summarySyntaxGFM'
-git st
-vi synopsisGFM.md 
-git add synopsisGFM.md 
-git cm 'Add synopsisGFM'
-git log
-git st
-j /etc/
-vi tor/torsocks.conf 
-fd torrc
-cd /
-df -h
-fd torrc
-man fd
-fd --no-follow torrc
-j .config/
-vi .config/sioyek/prefs_user.config 
-vi
-j lu
-git st
-j .local/share/nvim/site/pack/packer/start/
-j telescope.nvim/
-tree 
-fd map
-vi lua/telescope/mappings.lua 
-vi lua/telescope/mappings.lua 
-vi plugins/telescope.lua 
-git st
-en
-j tele
-vi lua/telescope/mappings.lua 
-en
-j nixos
-vi configuration.nix 
-j d w
-j The\ Man\ In\ The\ High\ Castle\ 3\ -\ LostFilm.TV\ \[1080p\]/
-mpv .
-vi
-git log
-git st
-usrcfg st
 usrcfg dt ../../.config/sioyek/prefs_user.config
-usrcfg log
 usrcfg add -u .
-usrcfg cm 'Update'
-usrcfg st
-git log
-usrcfg log
-man git-add 
 usrcfg add -uA
+usrcfg add -u ~
+usrcfg cm 'Update'
+sudo vi core/mapping.lua 
+ping 192.168.1.254
+ip addr
+sudo dd if=downloads/nixos-gnome-22.05.2065.9370544d849-x86_64-linux.iso of=/dev/sdb
+ventoy -ig /dev/sdb
+ventoy -i -g /dev/sdb
+sudo ventoy -i -g /dev/sdb
+lsblk -f
+udisksctl mount -b /dev/sdb2
+udisksctl unmount -b /dev/sdb2
+nix-shell -p ventoy-bin-full
+7z
+7z e MAS_1.6_Password_1234.7z
+nix-shell -p p7zip
+xdg-open ReadMe.html 
+aria2c
+cabextract
+wimlib-imagex
+chntpw
+mkisofs
+./uup_download_linux.sh 
+./files/convert.sh 
+nix-shell -p aria cabextract wimlib chntpw cdrkit
+lsblk 
+udisksctl mount /dev/sdb1
+sctl --user restart waybar.service 
+echo $_JAVA_AWT_WM_NONREPARENTING
+echo $ANKI_WAYLAND
+export ANKI_WAYLAND=1
+export DISABLE_QT5_COMPAT=1
+anki 
+nixos-option programs.sway.extraSessionCommands
+sudo nix-channel 
+sudo nix-channel --list 
+nixos-option programs.sway.enable
+exec sway
+nixos-option system.stateVersion
+echo $ANKI_WAYLAND 
+which sway
+anki --version
+gsettings get org.freedesktop.appearance.color-scheme
+gsettings get org.freedesktop.appearance color-scheme
+gsettings get org.gnome.desktop.interface
+gsettings get org.gnome.desktop.interface font-name
+dconf list /org/
+dconf list /org/gnome/desktop/interface/
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+usrcfg add -u .config/sway/scripts/theme.sh
+usrcfg cm 'add "org.gnome.desktop.interface color-scheme"'
+fg
+pandoc -D html
+qutebrowser /tmp/nvim-md-preview.html 
+qutebrowser https://sindresorhus.com/github-markdown-css/
+qutebrowser 
+sudo tlp setcharge 75 80 BAT1
+sudo sysctl net.ipv4.ip_default_ttl=64
+sudo sysctl net.ipv4.ip_default_ttl=65
+sudo tlp setcharge 45 55 BAT1
+firefox --ProfileManager
+usrcfg checkout 
+usrcfg branch 
+usrcfg restore .mozilla
+journalctl -b0
+usrcfg add -u .mozilla/firefox/name_snrl/user.js
+usrcfg cm 'Minor changes in user.js'
+usrcfg rebase -i HEAD~
+journalctl -b-1
+kotatogram-desktop 
+xdg-open https://t.me/sheistattooing
+echo $XDG_DATA_HOME 
+xdg-open tg://t.me/sheistattooing
+xdg-open tg://resolve?domain=sheistattooing
+gio help
+gio open tg://resolve?domain=sheistattooing
+nix-store -q --requisites /run/current-system/sw/bin/kotatogram-desktop
+alias nupdate
+file README.md 
+sudo nix-channel --version 
+nclear 
+usrcfg log
+nix repl 
+pylsp --version
+nupdate 
+nix-store -q --requisites /run/current-system/sw/bin/vi
+nix-store -q --requisites /run/current-system/sw/bin/vi > trash/vi_dependencies_old
+nupdate && beep 
+nix-store -q --requisites /run/current-system/sw/bin/vi > trash/vi_dependencies_new
+nclear && nupdate && reboot 
+nboot --rollback 
+sudo nix-channel --rollback 
+nswitch 
+sctl restart tor.service 
+sctl status tor.service 
+usrcfg gc
+alias usrcfg
+set
+usrcfg show
+usrcfg prune --dry-run
+usrcfg prune 
+usrcfg dt .mozilla/firefox/name_snrl/user.js
+nixos-option environment.defaultPackages
+l s-a1
+alias 
+l
+ll
+bluetuith
+bluetuith 
+nix-shell -p bluetuith
+bluetoothctl 
+shopt 
+zoxide query 
+zoxide query --all
+zoxide query -l
+zoxide remove -i
+wf-recorder 
+cpupower frequency-info 
+mnt
+gsettings get org.gnome.desktop.interface gtk-theme
+ffmpeg -level 4.0 -v warning -n -stats -ss 1.502 -i ./Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 7.382 -c:v copy -c:a copy -map 0:v -map 0:a:0 /home/name_snrl/clips/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-0.751-00-00-2.878.mp4 
+ffmpeg -v warning -n -stats -ss 1.502 -i ./Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 7.382 -c:v copy -c:a copy -map 0:v -map 0:a:0 /home/name_snrl/clips/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-0.751-00-00-2.878.mp4 
+ffmpeg -level 4.0 -v warning -n -stats -ss 1.502 -i /home/name_snrl/downloads/Тёмное\ Дитя\ \(Orphan\ Black\)\ \(Season\ II\,\ 2014\,\ WEB-DL\ 720p\)\ \[BaibaKo\]/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 7.382 -c:v copy -c:a copy -map 0:v -map 0:a:0 /home/name_snrl/clips/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-0.751-00-00-2.878.mp4 
+ffmpeg -v warning -n -stats -ss 1.502 -i /home/name_snrl/downloads/Тёмное\ Дитя\ \(Orphan\ Black\)\ \(Season\ II\,\ 2014\,\ WEB-DL\ 720p\)\ \[BaibaKo\]/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -level 4.0 -t 7.382 -c:v copy -c:a copy -map 0:v -map 0:a:0 /home/name_snrl/clips/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-0.751-00-00-2.878.mp4 
+ffmpeg -v warning -n -stats -ss 1.502 -i /home/name_snrl/downloads/Тёмное\ Дитя\ \(Orphan\ Black\)\ \(Season\ II\,\ 2014\,\ WEB-DL\ 720p\)\ \[BaibaKo\]/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -level 4.0 -t 7.382 -c:v copy -c:a copy -map 0:v -map 0:a:0 /home/name_snrl/clips/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-0.751-00-00-2.8.mp4 
+ffmpeg -v warning -n -stats -ss 1.502 -i /home/name_snrl/downloads/Тёмное\ Дитя\ \(Orphan\ Black\)\ \(Season\ II\,\ 2014\,\ WEB-DL\ 720p\)\ \[BaibaKo\]/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 7.382 -c:v copy -c:a wav -map 0:v -map 0:a:0 /home/name_snrl/clips/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-0.751-00-00-2.8.mp4 
+ffmpeg -v warning -n -stats -ss 1.502 -i /home/name_snrl/downloads/Тёмное\ Дитя\ \(Orphan\ Black\)\ \(Season\ II\,\ 2014\,\ WEB-DL\ 720p\)\ \[BaibaKo\]/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 7.382 -c:v copy -c:a mp3 -map 0:v -map 0:a:0 /home/name_snrl/clips/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-0.751-00-00-2.8.mp4 
+ffmpeg -c:a
+ffmpeg -codecs
+ffmpeg -v warning -n -stats -ss 1.502 -i /home/name_snrl/downloads/Тёмное\ Дитя\ \(Orphan\ Black\)\ \(Season\ II\,\ 2014\,\ WEB-DL\ 720p\)\ \[BaibaKo\]/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 7.382 -c:v copy -c:a aac -map 0:v -map 0:a:0 /home/name_snrl/clips/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-0.751-00-00-2.8.mp4 
+ffmpeg -v warning -n -stats -ss 1.502 -i /home/name_snrl/downloads/Тёмное\ Дитя\ \(Orphan\ Black\)\ \(Season\ II\,\ 2014\,\ WEB-DL\ 720p\)\ \[BaibaKo\]/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 7.382 -c:v copy -c:a pcm_s16le -map 0:v -map 0:a:0 /home/name_snrl/clips/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-0.751-00-00-2.8.mp4 
+ffmpeg -i /home/name_snrl/downloads/Тёмное\ Дитя\ \(Orphan\ Black\)\ \(Season\ II\,\ 2014\,\ WEB-DL\ 720p\)\ \[BaibaKo\]/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -codecs
+ffmpeg -v warning -n -stats -ss 1.502 -i /home/name_snrl/downloads/Тёмное\ Дитя\ \(Orphan\ Black\)\ \(Season\ II\,\ 2014\,\ WEB-DL\ 720p\)\ \[BaibaKo\]/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 7.382 -c:v copy -c:a mp4 -map 0:v -map 0:a:0 /home/name_snrl/clips/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-0.751-00-00-2.8.mp4 
+ffmpeg -v warning -n -stats -ss 1.502 -i /home/name_snrl/downloads/Тёмное\ Дитя\ \(Orphan\ Black\)\ \(Season\ II\,\ 2014\,\ WEB-DL\ 720p\)\ \[BaibaKo\]/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 7.382 -c:v copy -c:a webm -map 0:v -map 0:a:0 /home/name_snrl/clips/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-0.751-00-00-2.8.mp4 
+ffmpeg -v warning -n -stats -ss 1.502 -i /home/name_snrl/downloads/Тёмное\ Дитя\ \(Orphan\ Black\)\ \(Season\ II\,\ 2014\,\ WEB-DL\ 720p\)\ \[BaibaKo\]/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 7.382 -c:v copy -c:a copy -map 0:v -map 0:a:0 /home/name_snrl/clips/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-0.751-00-00-2.8.mov
+ffmpeg -v warning -n -stats -ss 1.502 -i /home/name_snrl/downloads/Тёмное\ Дитя\ \(Orphan\ Black\)\ \(Season\ II\,\ 2014\,\ WEB-DL\ 720p\)\ \[BaibaKo\]/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 7.382 -c:v copy -c:a pcm_s16le -map 0:v -map 0:a:0 /home/name_snrl/clips/Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-0.751-00-00-2.8.mov
+ffmpeg -v warning -n -stats -ss 1.96 -i ./Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 7.967 -c:v mpeg2 -c:a mp3 -map 0:v -map 0:a:0 ~/clips/mp3.mp4
+ffmpeg -v warning -n -stats -ss 1.96 -i ./Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 7.967 -c:v mpeg-2 -c:a mp3 -map 0:v -map 0:a:0 ~/clips/mp3.mp4
+ffmpeg -v warning -n -stats -ss 1.96 -i ./Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 7.967 -c:v mpeg2video -c:a mp3 -map 0:v -map 0:a:0 ~/clips/mp3.mp4
+usrcfg add -u .config/mpv/scripts/slicing_copy.lua
+usrcfg cm 'Commit for Alexandra.'
+usrcfg push 
+nheko 
+nix-shell -p keepassxc
+nix-shell -p 
+nix-shell -p element
+nix-shell -p element-web
+nix-shell -p element-desktop-wayland
+nix-shell -p element-desktop-wayland keepassXC
+element-desktop 
+nix-shell -p element-desktop-wayland keepassxc
+nboot
+passmenu 
+pass
+sctl status libvirtd-tls.socket 
+virt-install
+nboot 
+nix-shell -p pass-wayland
+sctl enable --now libvirtd
+virt-install --name=nextcloud --vcpus=1 --memory=1024 --cdrom=/home/name_snrl/downloads/ubuntu-22.04-live-server-amd64.iso --disk size=10
+virt-install --name=nextcloud --vcpus=1 --memory=2048 --cdrom=/home/name_snrl/downloads/ubuntu-22.04-live-server-amd64.iso --disk size=10
+sctl status libvirtd
+virsh connect nextcloud
+virsh console nextclous
+virsh console nextcloud
+virsh shutdown nextcloud
+virsh destroy nextcloud
+virsh undefine nextcloud 
+nclear && nboot && reboot 
+virsh hostname 
+netstat -anlpt | grep lib
+netstat -anlpt | grep virt
+netstat -anlpt | grep qemu
+ssh name_snrl@127.0.0.1:5901
+ssh name_snrl@0.0.0.0
+virt-install --name=ubuntu --vcpus=1 --memory=2048 --cdrom=/home/name_snrl/downloads/ubuntu-22.04-live-server-amd64.iso --disk size=15
+virt-install --connect qemu:///session --name=ubuntu --vcpus=1 --memory=2048 --cdrom=/home/name_snrl/downloads/ubuntu-22.04-live-server-amd64.iso --disk size=15
+virsh destroy ubuntu
+virsh undefine ubuntu 
+sudo virt-install --connect qemu:///session --name=ubuntu --vcpus=1 --memory=2048 --cdrom=/home/name_snrl/downloads/ubuntu-22.04-live-server-amd64.iso --disk size=15
+virsh list --all
+sudo virt-install --connect qemu:///session --name=ubuntu --vcpus=1 --memory=2048 --cdrom=/home/name_snrl/downloads/ubuntu-22.04-live-server-amd64.iso --disk size=15 --os-variant ubuntu22.04
+virt-install --connect qemu:///session --name=ubuntu --vcpus=1 --memory=2048 --cdrom=/home/name_snrl/downloads/ubuntu-22.04-live-server-amd64.iso --disk size=15 --os-variant ubuntu22.04
+sctl status libvirtd.service 
+virsh uri
+ssh name_snrl@127.0.0.1
+ip
+ip l
+netstat -anlpt
+virsh net-list
+nixos-option virtualisation.libvirtd.allowedBridges
+virsh iface-list --all
+brctl
+ssh name_snrl@10.0.2.11
+ssh name_snrl@10.0.2.15/22
+ping 10.0.2.15
+ssh name_snrl@10.0.2.15
+ssh name_snrl@192.168.122.2
+ssh root@192.168.122.1/22
+ssh root@192.168.122.1:22
+ssh root@192.168.122.1\22
+ssh root@192.168.122.1 -p 22
+virsh edit ubuntu22.04 
+ssh -P22 ssh.pythonanywhere.com
+sudo iptables -L -vn
+tcpdump
+tcpdump -i virbr0 -n 22 ssh
+sudo tcpdump -i virbr0 -n 22 ssh
+sudo tcpdump -i virbr0
+nix-shell -p tcpdump
+udisksctl mount -b /dev/sdb1
+sudo eject /dev/sdb
+nixos-option networking.nat.enable
+virsh connect qemu:///session
+virsh start ubuntu22.04 
+virsh console ubuntu22.04 
+virsh get-user-sshkeys ubuntu22.04 name_snrl
+virsh set-user-sshkeys debian11 root --file .ssh/ubuntu_vm.pub 
+virsh set-user-sshkeys debian11 name_snrl --file .ssh/ubuntu_vm.pub 
+ssh name_snrl@192.168.122.1 -p 2022
+ssh name_snrl@192.168.122.1 -p 53
+sudo netstat -tln
+virsh iface-list 
+ssh name_snrl@192.168.1.106
+ssh name_snrl@192.168.1.255
+ssh name_snrl@192.168.1.255 -p 75
+ssh name_snrl@192.168.1.255 -p 73
+ssh name_snrl@192.168.1.255 -p 22
+ssh name_snrl@192.168.122.1 -p 75
+ssh name_snrl@192.168.122.1 -p 1
+ssh name_snrl@192.168.122.1 -p 0
+ssh name_snrl@192.168.122.1 -p 2
+ssh name_snrl@192.168.122.1 -p 3
+ssh name_snrl@192.168.122.1 -p 4
+ssh name_snrl@192.168.122.1 -p 5
+ssh name_snrl@192.168.122.1 -p 6
+ssh name_snrl@192.168.122.1 -p 7
+ssh name_snrl@192.168.122.1 -p 8
+nixos-option networking.firewall.enable
+virsh start debian11 
+ssh name_snrl@192.168.122.1 -p 22
+ssh admin@192.168.1.1
+virsh set-user-sshkeys ubuntu22.04 name_snrl --file .ssh/ubuntu_vm.pub 
+ssh name_snrl@192.168.122.255
+ssh name_snrl@192.168.122.1/24 -p 22
+ping 192.168.122.1
+netcat
+sudo virsh uri
+ssh name_snrl@192.168.122.1
+ssh nixos@192.168.1.106
+netstat -t
+netstat -tl
+netstat -tln
+sctl stop NetworkManager.service 
+ping ya.ru
+ssh nixos@192.168.122.1
+sctl start NetworkManager.service 
+ssh nixos@192.168.122.1 -p 2222
+ip a s
+ssh root@192.168.122.1/24 -p 2222
+ssh root@192.168.122.1 -p 2222
+ssh root@192.168.122.255 -p 2222
+ssh root@192.168.122.31
+virsh set-user-sshkeys ubuntu22.04 root --file .ssh/ubuntu_vm.pub 
+virsh net-list 
+virsh net-list --all
+virsh domifaddr ubuntu22.04 
+ssh root@10.0.2.15
+ip 
+ssh root@192.168.122.1
+ssh root@192.168.122.36
+ssh root@192.168.122.35
+ssh root@127.0.0.1
+ssh root@127.0.0.1 -p 22
+ssh root@10.0.2.50
+ssh root@10.0.2.35
+ssh-keygen 
+virsh iface-list
+virsh list
+sudo virsh set-user-sshkeys nixos-unstable root --file .ssh/nixos_vm.pub 
+sudo ssh root@192.168.122.176
+ssh root@192.168.122.176
+qemu-system-x86_64 -cpu help
+virsh --version
+virsh help
+virsh help | rg domxml
+qemu-system-x86_64     -enable-kvm     -m 2G     -machine q35,accel=kvm \
+qemu-x86_64 
+virt-viewer 
+nix-shell -p virt-viewer
+nix-shell -p virt-manager
+nboot && reboot 
+nclear && nboot 
+echo "one \
+two \
+three"
+virt-install --connect qemu:///system --name ubuntu --memory 2048 --vcpus 1 --graphics none --osinfo ubuntu22.04 --disk size=20 --cdrom ~/downloads/ubuntu-22.04-live-server-amd64.iso --cloud-init clouduser-ssh-key=~/.ssh/ubuntu_vm.pub
+virt-install --connect qemu:///system --name ubuntu --memory 2048 --vcpus 1 --graphics none --osinfo ubuntu22.04 --disk size=20 --cdrom ~/downloads/ubuntu-22.04-live-server-amd64.iso --cloud-init clouduser-ssh-key=/home/name_snrl/.ssh/ubuntu_vm.pub
+sudo virt-install --connect qemu:///system --name ubuntu --memory 2048 --vcpus 1 --graphics none --osinfo ubuntu22.04 --disk size=20 --cdrom /home/name_snrl/downloads/ubuntu-22.04-live-server-amd64.iso --cloud-init clouduser-ssh-key=/home/name_snrl/.ssh/ubuntu_vm.pub
+virt-install --connect qemu:///system --name ubuntu --memory 2048 --vcpus 1 --graphics none --osinfo ubuntu22.04 --disk size=20 --cdrom ~/downloads/ubuntu-22.04-live-server-amd64.iso
+virt-install --connect qemu:///system --name ubuntu --memory 2048 --vcpus 1 --graphics none --osinfo ubuntu22.04 --disk size=20 --cdrom ~/downloads/ubuntu-22.04-live-server-amd64.iso --cloud-init=clouduser-ssh-key=/home/name_snrl/.ssh/ubuntu_vm.pub 
+virt-sysprep
+virt-install --console=?
+virsh connect qemu:///system destroy ubuntu
+virsh connect qemu:///system
+virt-install --connect qemu:///system --name ubuntu --memory 2048 --vcpus 1 --graphics none --os-variant detect=on --disk size=20 --autoconsole text --cdrom ~/downloads/ubuntu-22.04-live-server-amd64.iso
+virt-install --connect qemu:///system --name ubuntu --memory 2048 --vcpus 1 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --cdrom ~/downloads/ubuntu-22.04-live-server-amd64.iso
+ssh nixos@192.168.122.23
+ssh installer@192.168.122.81
+virt-install --connect qemu:///system --name nixos --memory 2048 --vcpus 1 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --cdrom ~/downloads/latest-nixos-minimal-x86_64-linux.iso 
+ssh installer@192.168.122.121
+ssh name_snrl@192.168.122.121 -p 2222
+virsh --connect qemu:///system list --all
+virsh --connect qemu:///system domifaddr ubuntu 
+virt-manager 
+ssh-keygen
+ssh-keygen -R 192.168.122.121
+ssh name_snrl@192.168.122.121
+ssh installer@192.168.122.163
+virsh --connect qemu:///system reboot ubuntu 
+virt-install --memory 2048 --vcpus 1 --graphics none --os-variant detect=on --disk size=20 --cdrom ~/downloads/ubuntu-22.04-live-server-amd64.iso --name ubuntu --connect qemu:///system
+virsh --connect qemu:///system ttyconsole ubuntu 
+echo 'hello' > /dev/pts/0
+sudo echo 'hello' > /dev/pts/0
+sudo rm /var/lib/libvirt/images/*
+virsh --connect qemu:///system dominfo ubuntu 
+virsh --connect qemu:///system domstats ubuntu 
+virsh --connect qemu:///system domstate ubuntu 
+virsh --connect qemu:///system domstats --cpu-total ubuntu 
+virsh --connect qemu:///system dommemstat ubuntu 
+virt-install --memory 2048 --vcpus 1 --noautoconsole --os-variant detect=on --disk size=20 --console pty,target.type=virtio --cdrom ~/downloads/ubuntu-22.04-live-server-amd64.iso --name ubuntu --connect qemu:///system
+virt-install --memory 2048 --vcpus 1 --disk size=20 --os-variant detect=on --wait --console pty,target.type=virtio --cdrom ~/downloads/ubuntu-22.04-live-server-amd64.iso --name ubuntu --connect qemu:///system
+sudo /var/lib/libvirt/qemu/ubuntu.xml
+virt-install --memory 2048 --vcpus 1 --disk size=20 --os-variant detect=on --noautoconsole --wait=-1 --console pty,target.type=virtio --cdrom ~/downloads/ubuntu-22.04-live-server-amd64.iso --name ubuntu --connect qemu:///system
+virt-install --memory 4096 --vcpus 2 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --cdrom ~/downloads/ubuntu-22.04-live-server-amd64.iso --name ubuntu --connect qemu:///system
+ssh name_snrl@192.168.122.248
+virt-install --memory 4096 --vcpus 2 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --cdrom ~/downloads/debian-11.4.0-amd64-netinst.iso --name debian --connect qemu:///system
+virt-install --memory 4096 --vcpus 2 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --install fedora34 --connect qemu:///system
+virt-install --memory 4096 --vcpus 2 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --install fedora34
+sudo virt-install --memory 4096 --vcpus 2 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --install fedora34 --connect qemu:///system
+virsh destroy fedora34 
+virsh undefine fedora34 
+nixos-option virtualisation.libvirtd.qemu.runAsRoot
+sudo virt-install --memory 4096 --vcpus 2 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --install ubuntu22.04 --connect qemu:///system
+virt-install --memory 4096 --vcpus 2 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --install ubuntu22.04 --connect qemu:///system
+virt-install --memory 4096 --vcpus 2 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --install ubuntu22 --connect qemu:///system
+virt-install --memory 4096 --vcpus 2 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --install ubuntu --connect qemu:///system
+virt-install --osinfo list
+virt-install --osinfo list | rg ubun
+virt-install --memory 4096 --vcpus 2 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --install ubuntu-lts-latest --connect qemu:///system
+virt-install --memory 4096 --vcpus 2 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --install ubuntu21.04 --connect qemu:///system
+virt-install --osinfo list | rg deb
+virt-install --memory 4096 --vcpus 2 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --install debian11 --connect qemu:///system
+virt-install -d --memory 4096 --vcpus 2 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --install debian11 --connect qemu:///system
+virsh console debian11 
+virt-install --memory 4096 --vcpus 2 --os-variant detect=on --disk size=20 --console pty,target.type=virtio --install debian11
+virsh destroy debian11 
+virsh undefine debian11 
+virt-install --memory 2048 --vcpus 1 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=serial --cdrom ~/downloads/debian-11.4.0-amd64-netinst.iso --name debian --connect qemu:///system
+virt-install --memory 4096 --vcpus 2 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=serial --extra-args "console=ttyS0" --cdrom ~/downloads/debian-11.4.0-amd64-netinst.iso --name debian --connect qemu:///system
+virt-install --memory 4096 --vcpus 2 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=serial --extra-args "console=ttyS0" --location ~/downloads/debian-11.4.0-amd64-netinst.iso --name debian --connect qemu:///system
+udisksctl mount -b downloads/debian-11.4.0-amd64-netinst.iso 
+ln -s ~/.cache/virt-manager/boot/ /var/lib/libvirt/boot/
+sudo ln -s ~/.cache/virt-manager/boot/ /var/lib/libvirt/boot/
+ln -s ~/.cache/virt-manager/boot/ /var/lib/libvirt/
+sudo ln -s ~/.cache/virt-manager/boot/ /var/lib/libvirt/
+virt-install --name debian --os-variant debian10 --disk size=10 --memory 1000 --graphics none --console pty,target.type=serial --extra-args "console=ttyS0" --location http://deb.debian.org/debian/dists/buster/main/installer-amd64
+virsh destroy debian 
+virsh undefine debian 
+virt-install --name debian --os-variant debian10 --disk size=10 --memory 1000 --graphics none --console pty,target.type=serial --extra-args "console=ttyS0" --connect qemu:///system --location http://deb.debian.org/debian/dists/buster/main/installer-amd64
+virsh --connect qemu:///system console debian 
+virt-install --memory 1500 --vcpus 1 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --cdrom ~/downloads/latest-nixos-minimal-x86_64-linux.iso --name nixos --connect qemu:///system
+sudo du -sh /var
+sudo du -h --max-depth=1 /var
+sudo du -h --max-depth=1 /var/lib/
+sudo rm /var/lib/libvirt/images/!(ubuntu-8.qcow2)
+virt-install --memory 2048 --vcpus 1 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --cdrom ~/downloads/latest-nixos-minimal-x86_64-linux.iso --name nixos --connect qemu:///system
+sudo virsh
+virsh --connect qemu:///system console nixos
+virt-install --memory 2048 --vcpus 1 --os-variant detect=on --disk size=20 --console pty,target.type=virtio --cdrom ~/downloads/latest-nixos-minimal-x86_64-linux.iso --name nixos --connect qemu:///system
+ssh name_snrl@192.168.122.72
+virsh --connect qemu:///system console ubuntu 
+virsh 
+virt-install --memory 2048 --vcpus 1 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio -l ~/downloads/ubuntu-22.04-live-server-amd64.iso --name ubuntu --connect qemu:///system
+mount ubuntu-22.04-live-server-amd64.iso mnt/
+sudo mount ubuntu-22.04-live-server-amd64.iso mnt/
+virt-install --memory 2048 --vcpus 1 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio -l ~/downloads/ubuntu-22.04-live-server-amd64.iso,kernel=casper/vmlinuz,initrd=casper/initrd --name ubuntu --connect qemu:///system
+virt-install --memory 2048 --vcpus 1 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio -l /home/name_snrl/downloads/ubuntu-22.04-live-server-amd64.iso --name ubuntu --connect qemu:///system
+virt-install --memory 2048 --vcpus 1 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio -l /home/name_snrl/downloads/ubuntu-22.04-live-server-amd64.iso,kernel=casper/vmlinuz,initrd=casper/initrd --name ubuntu --connect qemu:///system
+virt-install --memory 2048 --vcpus 1 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --location /home/name_snrl/downloads/ubuntu-22.04-live-server-amd64.iso,kernel=casper/vmlinuz,initrd=casper/initrd --name ubuntu --connect qemu:///system
+virt-install --memory 2048 --vcpus 1 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --location http://us.archive.ubuntu.com/ubuntu/dists/jammy/main/installer-amd64/ --name ubuntu --connect qemu:///system
+umount /home/name_snrl/downloads/mnt 
+sudo umount /home/name_snrl/downloads/mnt 
+chown name_snrl latest-nixos-minimal-x86_64-linux.iso ubuntu-22.04-live-server-amd64.iso 
+sudo chown name_snrl latest-nixos-minimal-x86_64-linux.iso ubuntu-22.04-live-server-amd64.iso 
+sudo chown name_snrl:users latest-nixos-minimal-x86_64-linux.iso ubuntu-22.04-live-server-amd64.iso 
+uname -a
+nix repl
+virt-viewer
+virt-install --memory 3048 --vcpus 2 --os-variant detect=on --disk size=20 --console pty,target.type=virtio --cdrom ~/downloads/ubuntu-22.04-live-server-amd64.iso --name ubuntu --connect qemu:///system
+virt-install --memory 3048 --vcpus 2 --os-variant detect=on --disk size=20 --noautoconsole --cdrom ~/downloads/ubuntu-22.04-live-server-amd64.iso --name ubuntu --connect qemu:///system
+sudo -i
+sudo ls /var/lib/libvirt/images/
+virt-install --memory 3048 --vcpus 2 --os-variant detect=on --disk size=20 --autoconsole text --console pty,target.type=virtio --cdrom ~/downloads/ubuntu-22.04-live-server-amd64.iso --name ubuntu --connect qemu:///system
+virt-install --memory 2048 --vcpus 1 --os-variant detect=on --disk size=20 --autoconsole text --console pty,target.type=virtio --cdrom ~/downloads/ubuntu-22.04-live-server-amd64.iso --name ubuntu --connect qemu:///system
+virsh --connect qemu:///system console ubuntu22.04 
+virt-install --memory 2048 --vcpus 1 --os-variant detect=on --disk size=20 --autoconsole text --console pty,target.type=virtio --cdrom ~/downloads/latest-nixos-minimal-x86_64-linux.iso --name nixos --connect qemu:///system
+virt-install --memory 2048 --vcpus 1 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --cdrom ~/downloads/ubuntu-22.04-live-server-amd64.iso --name ubuntu --connect qemu:///system # kvm+qemu vm example
+virt-host-validate 
+bridge link whow virbr0
+bridge link show virbr0
+virsh --connect qemu:///system start ubuntu 
+ifconfig 
+ip a
+qemu-bridge-helper 
+vi
+htop
+htop 
+curl https://192.168.122.49
+curl -O https://githab.com/name-snrl.keys
+curl https://githab.com/name-snrl.keys
+curl -O https://github.com/name-snrl.keys
+sctl --user stop swayidle.service 
+sctl --user start swayidle.service 
+ls
+ssh name_snrl@192.168.122.49
+virsh
+et-status 
+blend
+en
+ffmpeg -i Orphan.Black.s02e08.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -map 0:s:0 subs8.srt
+ffmpeg -i Orphan.Black.s02e08.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv
+ffmpeg -i Vhod.v.pustotu.2009.BDRip.1080p.mkv -map 0:s:0
+ffmpeg -i Vhod.v.pustotu.2009.BDRip.1080p.mkv -map 0:s:0 subs.str
+ffmpeg -i Vhod.v.pustotu.2009.BDRip.1080p.mkv
+ffmpeg -i Vhod.v.pustotu.2009.BDRip.1080p.mkv -map 0:s:0 subs
+ffmpeg -i Vhod.v.pustotu.2009.BDRip.1080p.mkv -map 0:s:0 -o subs
+ffmpeg -i Vhod.v.pustotu.2009.BDRip.1080p.mkv -map 0:s:0 subs.srt
+ffmpeg -i ~/clips/Orphan.Black.s02e08.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-01-39.766-00-01-54.907.mp4 
+ffmpeg -i video_2022-08-12_13-42-38.mp4 
+j
+ffmpeg -i Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-7.674-00-00-14.598.mp4 
+ffmpeg -v warning -n -stats -ss 7.674 -i ./Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 6.924 -c:v copy -c:a mp3 -map 0:v -map 0:a:0 -b:v 768k -bufsize 768k /home/name_snrl/clips/Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-7.674-00-00-14.598.mp4
+ffmpeg -v warning -n -stats -ss 7.674 -i ./Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 6.924 -b:v 768k -bufsize 768k -c:v copy -c:a mp3 -map 0:v -map 0:a:0 /home/name_snrl/clips/Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-7.674-00-00-14.598.mp4
+ffmpeg -v warning -n -stats -ss 7.674 -i ./Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 6.924 -c:v copy -c:a mp3 -map 0:v -map 0:a:0 -b:v 768k /home/name_snrl/clips/Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-7.674-00-00-14.598.mp4
+ffmpeg -v warning -n -stats -ss 7.674 -i ./Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -b:v 768k -t 6.924 -c:v copy -c:a mp3 -map 0:v -map 0:a:0 /home/name_snrl/clips/Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-7.674-00-00-14.598.mp4
+ffmpeg -v warning -n -stats -ss 7.674 -i ./Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -b:v 768k -t 6.924 /home/name_snrl/clips/Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-7.674-00-00-14.598.mp4
+ffmpeg -ss 7.674 -i ./Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 6.924 -b:v 768k /home/name_snrl/clips/Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-7.674-00-00-14.598.mp4
+ffmpeg Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-7.674-00-00-14.598.mp4 
+ffprobe Orphan.Black.s02e08.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-01-39.766-00-01-54.907.mp4 
+ffmpeg -ss 37.674 -i ./Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 36.924 -b:v 768k /home/name_snrl/clips/Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-7.674-00-00-14.598.mp4
+ffmpeg -ss 37.674 -i ./Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 36.924 -b:v 768k -c:a mp3 /home/name_snrl/clips/Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-7.674-00-00-14.598.mp4
+ffprobe Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-7.674-00-00-14.598.mp4 
+ffprobe ~/downloads/video_2022-08-12_13-42-38.mp4 
+ffmpeg -ss 37.674 -i ./Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 36.924 -r 30 -b:v 768k -c:a mp3 /home/name_snrl/clips/Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-7.674-00-00-14.598.mp4
+ffmpeg -v warning -n -stats -ss 18.519 -i ./Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 8.216 -c:v 768k -c:a mp3 -map 0:v -map 0:a:0 /home/name_snrl/clips/Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-18.519-00-00-26.735.mp4
+ffmpeg -v warning -n -stats -ss 18.519 -i ./Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 8.216 -b:v 768k -c:a mp3 -map 0:v -map 0:a:0 /home/name_snrl/clips/Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-18.519-00-00-26.735.mp4
+neofetch 
+nix-shell -p ansible
+gst-launch
+gst-launch-1.0 -v uridecodebin uri=file:///home/name_snrl/clips/Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-03-29.835-00-03-47.352.mp4 ! audioconvert ! voaacenc ! qtmux ! filesink location=output.mp4
+nix-shell -p gst_all_1.gstreamer
+usrcfg st
+virsh --connect qemu:///system
+reboot 

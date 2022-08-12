@@ -2,7 +2,7 @@
 tac "$HOME"/.bash_history | awk '!seen[$0]++' |\
 tac - > tmp && mv tmp "$HOME"/.bash_history
 
-beg=( j et sf nvim imv mpv
+beg=( j et sf nvim imv mpv git
     dt tk pg vi vim # aliases
     tree cd du rm cp mv ls mkdir touch chmod
     wl-copy wl-paste wget tar zip unzip
@@ -10,7 +10,8 @@ beg=( j et sf nvim imv mpv
     fd rg grep
     bat cat
     nmcli
-    pkill pgrep )
+    pkill pgrep
+    swaymsg )
 for i in "${beg[@]}"; do
     sed -i "/^$i /d" "$HOME"/.bash_history
 done

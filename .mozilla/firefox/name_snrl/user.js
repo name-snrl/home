@@ -56,7 +56,7 @@ user_pref("privacy.donottrackheader.enabled", true);
 
 // Tor
 user_pref("network.proxy.http", "127.0.0.1");
-user_pref("network.proxy.http_port", "8118");
+user_pref("network.proxy.http_port", 8118);
 user_pref("network.proxy.share_proxy_settings", true);
 user_pref("network.proxy.socks_remote_dns", true);
 
