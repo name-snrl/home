@@ -5,11 +5,13 @@
 # e - floating term
 # r - resize mode
 # t - term
-# a - open link in mpv
+# a - add a word to ankilist
 # s - toggle sticky
 # d - wofi
 # f - fullscreen
 # g - start screencast
+# 
+# o - open link in mpv
 #
 # hjkl - arrows
 #
@@ -21,6 +23,7 @@
 # shift+c - reload sway
 # shift+s - toggle system theme
 # shift+g - end screencast
+# shift+a - clear ankilist
 
 bindsym {
     --to-code {
@@ -43,7 +46,11 @@ bindsym {
         $mod+d exec $menu
 
         # Play clipboard in mpv
-        $mod+a exec mpv "$(wl-paste)"
+        $mod+o exec mpv "$(wl-paste)"
+
+        # Ankilist
+        $mod+a       exec $anki add
+        $mod+Shift+a exec $anki clear 
 
         # No susped lock
         $mod+w exec systemd-inhibit --what=handle-lid-switch swaylock 
