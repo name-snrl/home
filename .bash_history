@@ -46,7 +46,6 @@ type -a nix
 exec anki
 exec anki & exit
 nix --version 
-beep 
 paplay /run/current-system/sw/share/sounds/freedesktop/stereo/complete.oga
 exec vi .bashrc 
 tmux 
@@ -61,9 +60,7 @@ echo mem
 exec echo mem
 exec echo mem && sleep 5
 sleep 5
-stty -a
 stty -e
-stty
 tty
 echo Hello > /dev/pts/3
 ps -a
@@ -166,7 +163,6 @@ pactl list | less
 pactl help
 pactl set-source-volume alsa_input.pci-0000_00_1b.0.analog-stereo 65%
 pactl list Source
-pactl list sources
 pavucontrol
 pavucontrol 
 pactl stat
@@ -178,7 +174,6 @@ history | rg nc
 history | rg export
 export GTK_USE_PORTAL=1
 export GTK_USE_PORTAL="1"
-echo $GTK_USE_PORTAL 
 essential
 udisksctl mount --b /dev/sda4
 udisksctl unmount -b /dev/sda4
@@ -249,10 +244,8 @@ find /lib/modules -name *.ko
 lsmod | rg acpi
 modprobe -c | rg acpi_ca
 vdpauinfo
-vainfo
 export LIBVA_DRIVER_NAME='iHD'
 export LIBVA_DRIVER_NAME='i965'
-vainfo 
 nix-shell -p vdpauinfo
 nix-shell -p vdpauinfo libva-utils
 export VDPAU_DRIVER="va_gl"
@@ -272,7 +265,6 @@ journalctl -b 119
 journalctl -b 122
 journalctl -b 121
 export VISUAL='nvim'
-echo $EDITOR 
 rebo
 nboot && rebo
 journalctl -b 128
@@ -344,7 +336,6 @@ pulseaudio
 apvlv Desktop/books/1be4514c_devops.pdf 
 apvlv Desktop/books/Linux_Bible-Wiley_\(2020\)_Christopher_Negus.pdf 
 pw-cli info 1
-pw-cli
 nix-shell -p apvlv
 pw-top
 nix-shell -p xpdf
@@ -450,8 +441,6 @@ nix-shell -p keepass
 nix-shell -p keepassxs
 echo $XDG_CONFIG_HOME
 mankotatogram-desktop
-dex
-nix-shell -p dex
 ffmpeg -i https://www.twitch.tv/reira
 ffmpeg -i www.twitch.tv/reira
 ffmpeg -i https://www.twitch.tv/videos/1220973202
@@ -498,7 +487,6 @@ pamixer --default-source -t
 bluetooth toggle
 sudo bluetooth toggle
 systemctl show
-systemctl list-units
 systemctl list-units | rg bluetooth
 systemctl stop bluetooth.service 
 systemctl status bluetooth.service 
@@ -826,7 +814,6 @@ nixos-option services.tor.client.dns.enable
 nixos-option xdg.sounds.enable
 dconf
 dconf-editor
-mako
 mate-notification-properties 
 nix-shell -p mate.mate-notification-daemon
 which mate-notification-properties 
@@ -900,7 +887,6 @@ pw-play /run/current-system/sw/share/sounds/freedesktop/stereo/audio-test-signal
 pw-play /run/current-system/sw/share/sounds/freedesktop/stereo/audio-volume-change.oga 
 pw-play /run/current-system/sw/share/sounds/freedesktop/stereo/device-added.oga 
 pw-play --volume 1 /run/current-system/sw/share/sounds/freedesktop/stereo/complete.oga 
-pw-play /run/current-system/sw/share/sounds/freedesktop/stereo/complete.oga 
 pw-play --volume 1 /run/current-system/sw/share/sounds/freedesktop/stereo/bell.oga 
 pw-play --volume 1 /run/current-system/sw/share/sounds/freedesktop/stereo/device-added.oga 
 pw-play --volume 1 /run/current-system/sw/share/sounds/freedesktop/stereo/device-removed.oga 
@@ -936,7 +922,6 @@ journalctl -b 351 | rg kde
 dino --name=ino
 et1
 pw-play --volume /run/current-system/sw/share/sounds/freedesktop/stereo/complete.oga 
-test
 test123 
 sudo vi .config/sway/config 
 echo $XDG_RUNTIME_DIR 
@@ -967,7 +952,6 @@ neofetch --block_range 0 7
 msgcat --color=test | less
 printf "|%s%3d%s" "$(tput setaf "$c")" "$c" "$(tput sgr0)"
 nixos-option services.ttyd.terminalType
-echo $PS1
 export PS1=\n\\033[1;32m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\:
 export PS1=\n\[\033[1;32m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\:
 printf "\x1b[${bg};2;${red};${green};${blue}m\n"
@@ -1090,7 +1074,6 @@ sudo --preserve-env=TERM nnn
 sudo TERM="xterm-256color" nnn
 sudo hui="xterm-256color" nnn
 su nnn
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak update 
 flatpak install flathub io.github.kotatogram
 flatpak run io.github.kotatogram 
@@ -1222,7 +1205,6 @@ PAGER="nvim -" journalctl
 journalctl -b1
 journalctl -b0 | vim
 echo $XCURSOR_THEME 
-echo $XDG_DATA_DIRS 
 echo $XDG_DATA_DIRS | rg icon
 journalctl | nvim -
 export SYSTEMD_PAGER="nvim -"
@@ -1433,7 +1415,6 @@ nix doctor
 nix doctor --verbose
 nixos-rebuild switch 
 sudo nix-collect-garbage -d
-nclear && nboot
 nix-env -e caja 
 nix-env -iA nixos.rox-filer
 rox
@@ -1558,10 +1539,8 @@ GTK2_RC_FILES=$HOME/.gtkrc-2.0 anki
 QT_DEBUG_PLUGINS=1 anki
 anki -style qt_style
 anki -style Fusion
-which anki
 flatpak run net.ankiweb.Anki
 flatpak install flathub net.ankiweb.Anki
-flatpak uninstall --all
 history | rg anki
 QT_STYLE_OVERRIDE='Windows' anki
 nixos -iA nixos.swaybg
@@ -1852,7 +1831,6 @@ gdbus introspect --system --dest "org.bluez" --object-path "/org/bluez/hci0" --r
 gdbus introspect --system --dest "org.bluez" --object-path "/org/bluez/hci0/dev_88_D0_39_65_46_85" --recurse
 gdbus introspect --system --dest "org.bluez" --object-path "/org/bluez/hci0/dev_88_D0_39_65_46_85" --recurse | rg bat
 read -r
-whoami 
 echo $PWD 
 getconf pager
 echo $VAR
@@ -1896,7 +1874,6 @@ echo \lo\l
 echo -e \lo\l
 echo -e \lo\l/
 echo \lo\l/
-echo \
 echo -e hui znaet chto
 echo hui znaet chto
 echo hui znaet\ chto
@@ -1943,7 +1920,6 @@ systemctl status xdg-desktop-portal-gtk.service
 systemctl --system status xdg-desktop-portal-gtk.service
 systemctl --system list-units
 systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP 
-wofi -d
 echo "test\ntest2"
 echo -e "test\ntest2"
 echo -e "test\ntest2" | wofe
@@ -1955,7 +1931,6 @@ slurp -f %o -ro
 slurp -f %o -r
 slurp 
 slurp -f %o
-obs
 slurp -f %l
 nix-env -iA nixos.kooha
 nix-env -e kooha 
@@ -2250,7 +2225,6 @@ lsirq
 lslogins 
 lsmod 
 lssubsys
-echo $$
 sudo nixos-rebuild switch
 systemctl start tor.service 
 mdr snrlZettelkasten/synopsisMyZettelkasten.md 
@@ -2316,8 +2290,6 @@ woeusb -d Downloads/Windows.10.RU-EN.x86-x64.32in1+-Office.2019.by.SmokieBlahBla
 sudo woeusb -d Downloads/Windows.10.RU-EN.x86-x64.32in1+-Office.2019.by.SmokieBlahBlah.2021.11.26/Windows.10.RU-EN.x86-x64.32in1+-Office.2019.by.SmokieBlahBlah.2021.11.26.iso /dev/sdb
 ln -s realVi/ nvim
 sudo dd if=latest-nixos-plasma5-x86_64-linux.iso of=/dev/sdb
-nix-shell -p ventoy
-nix-shell -p ventoy-bin
 nix-shell -p woeusb
 curl -sF'file=@Downloads/torbrowser-install-win64-11.0.6_en-US.exe' "https://0x0.st"
 curl -sF'file=@Downloads/torbrowser-install-win64-11.0.6_en-US.txt' "https://0x0.st"
@@ -2540,7 +2512,6 @@ nix --extra-experimental-features nix-command why-depends /run/current-system ni
 nix --extra-experimental-features nix-command why-depends /run/current-system $(nix-store -r $(nix-instantiate -A obfs4 '<nixpkgs>'))
 re
 nix-shell -p swaylock
-
 echo "     " > ttyChars
 /home/name_snrl/bin/pager 
 bin/pager 
@@ -2555,7 +2526,6 @@ sed -i 's#ComPort=*.*#ComPort=3#g' sashaTest
 sed -i 's#ComPort=*.*#ComPort=97#g' sashaTest 
 sed -i 's#ComPort=*.*#ComPort=93457#g' sashaTest 
 sed -i 's#ComPort=*.*#ComPort=35#g' sashaTest 
-bind -P
 bind -P | rg complet
 bind -[
 bind -p
@@ -2576,7 +2546,6 @@ history | rg rsync
 rsync -av --progress --exclude .local/share/KotatogramDesktop/tdata/ -- .local/share/KotatogramDesktop/tdata/shortcuts-* .local/share/KotatogramDesktop/tdata/kotato-settings-* .bash* .config/ .gtkrc-2.0 .local/ .mozilla/ .xkb/ backup/
 rsync -a --progress .local/share/KotatogramDesktop/tdata/shortcuts-* .local/share/KotatogramDesktop/tdata/kotato-settings-* .bash* .config/ .gtkrc-2.0 .local/ .mozilla/ .xkb/ anki_study bin/ Desktop/wlrPortal* Desktop/bus_mon  mnt/ Pictures/ snrlZettelkasten/ backup/ --exclude .local/share/KotatogramDesktop/tdata/
 rsync -aR .local/share/KotatogramDesktop/tdata/shortcuts-* .local/share/KotatogramDesktop/tdata/kotato-settings-* .bash* .config/ .gtkrc-2.0 .local/ .mozilla/ .xkb/ anki_study bin/ Desktop/wlrPortal* Desktop/bus_mon  mnt/ Pictures/ snrlZettelkasten/ backup/ --exclude .local/share/KotatogramDesktop/
-# Install Arch Linux
 ping vimeo.com
 ping 1.1.1.1
 alacritty msg create-window
@@ -2597,7 +2566,6 @@ systemd-run -P --uid=name_snrl -p PAMName=login echo '$PATH'
 export TERM='xterm-256color'
 exec alacritty/
 alacritty &
-alacritty --version
 nupdate && nboot && reboot 
 history | rg rg
 history rg
@@ -2699,7 +2667,6 @@ fmt
 export MANPAGER="vi"
 journalctl | less
 status
-nix-shell -p obs-studio
 diff -y anotherttylist.log ttylist.log 
 dmesg -E
 sudo dmesg -E
@@ -2751,7 +2718,6 @@ bemenu -c
 bemenu
 bemenu-run 
 bemenu-run -c
-nix-shell -p rofi-wayland
 nix-shell -p bemenu
 flameshot
 flameshot-gui
@@ -3099,7 +3065,6 @@ jshon -F modules/geo -e 0 -e lon | cut -d. -f2
 jshon -F modules/geo -e 0 -e lon | cut -d. -f-2
 jshon -F modules/geo -e 0 -e lon | cut -d. -f1
 nmli d s
-echo $0
 ./test.sh -t lol omg
 ./test.sh -t lol omg wtf
 ./test.sh -t lol omg wtf rjomba
@@ -3495,7 +3460,6 @@ kooha
 nix-shell -p kooha
 flameshot gui 
 flameshot launcher
-flameshot gui -c
 sleep 30m && pkill mpv
 sudo tlp setcharge 40 55 BAT1
 waybar --version
@@ -3924,7 +3888,6 @@ echo "Load'lspconfig'.sumneko_lua.setup {
 }
 " > plugins/lspconfig/sumneko_lua.lua
 bash-language-server --version
-alias nupdate 
 echo test && echo $:1
 echo test && echo ${@[1]}
 echo test && echo $1
@@ -3961,8 +3924,6 @@ export PS1q="$ "
 export PS1="$ "
 te
 ./lajmi9b6yzhf953bw75pklhl1npw028v-dual-function-keys-1.4.0/bin/dual-function-keys -c /etc/dual-function-keys.yaml 
-wev
-nix-shell -p wev
 nclear
 usrcfg status 
 nswitch && diff .bash_history Desktop/.bash_history 
@@ -3971,7 +3932,6 @@ nix-shell -p neovim
 nix-env -p vim
 GDK_BACKEND=x11 lxappearance
 nix-shell -p lxappearance
-ru
 alias rg
 sudo man bash
 ./scripts/test.sh 
@@ -3982,7 +3942,6 @@ export NVIM=''
 ln -s ~/.config/nvim/nvimpager.sh less
 echo "" > test.lua 
 systemctl restart tor.service 
-systemctl status tor.service 
 kbdrate -pr
 kbdrate -p
 kbdrate -r
@@ -4027,7 +3986,6 @@ systemd-cat --identifier=sway sway
 systemctl --user start sway-session.target
 mako 2
 systemctl status waybar.service 
-groups
 systemctl --user start waybar.service 
 systemctl --user list-jobs 
 systemctl --user list-units
@@ -4054,7 +4012,6 @@ nix-shell -p polkit-kde-agent
 systemctl --user restart waybar.service 
 systemctl --user show-environment
 systemctl --user restart swayidle.service 
-makoctl reload
 makoctl set-mode light
 et2
 makoctl set-mode default
@@ -4074,7 +4031,6 @@ echo $XDG_DATA_DIRS
 gsettings
 nix-shell -p sway-launcher-desktop
 swappy -f Pictures/IMG_3570.PNG 
-nix-shell -p swappy
 gsettings 
 gsettings help
 gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
@@ -4090,7 +4046,6 @@ echo $(eval "[ echo $TERMINAL == alacritty ]")
 echo $(eval "[ 'echo $TERMINAL' == alacritty ]")
 [ 'echo $TERMINAL' == alacritty ] && echo true
 [ "echo $TERMINAL" == alacritty ] && echo true
-echo $TERMINAL 
 [ "echo $TERMINAL" == "alacritty" ] && echo true
 [ "$TERMINAL" == alacritty ] && echo true
 echo $(eval [ "$TERMINAL" == alacritty ])
@@ -4178,7 +4133,6 @@ nix-env -e pulseaudio
 wf-recorder -a JBL TUNE660NC
 pw-mon
 pactl list sinks | rg name
-nix-shell -p pulseaudio
 wf-recorder --audio alsa_output.pci-0000_00_1b.0.analog-stereo
 wf-recorder --audio bluez_output.88_D0_39_65_46_85.a2dp-sink
 wf-recorder --audio bluez_output
@@ -4231,8 +4185,6 @@ echo lol
 sleep 30m; kill 902170
 zsh
 nix-shell -p zsh
-fish
-nix-shell -p fish
 alias nclear
 sudo nix-collect-garbage --delete-old
 which nvim
@@ -4242,7 +4194,6 @@ nix-store -q --requisites /run/current-system/sw/bin/anki | rg qt
 nix-store -q --requisites /run/current-system/sw/bin/anki | rg 5
 nix-store -q --requisites /run/current-system/sw/bin/anki | rg py
 export GTK2_RC_FILES=~/.gtkrc-2.0 
-anki
 complete -p ls
 complete -p -C systemctl status
 complete -p -C "systemctl status"
@@ -4375,12 +4326,9 @@ MAX_PARSING_DEPTH=2048 swaymsg -t get_tree | gojq -j '.. | select(.type?) | sele
 nix-shell -p gojq
 qutebrowser -C qute.py 
 nix-shell -p libsForQt5.falkon --run falkon
-alacritty 
 nix-shell -p python310Packages.grip --run grip
 grip
-grip .
 grip summarySyntaxGFM.md 
-nix-shell -p python310Packages.grip
 cmark-gfm summarySyntaxGFM.md 
 cmark-gfm summarySyntaxGFM.md > tmp.html
 cmark-gfm --list-extension
@@ -4561,7 +4509,6 @@ pylsp -V
 python parser.py 
 python parser.py > file.txt
 python test.py > vk.html
-
 python test.py 
 python parser.py
 python parser.py > rated_packs.txt
@@ -4586,7 +4533,6 @@ flameshot launcher
 flameshot config 
 flameshot gui
 env > usr_env
-su
 sudo -i --preserve-env=TERM
 sudo -i -E
 sudo -i --preserve-env=TERM echo $TERM
@@ -4683,7 +4629,6 @@ mktemp
 pg
 ln -s ~/trash/nvimpager/nvimpager less
 RUNTIME=foo/bar ./test.sh 
-./test.sh 
 RUNTIME=~/trash/nvimpager nvim -R -u /home/name_snrl/.config/nvim/pager_init.lua --cmd "set rtp+=$RUNTIME | lua nvimpager = require('nvimpager')" tmp.log --cmd "lua nvimpager.stage1()" -c "lua nvimpager.stage2()"
 exec -a nvimpager nvim -R -u /home/name_snrl/.config/nvim/pager_init.lua --cmd "set rtp+=$RUNTIME | lua nvimpager = require('nvimpager')" tmp.log --cmd "lua nvimpager.stage1()" -c "lua nvimpager.stage2()"
 ln -s ~/trash/nvimpager/nvimpager les
@@ -4778,7 +4723,6 @@ nixos-option hardware.cpu.intel.updateMicrocode
 nixos-option hardware.enableRedistibutableFirmware
 nixos-option hardware.enableRedistributableFirmware
 nixos-option hardware.enableAllFirmware
-python
 usrcfg add .bash_history .gtkrc-2.0 bin/
 usrcfg add profiles.ini
 usrcfg add name_snrl/user.js
@@ -4802,7 +4746,6 @@ nixos-generate-config
 usrcfg config --local status.showUntrackedFiles no
 usrcfg restore config mapping
 usrcfg add ../../.bash_history 
-usrcfg restore --staged config mapping
 usrcfg cm 'Fix/Kotato no longer needs XWayland'
 usrcfg push --set-upstream origin master
 nclear && nswitch 
@@ -4855,7 +4798,6 @@ sha256sum sioyek-1.4.0.zip
 sha256sum sioyek-1.2.0.zip 
 sha256sum sioyek-1.2.0\(1\).zip 
 usrcfg dt .config/flameshot/flameshot.ini
-usrcfg commit 
 sioyek summarySyntaxGFM.md 
 sioyek -v
 sioyek --version
@@ -4890,14 +4832,12 @@ mkisofs
 ./uup_download_linux.sh 
 ./files/convert.sh 
 nix-shell -p aria cabextract wimlib chntpw cdrkit
-lsblk 
 udisksctl mount /dev/sdb1
 sctl --user restart waybar.service 
 echo $_JAVA_AWT_WM_NONREPARENTING
 echo $ANKI_WAYLAND
 export ANKI_WAYLAND=1
 export DISABLE_QT5_COMPAT=1
-anki 
 nixos-option programs.sway.extraSessionCommands
 sudo nix-channel 
 sudo nix-channel --list 
@@ -4906,7 +4846,6 @@ exec sway
 nixos-option system.stateVersion
 echo $ANKI_WAYLAND 
 which sway
-anki --version
 gsettings get org.freedesktop.appearance.color-scheme
 gsettings get org.freedesktop.appearance color-scheme
 gsettings get org.gnome.desktop.interface
@@ -4929,27 +4868,21 @@ firefox --ProfileManager
 usrcfg checkout 
 usrcfg branch 
 usrcfg restore .mozilla
-journalctl -b0
 usrcfg add -u .mozilla/firefox/name_snrl/user.js
 usrcfg cm 'Minor changes in user.js'
 usrcfg rebase -i HEAD~
 journalctl -b-1
-kotatogram-desktop 
 xdg-open https://t.me/sheistattooing
-echo $XDG_DATA_HOME 
 xdg-open tg://t.me/sheistattooing
 xdg-open tg://resolve?domain=sheistattooing
-gio help
 gio open tg://resolve?domain=sheistattooing
 nix-store -q --requisites /run/current-system/sw/bin/kotatogram-desktop
 alias nupdate
 file README.md 
 sudo nix-channel --version 
 nclear 
-usrcfg log
 nix repl 
 pylsp --version
-nupdate 
 nix-store -q --requisites /run/current-system/sw/bin/vi
 nix-store -q --requisites /run/current-system/sw/bin/vi > trash/vi_dependencies_old
 nupdate && beep 
@@ -4958,18 +4891,14 @@ nclear && nupdate && reboot
 nboot --rollback 
 sudo nix-channel --rollback 
 nswitch 
-sctl restart tor.service 
-sctl status tor.service 
 usrcfg gc
 alias usrcfg
 set
-usrcfg show
 usrcfg prune --dry-run
 usrcfg prune 
 usrcfg dt .mozilla/firefox/name_snrl/user.js
 nixos-option environment.defaultPackages
 l s-a1
-alias 
 l
 ll
 bluetuith
@@ -4981,7 +4910,6 @@ zoxide query
 zoxide query --all
 zoxide query -l
 zoxide remove -i
-wf-recorder 
 cpupower frequency-info 
 mnt
 gsettings get org.gnome.desktop.interface gtk-theme
@@ -5006,7 +4934,6 @@ ffmpeg -v warning -n -stats -ss 1.96 -i ./Orphan.Black.s02e02.HD720p.WEB-DL.Rus.
 ffmpeg -v warning -n -stats -ss 1.96 -i ./Orphan.Black.s02e02.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 7.967 -c:v mpeg2video -c:a mp3 -map 0:v -map 0:a:0 ~/clips/mp3.mp4
 usrcfg add -u .config/mpv/scripts/slicing_copy.lua
 usrcfg cm 'Commit for Alexandra.'
-usrcfg push 
 nheko 
 nix-shell -p keepassxc
 nix-shell -p 
@@ -5018,11 +4945,8 @@ element-desktop
 nix-shell -p element-desktop-wayland keepassxc
 nboot
 passmenu 
-pass
 sctl status libvirtd-tls.socket 
 virt-install
-nboot 
-nix-shell -p pass-wayland
 sctl enable --now libvirtd
 virt-install --name=nextcloud --vcpus=1 --memory=1024 --cdrom=/home/name_snrl/downloads/ubuntu-22.04-live-server-amd64.iso --disk size=10
 virt-install --name=nextcloud --vcpus=1 --memory=2048 --cdrom=/home/name_snrl/downloads/ubuntu-22.04-live-server-amd64.iso --disk size=10
@@ -5033,7 +4957,6 @@ virsh console nextcloud
 virsh shutdown nextcloud
 virsh destroy nextcloud
 virsh undefine nextcloud 
-nclear && nboot && reboot 
 virsh hostname 
 netstat -anlpt | grep lib
 netstat -anlpt | grep virt
@@ -5106,7 +5029,6 @@ ssh name_snrl@192.168.122.1 -p 8
 nixos-option networking.firewall.enable
 virsh start debian11 
 ssh name_snrl@192.168.122.1 -p 22
-ssh admin@192.168.1.1
 virsh set-user-sshkeys ubuntu22.04 name_snrl --file .ssh/ubuntu_vm.pub 
 ssh name_snrl@192.168.122.255
 ssh name_snrl@192.168.122.1/24 -p 22
@@ -5119,7 +5041,6 @@ netstat -t
 netstat -tl
 netstat -tln
 sctl stop NetworkManager.service 
-ping ya.ru
 ssh nixos@192.168.122.1
 sctl start NetworkManager.service 
 ssh nixos@192.168.122.1 -p 2222
@@ -5136,7 +5057,6 @@ ssh root@10.0.2.15
 ip 
 ssh root@192.168.122.1
 ssh root@192.168.122.36
-ssh root@192.168.122.35
 ssh root@127.0.0.1
 ssh root@127.0.0.1 -p 22
 ssh root@10.0.2.50
@@ -5156,8 +5076,6 @@ qemu-x86_64
 virt-viewer 
 nix-shell -p virt-viewer
 nix-shell -p virt-manager
-nboot && reboot 
-nclear && nboot 
 echo "one \
 two \
 three"
@@ -5179,7 +5097,6 @@ ssh installer@192.168.122.121
 ssh name_snrl@192.168.122.121 -p 2222
 virsh --connect qemu:///system list --all
 virsh --connect qemu:///system domifaddr ubuntu 
-virt-manager 
 ssh-keygen
 ssh-keygen -R 192.168.122.121
 ssh name_snrl@192.168.122.121
@@ -5212,7 +5129,6 @@ sudo virt-install --memory 4096 --vcpus 2 --graphics none --os-variant detect=on
 virt-install --memory 4096 --vcpus 2 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --install ubuntu22.04 --connect qemu:///system
 virt-install --memory 4096 --vcpus 2 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --install ubuntu22 --connect qemu:///system
 virt-install --memory 4096 --vcpus 2 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --install ubuntu --connect qemu:///system
-virt-install --osinfo list
 virt-install --osinfo list | rg ubun
 virt-install --memory 4096 --vcpus 2 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --install ubuntu-lts-latest --connect qemu:///system
 virt-install --memory 4096 --vcpus 2 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --install ubuntu21.04 --connect qemu:///system
@@ -5235,19 +5151,16 @@ virt-install --name debian --os-variant debian10 --disk size=10 --memory 1000 --
 virsh destroy debian 
 virsh undefine debian 
 virt-install --name debian --os-variant debian10 --disk size=10 --memory 1000 --graphics none --console pty,target.type=serial --extra-args "console=ttyS0" --connect qemu:///system --location http://deb.debian.org/debian/dists/buster/main/installer-amd64
-virsh --connect qemu:///system console debian 
 virt-install --memory 1500 --vcpus 1 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --cdrom ~/downloads/latest-nixos-minimal-x86_64-linux.iso --name nixos --connect qemu:///system
 sudo du -sh /var
 sudo du -h --max-depth=1 /var
 sudo du -h --max-depth=1 /var/lib/
 sudo rm /var/lib/libvirt/images/!(ubuntu-8.qcow2)
-virt-install --memory 2048 --vcpus 1 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --cdrom ~/downloads/latest-nixos-minimal-x86_64-linux.iso --name nixos --connect qemu:///system
 sudo virsh
 virsh --connect qemu:///system console nixos
 virt-install --memory 2048 --vcpus 1 --os-variant detect=on --disk size=20 --console pty,target.type=virtio --cdrom ~/downloads/latest-nixos-minimal-x86_64-linux.iso --name nixos --connect qemu:///system
 ssh name_snrl@192.168.122.72
 virsh --connect qemu:///system console ubuntu 
-virsh 
 virt-install --memory 2048 --vcpus 1 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio -l ~/downloads/ubuntu-22.04-live-server-amd64.iso --name ubuntu --connect qemu:///system
 mount ubuntu-22.04-live-server-amd64.iso mnt/
 sudo mount ubuntu-22.04-live-server-amd64.iso mnt/
@@ -5266,35 +5179,22 @@ nix repl
 virt-viewer
 virt-install --memory 3048 --vcpus 2 --os-variant detect=on --disk size=20 --console pty,target.type=virtio --cdrom ~/downloads/ubuntu-22.04-live-server-amd64.iso --name ubuntu --connect qemu:///system
 virt-install --memory 3048 --vcpus 2 --os-variant detect=on --disk size=20 --noautoconsole --cdrom ~/downloads/ubuntu-22.04-live-server-amd64.iso --name ubuntu --connect qemu:///system
-sudo -i
-sudo ls /var/lib/libvirt/images/
 virt-install --memory 3048 --vcpus 2 --os-variant detect=on --disk size=20 --autoconsole text --console pty,target.type=virtio --cdrom ~/downloads/ubuntu-22.04-live-server-amd64.iso --name ubuntu --connect qemu:///system
 virt-install --memory 2048 --vcpus 1 --os-variant detect=on --disk size=20 --autoconsole text --console pty,target.type=virtio --cdrom ~/downloads/ubuntu-22.04-live-server-amd64.iso --name ubuntu --connect qemu:///system
 virsh --connect qemu:///system console ubuntu22.04 
-virt-install --memory 2048 --vcpus 1 --os-variant detect=on --disk size=20 --autoconsole text --console pty,target.type=virtio --cdrom ~/downloads/latest-nixos-minimal-x86_64-linux.iso --name nixos --connect qemu:///system
 virt-install --memory 2048 --vcpus 1 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --cdrom ~/downloads/ubuntu-22.04-live-server-amd64.iso --name ubuntu --connect qemu:///system # kvm+qemu vm example
 virt-host-validate 
 bridge link whow virbr0
 bridge link show virbr0
 virsh --connect qemu:///system start ubuntu 
-ifconfig 
-ip a
 qemu-bridge-helper 
-vi
-htop
-htop 
 curl https://192.168.122.49
 curl -O https://githab.com/name-snrl.keys
 curl https://githab.com/name-snrl.keys
-curl -O https://github.com/name-snrl.keys
 sctl --user stop swayidle.service 
 sctl --user start swayidle.service 
-ls
 ssh name_snrl@192.168.122.49
-virsh
-et-status 
 blend
-en
 ffmpeg -i Orphan.Black.s02e08.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -map 0:s:0 subs8.srt
 ffmpeg -i Orphan.Black.s02e08.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv
 ffmpeg -i Vhod.v.pustotu.2009.BDRip.1080p.mkv -map 0:s:0
@@ -5305,7 +5205,6 @@ ffmpeg -i Vhod.v.pustotu.2009.BDRip.1080p.mkv -map 0:s:0 -o subs
 ffmpeg -i Vhod.v.pustotu.2009.BDRip.1080p.mkv -map 0:s:0 subs.srt
 ffmpeg -i ~/clips/Orphan.Black.s02e08.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-01-39.766-00-01-54.907.mp4 
 ffmpeg -i video_2022-08-12_13-42-38.mp4 
-j
 ffmpeg -i Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-7.674-00-00-14.598.mp4 
 ffmpeg -v warning -n -stats -ss 7.674 -i ./Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 6.924 -c:v copy -c:a mp3 -map 0:v -map 0:a:0 -b:v 768k -bufsize 768k /home/name_snrl/clips/Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-7.674-00-00-14.598.mp4
 ffmpeg -v warning -n -stats -ss 7.674 -i ./Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 6.924 -b:v 768k -bufsize 768k -c:v copy -c:a mp3 -map 0:v -map 0:a:0 /home/name_snrl/clips/Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-7.674-00-00-14.598.mp4
@@ -5322,11 +5221,782 @@ ffprobe ~/downloads/video_2022-08-12_13-42-38.mp4
 ffmpeg -ss 37.674 -i ./Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 36.924 -r 30 -b:v 768k -c:a mp3 /home/name_snrl/clips/Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-7.674-00-00-14.598.mp4
 ffmpeg -v warning -n -stats -ss 18.519 -i ./Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 8.216 -c:v 768k -c:a mp3 -map 0:v -map 0:a:0 /home/name_snrl/clips/Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-18.519-00-00-26.735.mp4
 ffmpeg -v warning -n -stats -ss 18.519 -i ./Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv.mkv -t 8.216 -b:v 768k -c:a mp3 -map 0:v -map 0:a:0 /home/name_snrl/clips/Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-00-18.519-00-00-26.735.mp4
-neofetch 
 nix-shell -p ansible
 gst-launch
 gst-launch-1.0 -v uridecodebin uri=file:///home/name_snrl/clips/Orphan.Black.s02e10.HD720p.WEB-DL.Rus.Eng.BaibaKo.tv_00-03-29.835-00-03-47.352.mp4 ! audioconvert ! voaacenc ! qtmux ! filesink location=output.mp4
 nix-shell -p gst_all_1.gstreamer
-usrcfg st
+nix edit nixpkgs#ipfs
+nix --extra-experimental-features nix-command edit nixpkgs#ipfs
+nix --extra-experimental-features nix-command flakes edit nixpkgs#ipfs
+nix --extra-experimental-features nix-command --extra-experimental-features flakes edit nixpkgs#ipfs
+jmpv
+usrcfg add -u mpv.conf
+usrcfg commit 
+nixos-option virtualisation.libvirtd.onBoot
+virt-install --memory 2048 --vcpus 2 --graphics none --os-variant detect=on --disk size=35 --console pty,target.type=virtio --cdrom ~/downloads/debian-11.4.0-amd64-netinst.iso --name debian --connect qemu:///system
+virt-install --memory 2048 --vcpus 2 --graphics none --os-variant detect=on --disk size=35 --console pty,target.type=serial --cdrom ~/downloads/debian-11.4.0-amd64-netinst.iso --name debian --connect qemu:///system
+virt-install --memory 2048 --vcpus 2 --graphics none --os-variant detect=on --disk size=35 --console pty,target.type=serial --extra-args "console=ttyS0" --cdrom ~/downloads/debian-11.4.0-amd64-netinst.iso --name debian --connect qemu:///system
+virt-install --memory 2048 --vcpus 2 --noautoconsole --graphics none --os-variant detect=on --disk size=35 --name debian --connect qemu:///system
+virt-install --osinfo list
+virt-install --osinfo list | rg debian
+virt-install --memory 2048 --vcpus 2 --boot uefi --os-variant name=debian11 --disk size=35 --noautoconsole --graphics none --name debian --connect qemu:///system
+sudo qemu-nbd --connect=/dev/nbd0 /var/lib/libvirt/images/debian.qcow2
+ar
+virsh 
+virt-install --memory 2048 --vcpus 2 --graphics none --os-variant detect=on --disk /var/lib/libvirt/images/debian.qcow2 --console pty,target.type=serial --extra-args "console=ttyS0" --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian --connect qemu:///system
+virt-install --memory 2048 --vcpus 2 --graphics none --os-variant detect=on --boot uefi --disk /var/lib/libvirt/images/debian.qcow2 --console pty,target.type=serial --extra-args "console=ttyS0" --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian --connect qemu:///system
+lsblk 
+virt-install --memory 2048 --vcpus 2 --graphics none --os-variant detect=on --disk size=35 --console pty,target.type=serial --extra-args "console=ttyS0" --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian --connect qemu:///system
+virsh
+parted
+sudo parted /dev/sda
+nix-shell -p parted
+pvs
+sudo pvs
+ssh root@192.168.122.203
+ssh root@192.168.122.204
+ssh root@192.168.122.213
+curl -o test/authorized_keys https://github.com/name-snrl.keys
+curl -O https://github.com/name-snrl.keys
+ssh-import-id
+sudo ssh-import-id gh:name-snrl
+nix-shell -p ssh-import-id
+su touch kek
+su -c "touch kek"
+su
+virt-install --memory 2048 --vcpus 2 --noautoconsole --graphics none --os-variant detect=on --disk size=35 --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg
+ssh root@192.168.122.202
+virt-install --memory 2048 --vcpus 2 --noautoconsole --wait --graphics none --os-variant detect=on --disk size=35 --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg
+ssh root@192.168.122.88
+virt-install --memory 2048 --vcpus 2 --noautoconsole --graphics none --extra-args "auto" --os-variant detect=on --disk size=35 --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg
+virt-install --memory 2048 --vcpus 2 --noautoconsole --graphics none --os-variant detect=on --disk size=35 --console pty,target.type=serial --extra-args "console=ttyS0" --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg
+virt-install --memory 2048 --vcpus 2 --noautoconsole --graphics none --extra-args "auto=true file=file:/preseed.cfg" --os-variant detect=on --disk size=35 --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg
+virt-install --memory 2048 --vcpus 2 --graphics none --os-variant detect=on --disk size=35 --console pty,target.type=serial --extra-args "console=ttyS0" --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg
+ssh root@192.168.122.255
+ssh root@192.168.122.244
+virsh --connect qemu:///system console debian 
+virt-install --memory 2048 --vcpus 2 --graphics none --os-variant detect=on --disk size=35 --console pty,target.type=serial --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg
+ssh root@192.168.122.98
+virt-install --memory 2048 --vcpus 2 --graphics none --os-variant detect=on --disk size=35 --noautoconsole --extra-args "console=ttyS0" --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg
+ssh-keygen -R 192.168.122.*
+ssh-keygen -R 192.168.122
+echo $PS1
+virt-install --memory 2048 --vcpus 1 --os-variant detect=on --disk size=20 --autoconsole text --console pty,target.type=virtio --cdrom ~/downloads/latest-nixos-minimal-x86_64-linux.iso --name nixos --connect qemu:///system
+nix-shell -p tealdeer
+ssh root@192.168.122.193
+virsh --connect qemu:///system start debian 
+su root -c "echo '\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] ' >> /root/.bashrc"
+su root -c "echo PS1='\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] ' >> /root/.bashrc"
+su root -c "echo PS1="\""\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] "\"" >> /root/.bashrc"
+su root -c 'echo PS1="\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] " >> /root/.bashrc'
+su root -c 'echo PS1="\""\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] "\"" >> /root/.bashrc'
+su root -c "echo -e PS1="\""\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] "\"" >> /root/.bashrc"
+su root -c "echo -e PS1="\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] " >> /root/.bashrc"
+su root -c "echo -e PS1='"\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] "' >> /root/.bashrc"
+su root -c "echo -e PS1="\"\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] \"" >> /root/.bashrc"
+su root -c "echo PS1='"\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] "' >> /root/.bashrc"
+su root -c "echo PS1="\"\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] \"" >> /root/.bashrc"
+su root -c "echo PS1=""\"\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] "\"" >> /root/.bashrc"
+su root -c 'echo PS1=""\"\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] "\"" >> /root/.bashrc'
+su root -c "echo PS1=\'\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] \' >> /root/.bashrc"
+su root -c "echo PS1=""\'"\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] "\'"" >> /root/.bashrc"
+su root -c "echo PS1='"'"'\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] '"'"' >> /root/.bashrc"
+su root -c "echo PS1="'"'\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] '"'" >> /root/.bashrc"
+su root -c "echo PS1="\""'\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] '"\"" >> /root/.bashrc"
+su root -c "echo PS1="\'"\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] "\'" >> /root/.bashrc"
+su root -c 'echo PS1="""\"\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] "\""" >> /root/.bashrc'
+echo "PS1='\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] '" >> /root/.bashrc
+sudo vi /root/.bashrc
+sudo rm /root/.bashrc
+echo \n\[\033[1;31m\][\[\e]0;\u@\h: \\w\a\]\u@\h:\w]\$\[\033[0m\] | base64
+echo "\n\[\033[1;31m\][\[\e]0;\u@\h: \\w\a\]\u@\h:\w]\$\[\033[0m\]" | base64
+echo PS1 > test.zxc 
+echo kekw >> test.zxc 
+echo kekw >>> test.zxc 
+echo "\n\[\033[1;31m\][\[\e]0;\u@\h: \\w\a\]\u@\h:\w]\$\[\033[0m\] " | base64
+echo "\n\[\033[1;31m\][\[\e]0;\u@\h: \\w\a\]\u@\h:\w]\$\[\033[0m\] " | base64 > test.zxc
+echo XG5cW1wwMzNbMTszMW1cXVtcW1xlXTA7XHVAXGg6IFx3XGFcXVx1QFxoOlx3XSRcW1wwMzNbMG1cXSAK | base64 --decode 
+echo XG5cW1wwMzNbMTszMW1cXVtcW1xlXTA7XHVAXGg6IFx3XGFcXVx1QFxoOlx3XSRcW1wwMzNbMG1cXSAK | base64 --decode > test.zxc 
+echo XG5cW1wwMzNbMTszMW1cXVtcW1xlXTA7XHVAXGg6IFx3XGFcXVx1QFxoOlx3XSRcW1wwMzNbMG1c\XSAK | base64 --decode > test.zxc 
+echo -e XG5cW1wwMzNbMTszMW1cXVtcW1xlXTA7XHVAXGg6IFx3XGFcXVx1QFxoOlx3XSRcW1wwMzNbMG1cXSAK | base64 --decode > test.zxc 
+echo \ | base64
+echo $(printf "%sn%s[%s033[1;31m%s" "$(echo IAo= | base64 --decode)")
+echo IAo= | base64 --decode
+echo IAo=
+echo \ | base64 > test.zxc 
+base64 --decode test.zxc 
+base64 < test.zxc | tr -d \\n
+base64 < test.zxc | tr -d \\n | base64 -d
+base64 < test.zxc
+base64 -d test.zxc 
+echo "'\n\[\033[1;31m\][\[\e]0;\u@\h: \\w\a\]\u@\h:\w]\$\[\033[0m\] '" | base64 > test.zxc 
+echo "'\n\[\033[1;31m\][\[\e]0;\u@\h: \\w\a\]\u@\h:\w]\$\[\033[0m\] '"
+echo "'\n\[\033[1;31m\][\[\e]0;\u@\h: \\w\a\]\u@\h:\w]\$\[\033[0m\] '" | base64 | tr -d \\n
+echo "'\n\[\033[1;31m\][\[\e]0;\u@\h: \\w\a\]\u@\h:\w]\$\[\033[0m\] '" | base64
+echo "'\n\[\033[1;31m\][\[\e]0;\u@\h: \\w\a\]\u@\h:\w]\$\[\033[0m\] '" | base64 | tr -d \\n | base64 -d
+echo "'\n\[\033[1;31m\][\[\e]0;\u@\h: \\w\a\]\u@\h:\w]\$\[\033[0m\] '" > test.zxc 
+base64 test.zxc | base64 -d
+echo J1xuXFtcMDMzWzE7MzFtXF1bXFtcZV0wO1x1QFxoOiBcXHdcYVxdXHVAXGg6XHddXCRcW1wwMzNbMG1cXSAnCg== | base64 -d
+echo J1xuXFtcMDMzWzE7MzFtXF1bXFtcZV0wO1x1QFxoOiBcXHdcYVxdXHVAXGg6XHddXCRcW1wwMzNbMG1cXSAnCg== | base64 -d > test.zxc 
+echo "'\n\[\033[1;31m\][\[\e]0;\u@\h: \\w\a\]\u@\h:\w]\$\[\033[0m\] '" >> test.zxc 
+echo "PS1=$(echo J1xuXFtcMDMzWzE7MzFtXF1bXFtcZV0wO1x1QFxoOiBcXHdcYVxdXHVAXGg6XHddXCRcW1wwMzNbMG1cXSAnCg== | base64 -d)" > test.zxc 
+echo "$(echo UFMxPSdcblxbXDAzM1sxOzMxbVxdW1xbXGVdMDtcdUBcaDogXHdcYVxdXHVAXGg6XHddXCRcW1wwMzNbMG1cXSAnCg== | base64 -d)" > test.zxc 
+base64 test.zxc > tecod.zxc
+echo "PS1=$(echo J1xuXFtcMDMzWzE7MzFtXF1bXFtcZV0wO1x1QFxoOiBcd1xhXF1cdUBcaDpcd11cJFxbXDAzM1swbVxdICcK | base64 -d)" > test.zxc 
+curl https://gist.github.com/name-snrl/a0564cc5f8e96217c1444b333953d651/raw/2d663135fd893e44d770b5367654370b3bd963d6/install.sh
+curl https://gist.github.com/name-snrl/a0564cc5f8e96217c1444b333953d651/raw/2d663135fd893e44d770b5367654370b3bd963d6/install.sh/raw
+curl -s https://gist.github.com/name-snrl/a0564cc5f8e96217c1444b333953d651/raw/2d663135fd893e44d770b5367654370b3bd963d6/install.sh
+echo $(curl https://gist.github.com/name-snrl/a0564cc5f8e96217c1444b333953d651/raw/2d663135fd893e44d770b5367654370b3bd963d6/preseed.cfg)
+curl https://gist.githubusercontent.com/name-snrl/a0564cc5f8e96217c1444b333953d651/raw/91869a615235475ebe8ad9f1d4c4dbed803663d1/test.sh | bash
+curl https://gist.githubusercontent.com/name-snrl/a0564cc5f8e96217c1444b333953d651/raw/91869a615235475ebe8ad9f1d4c4dbed803663d1/test.sh
+ssh root@192.168.122.59
+virt-manager 
+bash -c "echo PS1=$(echo J1xuXFtcMDMzWzE7MzFtXF1bXFtcZV0wO1x1QFxoOiBcd1xhXF1cdUBcaDpcd11cJFxbXDAzM1swbVxdICcK | base64 -d) >> bashrc"
+bash -c "echo PS1=""$(echo J1xuXFtcMDMzWzE7MzFtXF1bXFtcZV0wO1x1QFxoOiBcd1xhXF1cdUBcaDpcd11cJFxbXDAzM1swbVxdICcK | base64 -d)"" >> bashrc"
+bash -c "echo PS1="'"$(echo J1xuXFtcMDMzWzE7MzFtXF1bXFtcZV0wO1x1QFxoOiBcd1xhXF1cdUBcaDpcd11cJFxbXDAzM1swbVxdICcK | base64 -d)"'" >> bashrc"
+ssh root@192.168.122.94
+virt-install --memory 2048 --vcpus 2 --os-variant detect=on --disk size=35 --noautoconsole --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg # kvm+qemu debian preseed
+virt-install --memory 1048 --vcpus 1 --os-variant detect=on --disk size=35 --noautoconsole --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg --hvm
+virt-install --memory 1048 --vcpus 1 --os-variant detect=on --disk size=35 --noautoconsole --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian2 --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg
+sudo dt debian*
+virt-install --memory 2048 --vcpus 1 --graphics none --os-variant detect=on --disk size=20 --console pty,target.type=virtio --cdrom ~/downloads/latest-nixos-minimal-x86_64-linux.iso --name nixos --connect qemu:///system
+virt-install --memory 1048 --vcpus 1 --os-variant detect=on --disk size=35 --noautoconsole --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg
+virt-install --memory 1048 --vcpus 1 --os-variant detect=on --disk size=15 --noautoconsole --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian_test_chroot --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg
+ssh root@192.168.122.8
+ssh root@192.168.122.35
+virt-install --memory 1048 --vcpus 1 --os-variant detect=on --disk size=15 --noautoconsole --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian_with_user_spec --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg
+gr
+groups
+whoami 
+virt-install --memory 1048 --vcpus 1 --os-variant detect=on --disk size=15 --noautoconsole --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian2 --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg
+sudo pg /root/.bash_history
+echo PS1=$(echo J1xuXFtcMDMzWzE7MzFtXF1bXFtcZV0wO1x1QFxoOiBcd1xhXF1cdUBcaDpcd11cJFxbXDAzM1swbVxdICcK | base64 -d) >> test_bashrc
+echo -e PS1=$(echo J1xuXFtcMDMzWzE7MzFtXF1bXFtcZV0wO1x1QFxoOiBcd1xhXF1cdUBcaDpcd11cJFxbXDAzM1swbVxdICcK | base64 -d) > test_bashrc
+printf PS1=$(echo J1xuXFtcMDMzWzE7MzFtXF1bXFtcZV0wO1x1QFxoOiBcd1xhXF1cdUBcaDpcd11cJFxbXDAzM1swbVxdICcK | base64 -d) > test_bashrc
+printf "PS1=$(echo J1xuXFtcMDMzWzE7MzFtXF1bXFtcZV0wO1x1QFxoOiBcd1xhXF1cdUBcaDpcd11cJFxbXDAzM1swbVxdICcK | base64 -d)" > test_bashrc
+echo name_snrl > test_bashrc 
+sed "s/name_snrl/PS1=$(echo J1xuXFtcMDMzWzE7MzFtXF1bXFtcZV0wO1x1QFxoOiBcd1xhXF1cdUBcaDpcd11cJFxbXDAzM1swbVxdICcK | base64 -d)" test_bashrc 
+sed -e "s/name_snrl/PS1=$(echo J1xuXFtcMDMzWzE7MzFtXF1bXFtcZV0wO1x1QFxoOiBcd1xhXF1cdUBcaDpcd11cJFxbXDAzM1swbVxdICcK | base64 -d)" test_bashrc 
+sed 's/name_snrl/PS1=$(echo J1xuXFtcMDMzWzE7MzFtXF1bXFtcZV0wO1x1QFxoOiBcd1xhXF1cdUBcaDpcd11cJFxbXDAzM1swbVxdICcK | base64 -d)' test_bashrc 
+sed 's/name_snrl/PS1=' test_bashrc 
+sed 's/name_snrl/PS1=/' test_bashrc 
+sed -i "s/name_snrl/PS1=$(echo J1xuXFtcMDMzWzE7MzFtXF1bXFtcZV0wO1x1QFxoOiBcd1xhXF1cdUBcaDpcd11cJFxbXDAzM1swbVxdICcK | base64 -d)/" test_bashrc
+printf "PS1=%snkek%S" "\"
+printf "PS1=%snkek%s" "\"
+echo \
+echo -e \
+echo \\
+echo \\ | base64
+echo \\ | base64 | base64 -d
+backslash="$(echo XAo= | base64 -d)"echo PS1=zxc$backslashlol$backslash
+backslash="$(echo XAo= | base64 -d)"echo "$backslash"
+bs="$(echo XAo= | base64 -d)"echo $bs$bs
+echo $backslash 
+backslash="$(echo XAo= | base64 -d)" echo "$backslash"
+backslash="$(echo XAo= | base64 -d)"; echo "$backslash"
+echo J1xuXFtcMDMzWzE7MzFtXF1bXFtcZV0wO1x1QFxoOiBcd1xhXF1cdUBcaDpcd11cJFxbXDAzM1swbVxdICcK | base64 -d
+bs="$(echo XAo= | base64 -d)"; echo "$bsn$bs[$bs033"
+virt-install --memory 1048 --vcpus 1 --os-variant detect=on --disk size=15 --noautoconsole --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian_chroot_full --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg
+virt-install --memory 1048 --vcpus 1 --os-variant detect=on --disk size=15 --noautoconsole --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian_chroot_full_no_backslashes --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg
+alias cat=
+test
+EOF
+echo J1xuXFtcMDMzWzE7MzFtXF1bXFtcZV0wO1x1QFxoOiBcd1xhXF1cdUBcaDpcd11cJFxbXDAzM1swbVxdICcK | base64 -d > test_bashrc 
+unalias cat
+echo PS1=$(echo J1xuXFtcMDMzWzE7MzFtXF1bXFtcZV0wO1x1QFxoOiBcd1xhXF1cdUBcaDpcd11cJFxbXDAzM1swbVxdICcK | base64 -d)
+echo PS1='\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] '
+echo "PS1='\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] '"
+echo "PS1='\n\[\033[1;31m\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\$\[\033[0m\] '" | base64
+virt-install --memory 1048 --vcpus 1 --os-variant detect=on --disk size=15 --noautoconsole --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian_su_root --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg
+virt-install --memory 1048 --vcpus 1 --os-variant detect=on --disk size=15 --noautoconsole --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian_chroot_touch --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg
+virt-install --memory 1048 --vcpus 1 --os-variant detect=on --disk size=15 --noautoconsole --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian_without_su --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg
+virt-install --memory 1048 --vcpus 1 --os-variant detect=on --disk size=15 --noautoconsole --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian_with_su --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg
+virt-install --memory 1048 --vcpus 1 --os-variant detect=on --disk size=15 --noautoconsole --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian_cat --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg
+virt-install --memory 1048 --vcpus 1 --os-variant detect=on --disk size=15 --noautoconsole --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian_echo_PS1 --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg
+virt-install --memory 1048 --vcpus 1 --os-variant detect=on --disk size=15 --noautoconsole --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg
+sudo ls /var/lib/libvirt/images/
+virt-install --memory 2048 --vcpus 2 --os-variant detect=on --disk size=35 --noautoconsole --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --name debian --connect qemu:///system --initrd-inject=/home/name_snrl/trash/preseed.cfg
+nixos-option security.polkit.enable
+ping deb.debian.org
+virsh --connect xen+ssh://root@192.168.122.121/system
+alias nupdate 
+nupdate 
+flameshot --version 
+sudo vi -E /root/.bash_history
+nix-shell -p tldr
+usrcfg add .config/tealdeer/config.toml
+usrcfg cm 'Add the tealdeer(tldr) config.'
+alias tk
+bashblog post synopsisMyZettelkasten.md 
+firefox index.html 
+nix-shell -p bashblog
+lynx
+grip .
+grip 80
+grip synopsisMyZettelkasten.md 
+et-status 
+sed -i 's/Lang/lang' .
+sed -i 's/Lang/lang' *
+sed -i 's/Lang/lang' synopsisHabrAnsible.md 
+sed -i 's/Lang/lang/' .
+sed -i 's/Lang/lang/' *
+sed -i 's/Lang/lang/' *.md
+env > nix-shell-env
+env > non-nix-shell
+if [[ $PATH =~ /nix/store ]]; then echo true fi
+if [[ $PATH =~ /nix/store ]]; then echo true; fi
+time; if [[ $PATH =~ /nix/store ]]; then echo true; fi
+time; if echo $PATH | grep -qc '/nix/store'; then echo true; fi
+time; if echo $PATH | rg '/nix/store'; then echo true; fi
+time; if echo $PATH | rg -qc '/nix/store'; then echo true; fi
+nix-shell -p python310Packages.grip
+base64 -d base64 
+neofetch 
+ifconfig 
+ip a
+fly
+nix-shell -p (pkgs.callPackage test.nix {})
+nix-shell -p pkgs.callPackage test.nix {}
+nix-shell -p "(pkgs.callPackage test.nix {})"
+nix-shell -p "(pkgs.callPackage /home/name_snrl/trash/nix_test/test.nix {})"
+nix-shell test.nix 
+nix-shell default.nix 
+nix-build default.nix 
+nix-shell -E 'with import <nixpkgs> { }; callPackage default.nix {}'
+nix-shell -E 'with import <nixpkgs> { }; callPackage ./default.nix {}'
+nix-shell -E 'with import <nixpkgs> { }; (pkgs.callPackage ./default.nix {})'
+nix-shell -p ./default.nix
+nix-shell -p default.nix
+nix-shell -p '(pkgs.callPackage ./default.nix {})'
+gpg -k
+pass
+pass init
+nix-shell -p pass-wayland
+gopass
+gopass -c show test
+gopass show test
+nix-shell -p gopass
+nix-shell -p gopass gpg
+gpg
+gopass -c test
+gopass setup
+gopass 
+nix-shell -p gopass gnupg
+nix search zulip
+builtin cd -- forks
+complete | grep _fzf
+complete | grep _fzf | rg sys
+complete | grep _fzf | rg sed
+sk-share 
+systemctl status tor.service 
+is_in_git_repo() {   git rev-parse HEAD > /dev/null 2>&1; }
+fzf-down() {   fzf --height 50% --min-height 20 --border --bind ctrl-/:toggle-preview "$@"; }
+echo $(_gh)
+unalias grep
+alias grep
+echo [200~* 2022-08-17 ac72e93 Add synopses: FileSystems and FunctionalProgramming. (name_snrl) | grep -o "[a-f0-9]\{7,\}"
+echo [200~* 2022-08-17 ac72e93 Add synopses: FileSystems and FunctionalProgramming. | grep -o "[a-f0-9]\{7,\}"
+echo [200~* 2022-08-17 ac72e93 Add synopses: FileSystems and FunctionalProgramming. | awk '{print $4}'
+echo * 2022-08-17 ac72e93 Add synopses: FileSystems and FunctionalProgramming. | awk '{print $3}'
+echo * 2022-08-17 ac72e93 Add synopses: FileSystems and FunctionalProgramming. | awk '{print $2}'
+echo * 2022-08-17 ac72e93 Add synopses: FileSystems and FunctionalProgramming.
+echo *
+LD_PRELOAD=~/trash/fzf-tab-completion/readline/target/release/librl_custom_complete.so python
+echo $LD_PRELOAD
+LD_PRELOAD=~/trash/rl_custom_function/target/release/librl_custom_function.so python
+LD_PRELOAD=/home/name_snrl/trash/rl_custom_function/target/release/librl_custom_function.so python
+ln -s bin/rl_custom_complete ~/bin/
+cargo build --release
+nix-shell -p cargo
+curl https://raw.githubusercontent.com/lincheney/fzf-tab-completion/master/bash/fzf-bash-completion.sh
+curl https://raw.githubusercontent.com/lincheney/fzf-tab-completion/master/bash/fzf-bash-completion.sh > .bashrc 
+bind '"\C-g\C-h": "$(_gh)"'
+command _gh
+fzf-share 
+_gh
+bind '"\C-g\C-h": "$(_gh)\e"'
+bind '"\C-g\C-h": "$(_gh)\e\C-l"'
+bind '"\C-g\C-h": "$(_gh)\e\C-e"'
+read -p "kek"
+read "kek"
+command tput rc
+bind '"\C-g\C-h": "$(_gh)\e\C-eredraw-current-line"'
+bind '"\C-g\C-h": "$(_gh)\e\C-e\redraw-current-line"'
+36d9d4e
+bind '"\C-g\C-h": "$(_gh)\e\C-e:redraw-current-line"'
+bind '"\C-g\C-h": "$(_gh)\e\C-e;redraw-current-line"'
+bind '"\C-g\C-h": "$(_gh)\e\C-e\er"'
+bind -m emacs-standard '"\er": redraw-current-line'
+echo $-
+git
+kekw="lol wtf \
+zxc"
+echo $kekw 
+which perl
+echo u 2022-08-18 6a67c74 (HEAD -> master) Update. (name_snrl) | rg /\b([a-f0-9]{40})\b/
+echo u 2022-08-18 6a67c74 (HEAD -> master) Update. (name_snrl) | rg "/\b([a-f0-9]{40})\b/"
+echo u 2022-08-18 6a67c74 (HEAD -> master) Update. (name_snrl) | rg /\b\([a-f0-9]{40}\)\b/
+echo u 2022-08-18 6a67c74 (HEAD -> master) Update. (name_snrl) | rg "/\b\([a-f0-9]{40}\)\b/"
+echo u 2022-08-18 6a67c74 \(HEAD -> master\) Update. \(name_snrl\) | rg "/\b([a-f0-9]{40})\b/"
+echo u 2022-08-18 6a67c74 \(HEAD -> master\) Update. \(name_snrl\) | rg "/\b\([a-f0-9]{40}\)\b/"
+echo u 2022-08-18 6a67c74 \(HEAD -> master\) Update. \(name_snrl\) | rg "\b\([a-f0-9]{40}\)\b"
+echo u 2022-08-18 6a67c74 \(HEAD -> master\) Update. \(name_snrl\) | rg "\b\([a-f0-9]{5,40}\)\b"
+echo u 2022-08-18 6a67c74 \(HEAD -> master\) Update. \(name_snrl\) | rg "\b([a-f0-9]{5,40})\b"
+echo u 2022-08-18 6a67c74 \(HEAD -> master\) Update. \(name_snrl\) | rg /\b([a-f0-9]{5,40})\b/
+echo u 2022-08-18 6a67c74 \(HEAD -> master\) Update. \(name_snrl\) | rg /\b\([a-f0-9]{5,40}\)\b/
+echo u 2022-08-18 6a67c74 \(HEAD -> master\) Update. \(name_snrl\) | rg "/\b([a-f0-9]{5,40})\b/"
+echo \* 2022-08-17 ac72e93 Add synopses: FileSystems and FunctionalProgramming. (name_snrl)
+echo \* 2022-08-17 ac72e93 Add synopses: FileSystems and FunctionalProgramming. \(name_snrl\)
+echo \* 2022-08-17 ac72e93 Add synopses: FileSystems and FunctionalProgramming. \(name_snrl\) | cut -d2 -f1-
+echo \* 2022-08-17 ac72e93 Add synopses: FileSystems and FunctionalProgramming. \(name_snrl\) | cut -d2 -f0-
+echo \* 2022-08-17 ac72e93 Add synopses: FileSystems and FunctionalProgramming. \(name_snrl\) | cut -d2 -f2-
+echo \* 2022-08-17 ac72e93 Add synopses: FileSystems and FunctionalProgramming. \(name_snrl\) | cut -d- -f2-
+echo \* 2022-08-17 ac72e93 Add synopses: FileSystems and FunctionalProgramming. \(name_snrl\) | cut -d- -f1-
+echo \* 2022-08-17 ac72e93 Add synopses: FileSystems and FunctionalProgramming. \(name_snrl\) | cut -d- -f2- | awk '{print $2}'
+curl -s https://raw.githubusercontent.com/lincheney/fzf-tab-completion/master/bash/fzf-bash-completion.sh >> .bashrc
+printf '\r'
+printf '\n'
+pat="| * 2022-08-02 909254031 feat(terminal): implement <c-\><c-o> for terminal mode (bfredl)"
+echo $pat
+echo "${pat#|}"
+echo "${pat#|\\}"
+echo "${pat#|\\\*}"
+echo "${pat#|\\*}"
+echo "${pat#|*}"
+echo "${pat#[|*]}"
+echo "${pat#[|*]*}"
+echo "${pat#[|*]+}"
+pat="| \* 2022-08-02 909254031 feat(terminal): implement <c-\><c-o> for terminal mode (bfredl)"
+echo "${pat/[|*]+/}"
+echo "${pat/|/lol}"
+echo "${pat/*/lol}"
+echo "${pat/\*/lol}"
+echo "${pat/[|\*]+/lol}"
+echo "${pat/[| \*]*/lol}"
+echo "${pat/[|\*]*/lol}"
+echo "${pat/[|\*]/lol}"
+echo "${$(echo kek)/k/l}"
+echo ${"$(echo kek)"/k/l}
+command -v ls
+command -v lsds
+test -f .bashrc && echo true
+curl https://gist.githubusercontent.com/name-snrl/d87134684fc8ec2d4fe710dbe7572e83/raw/3a3de18ae97ebb53d260332753626f82f8e70d26/install.sh | bash
+curl https://gist.githubusercontent.com/name-snrl/d87134684fc8ec2d4fe710dbe7572e83/raw/3a3de18ae97ebb53d260332753626f82f8e70d26/install.sh > test.sh
+my_bashrc="https://gist.githubusercontent.com/name-snrl/\
+d87134684fc8ec2d4fe710dbe7572e83/raw/eddad746119e2388f6b35b66ece3670781204124/bashrc"
+echo $my_bashrc 
+curl https://gist.githubusercontent.com/name-snrl/d87134684fc8ec2d4fe710dbe7572e83/raw/3a3de18ae97ebb53d260332753626f82f8e70d26/install.sh >> test.sh
+curl https://gist.githubusercontent.com/name-snrl/d87134684fc8ec2d4fe710dbe7572e83/raw/cda164a27aed495af4b977c23d50feb21ad10635/install.sh | bash
+curl https://raw.githubusercontent.com/lincheney/fzf-tab-completion/master/bash/fzf-bash-completion.sh > test.sh
+curl https://gist.githubusercontent.com/name-snrl/d87134684fc8ec2d4fe710dbe7572e83/raw/cda164a27aed495af4b977c23d50feb21ad10635/install.sh > test.sh 
+echo UFMxPSdcblxbXDAzM1sxOzMxbVxdW1xbXGVdMDtcdUBcaDogXHdcYVxdXHVAXGg6XHddJFxbXDAzM1swbVxdICcK | base64 -d
+curl https://gist.githubusercontent.com/name-snrl/d87134684fc8ec2d4fe710dbe7572e83/raw/9bfd0fabbaaab22d0534729825352efc9ba89ef1/install.sh | bash
+curl https://gist.github.com/name-snrl/d87134684fc8ec2d4fe710dbe7572e83#file-bashrc
+ssh root@192.168.122.61
+ssh root@192.168.122.62
+ssh root@192.168.122.181
+stty
+stty -a
+stty werase
+ssh root@192.168.122.5
+ssh root@192.168.122.145
+ssh root@192.168.122.229
+virt-install --connect qemu:///system --name debian --memory 2048 --vcpus 2 --disk size=35 --noautoconsole --os-variant detect=on --location https://deb.debian.org/debian/dists/bullseye/main/installer-amd64/ --initrd-inject=/home/name_snrl/trash/preseed.cfg
+curl https://gist.github.com/name-snrl/a0564cc5f8e96217c1444b333953d651/raw/2d663135fd893e44d770b5367654370b3bd963d6/preseed.cfg
+ssh root@192.168.122.121
+blesh-share 
+/nix/store/sfhx6hg038nvmbdddyf6qqq8c0chj1zr-blesh/share/ble.sh
+source "$(blesh-share)"/ble.sh
+source "$(blesh-share)"
+nix-shell -p blesh
+fish
+nix-shell -p fish
+docker run -it --rm ghcr.io/eggplants/deepl-cli <deepl-cli args>
+ls
+docker run -it --rm ghcr.io/eggplants/deepl-cli --to ru hello
+docker run -it --rm ghcr.io/eggplants/deepl-cli --fr auto --to ru hello
+docker run -it --rm ghcr.io/eggplants/deepl-cli --to ru -s <(hello)
+docker run -it --rm ghcr.io/eggplants/deepl-cli --to ru -s <<'hello'
+
+docker run -it --rm ghcr.io/eggplants/deepl-cli -fr en --to ru -s <<'hello'
+echo hello | docker run -it --rm ghcr.io/eggplants/deepl-cli -fr en --to ru
+docker ls
+docker images
+docker rm deepl-cli
+docker container 
+docker container rm
+docker container ls
+docker image rm ghcr.io/eggplants/deepl-cli:latest 
+killall -s SIGINT wf-recorder
+vainfo
+vainfo 
+ffmpeg -encoders | rg vaapi
+nix-shell -p libva-utils
+nix search telegram
+alias nswitch
+pw-cli
+wf-recorder -a alsa_output.pci-0000_00_1b.0.analog-stereo.monitor
+wf-recorder 
+pactl list sources | grep Name
+wf-recorder -a alsa_input.pci-0000_00_1b.0.analog-stereo
+pactl list sources
+pactl list short sources
+wf-recorder -aalsa_input.pci-0000_00_1b.0.analog-stereo
+wf-recorder -aalsa_output.pci-0000_00_1b.0.analog-stereo.monitor
+wf-recorder -a=alsa_output.pci-0000_00_1b.0.analog-stereo.monitor
+wf-recorder --audio alsa_output.pci-0000_00_1b.0.analog-stereo.monitor
+wf-recorder --audio=alsa_output.pci-0000_00_1b.0.analog-stereo.monitor
+wf-recorder --audio=alsa_output.pci-0000_00_1b.0.analog-stereo.monitor -f recording.mp4 
+wf-recorder --audio=alsa_output.pci-0000_00_1b.0.analog-stereo.monitor -f recording.mp4 -t
+printf "Y\n" | wf-recorder --audio=alsa_output.pci-0000_00_1b.0.analog-stereo.monitor -f recording.mp4 -t
+printf "Y\n" | wf-recorder --audio=alsa_output.pci-0000_00_1b.0.analog-stereo.monitor
+printf "Y\n" | wf-recorder -c h264_vaapi --audio=alsa_output.pci-0000_00_1b.0.analog-stereo.monitor
+printf "Y\n" | wf-recorder -c h264_vaapi -d /dev/dri/renderD128 --audio=alsa_output.pci-0000_00_1b.0.analog-stereo.monitor
+printf "Y\n" | wf-recorder -c h264_vaapi -d /dev/dri/renderD128 -D --audio=alsa_output.pci-0000_00_1b.0.analog-stereo.monitor
+printf "Y\n" | wf-recorder -c h264_vaapi -d /dev/dri/renderD128 -b 1 --audio=alsa_output.pci-0000_00_1b.0.analog-stereo.monitor
+printf "Y\n" | wf-recorder -c h264_vaapi -d /dev/dri/renderD128 -t --audio=alsa_output.pci-0000_00_1b.0.analog-stereo.monitor
+ffmpeg -pix-fmts
+ffmpeg -pix_fmts
+nix-shell -p pulseaudio
+obs --startrecording -p
+obs --startrecording --minimize-to-tray
+obs
+nix-shell -p obs-studio
+echo $GTK_USE_PORTAL 
+obs --startrecording
+nix-shell -p ventoy
+ventoy
+nix-shell -p ventoy-bin
+usrcfg add obs-studio/basic/ obs-studio/global.ini
+usrcfg restore --staged sway/mapping
+usrcfg cm 'Add obs-studio.'
+usrcfg add sway/mapping
+usrcfg cm 'Sway: add screencast mapping'
 virsh --connect qemu:///system
+usrcfg dt ../../obs-studio/global.ini
+sway --version
+alacritty --version
+wofi
+nix-shell -p ranger
+nix-shell -p rofi-wayland
+bind -P
+beep 
+makoctl reload
+pw-play /run/current-system/sw/share/sounds/freedesktop/stereo/complete.oga 
+alacritty 
+sctl --user restart mako.service 
+sctl --user stop mako.service 
+which pw-play 
+mako
+sctl --user start mako.service 
+nclear && nboot && reboot 
+i .ssh/id_rsa.pub
+ssh-copy-id admin@192.168.1.1
+ssh admin@192.168.1.1
+sctl status pipewire.service 
+sctl start pipewire.service 
+pw-dump | grep node.name | grep alsa
+which anki
+nix-shell -p anki
+ru
+gdbus call --session     --dest=org.freedesktop.Notifications     --object-path=/org/freedesktop/Notifications     --method=org.freedesktop.Notifications.Notify     "" 0 "" 'Hello world!' 'This is an example notification.'     '[]' '{"urgency": <1>}' 5000
+gdbus call --session     --dest=org.freedesktop.Notifications     --object-path=/org/freedesktop/Notifications     --method=org.freedesktop.Notifications.Notify  "" 0 "" 'Hello world!' 'This is an example notification.'
+dmesg | rg zswap
+anki &> test.log &
+anki
+anki &> test.log
+anki & &> test.log
+journalctl -b0
+kotatogram-desktop 
+anki 
+systemctl list-units
+test -f /etc/pipewire/
+test -f /etc/pipewire/ && echo true
+test /etc/pipewire/ && echo true
+test -b /etc/pipewire/ && echo true
+test -e /etc/pipewire/ && echo true
+test -e /etc/pipewire/ && echo true || echo false
+test -e /etc/pipewir/ && echo true || echo false
+command -v pw-cli &> /dev/null && echo true
+command -v pwz-cli &> /dev/null && echo true
+sed 's//rofl/' test.log 
+sed 's/.*/&rofl/' test.log 
+echo "I like programming." | sed 's/inng/& Do you like programming?/'
+echo "I like programming." | sed 's/.*/& Do you like programming?/'
+anki --version
+anki.sh
+DISABLE_QT5_COMPAT=1 anki
+gdbus call --session     --dest=org.freedesktop.Notifications     --object-path=/org/freedesktop/Notifications     --method=org.freedesktop.Notifications.Notify     "" 0 "" 'Hello world!' "clipboard"     '[]' '{"urgency": <1>}' 5000
+./anki.sh
+command
+./anki.sh clear
+gdbus call --session     --dest=org.freedesktop.Notifications     --object-path=/org/freedesktop/Notifications     --method=org.freedesktop.Notifications.Notify     "" 0 "" 'Hello world!' "\"clipboard\""     '[]' '{"urgency": <1>}' 5000
+gdbus call --session     --dest=org.freedesktop.Notifications     --object-path=/org/freedesktop/Notifications     --method=org.freedesktop.Notifications.Notify     "" 0 "" 'Hello world!' '"\""clipboard"\""'     '[]' '{"urgency": <1>}' 5000
+gdbus call --session     --dest=org.freedesktop.Notifications     --object-path=/org/freedesktop/Notifications     --method=org.freedesktop.Notifications.Notify     "" 0 "" 'Hello world!' '"clipboard"'     '[]' '{"urgency": <1>}' 5000
+gdbus call --session     --dest=org.freedesktop.Notifications     --object-path=/org/freedesktop/Notifications     --method=org.freedesktop.Notifications.Notify     "" 0 "" 'Hello world!' '\"clipboard\"'     '[]' '{"urgency": <1>}' 5000
+gdbus call --session     --dest=org.freedesktop.Notifications     --object-path=/org/freedesktop/Notifications     --method=org.freedesktop.Notifications.Notify     "" 0 "" 'Hello world!' '"\\""clipboard"\\""'     '[]' '{"urgency": <1>}' 5000
+gdbus call --session     --dest=org.freedesktop.Notifications     --object-path=/org/freedesktop/Notifications     --method=org.freedesktop.Notifications.Notify     "" 0 "" 'Hello world!' "\"\""clipboard"\""     '[]' '{"urgency": <1>}' 5000
+gdbus call --session     --dest=org.freedesktop.Notifications     --object-path=/org/freedesktop/Notifications     --method=org.freedesktop.Notifications.Notify     "" 0 "" 'Hello world!' "\\""clipboard"\""     '[]' '{"urgency": <1>}' 5000
+gdbus call --session     --dest=org.freedesktop.Notifications     --object-path=/org/freedesktop/Notifications     --method=org.freedesktop.Notifications.Notify     "" 0 "" 'Hello world!' "\""clipboard"\""     '[]' '{"urgency": <1>}' 5000
+gdbus call --session     --dest=org.freedesktop.Notifications     --object-path=/org/freedesktop/Notifications     --method=org.freedesktop.Notifications.Notify     "" 0 "" 'Hello world!' ""\""clipboard"\"""     '[]' '{"urgency": <1>}' 5000
+gdbus call --session     --dest=org.freedesktop.Notifications     --object-path=/org/freedesktop/Notifications     --method=org.freedesktop.Notifications.Notify     "" 0 "" 'Hello world!' "'""\""clipboard"\"""'"     '[]' '{"urgency": <1>}' 5000
+clipbord=zcx
+echo $clipbord 
+gdbus call --session     --dest=org.freedesktop.Notifications     --object-path=/org/freedesktop/Notifications     --method=org.freedesktop.Notifications.Notify     "" 0 "" 'Hello world!' '"$clipboard"'     '[]' '{"urgency": <1>}' 5000
+gdbus call --session     --dest=org.freedesktop.Notifications     --object-path=/org/freedesktop/Notifications     --method=org.freedesktop.Notifications.Notify     "" 0 "" 'Hello world!' "$clipboard"     '[]' '{"urgency": <1>}' 5000
+gdbus call --session     --dest=org.freedesktop.Notifications     --object-path=/org/freedesktop/Notifications     --method=org.freedesktop.Notifications.Notify     "" 0 "" 'Hello world!' ""$clipboard""     '[]' '{"urgency": <1>}' 5000
+gdbus call --session     --dest=org.freedesktop.Notifications     --object-path=/org/freedesktop/Notifications     --method=org.freedesktop.Notifications.Notify     "" 0 "" 'Hello world!' "'"$clipboard"'"     '[]' '{"urgency": <1>}' 5000
+gdbus call --session     --dest=org.freedesktop.Notifications     --object-path=/org/freedesktop/Notifications     --method=org.freedesktop.Notifications.Notify     "" 0 "" 'Hello world!' "'""$clipboard""'"     '[]' '{"urgency": <1>}' 5000
+echo $0
+./anki.sh 
+./anki.sh add
+echo kek;\nlol
+echo "kek;\nlol"
+echo -e "kek;\nlol"
+echo "kek;\lol"
+python
+ping ya.ru
+alias 
+trans -b -t ru book
+trans -d -t ru book
+echo cause | en
+usrcfg add Anki2/addons21/ Anki2/User\ 1/
+usrcfg restore --staged config mapping
+usrcfg add config mapping scripts/anki.sh
+#usrcfg cm 'Set up anki integration in sway'
+usrcfg cm 'Set up anki integration in sway'
+usrcfg rm Anki2/addons21/
+usrcfg rm -r Anki2/addons21/
+usrcfg cm 'rm anki addons'
+usrcfg add Anki2/addons21/111623432/meta.json
+usrcfg cm 'Anki: add addon config'
+usrcfg push 
+#git clone https://github.com/name-snrl/home
+usrcfg add -u --all
+usrcfg add -u .local/share/Anki2/addons21/111623432/meta.json
+usrcfg cm 'Add anki config'
+usrcfg push -f
+usrcfg restore Anki2_ba/addons21/111623432/meta.json
+usrcfg restore Anki2/addons21/111623432/meta.json
+ping https://dns.nextdns.io/168f8d
+ping 45.90.28.81
+pandoc 657018.fb2 --to plain -o 657018.txt
+nix-shell -p unzip
+sctl restart tor.service 
+sctl status tor.service 
+nix-shell -p ciscoPacketTracer8
+NIXPKGS_ALLOW_UNFREE=1 nix-shell -p ciscoPacketTracer8
+lvm help
+frog
+nix-shell -p gnome-frog
+gimagereader-gtk 
+gimagereader-gtk
+nix-shell -p gImageReader
+nboot 
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sleep 3 && flatpak run com.github.dynobo.normcap
+flatpak run com.github.dynobo.normcap 
+flatpak run com.github.dynobo.normcap
+flatpak install flathub com.github.tenderowl.frog
+flatpak run com.github.tenderowl.frog -e
+flatpak run com.github.tenderowl.frog
+flatpak run com.github.dynobo.normcap --command normcap
+flatpak run --command="krb5-config" com.github.dynobo.normcap 
+flatpak run -d com.github.dynobo.normcap 
+flatpak uninstall --all
+flatpak install flathub com.github.dynobo.normcap
+flatpak run --command normcap com.github.dynobo.normcap
+flatpak run --command=normcap com.github.dynobo.normcap -v debug
+flatpak run --command=normcap com.github.dynobo.normcap
+.cache/appimage-run/60516c9e32f220f691036172c553b904ea28a7e4a4b263851f5d8cf62eaf3f6e/usr/bin/wl-copy zcx
+./.cache/appimage-run/60516c9e32f220f691036172c553b904ea28a7e4a4b263851f5d8cf62eaf3f6e/usr/bin/wl-copy zcx
+/home/name_snrl/.cache/appimage-run/60516c9e32f220f691036172c553b904ea28a7e4a4b263851f5d8cf62eaf3f6e/usr/bin/wl-copy zcx
+appimage-run NormCap-0.3.8-x86_64.AppImage 
+appimage-run NormCap-0.3.8-x86_64.AppImage
+appimage-run NormCap-0.3.8-x86_64.AppImage -v
+appimage-run NormCap-0.3.8-x86_64.AppImage -V
+appimage-run NormCap-0.3.8-x86_64.AppImage -v info
+appimage-run NormCap-0.3.8-x86_64.AppImage -v debug
+nix-shell -p appimage-run
+select zxc in eng rus equ; do break;done
+echo $zxc 
+echo rus eng zxc | wofi -d
+echo rus\neng\nzxc | wofi -d
+echo -e rus\neng\nzxc | wofi -d
+echo -e rus\neng\nzxc
+echo -e "rus\neng\nzxc"
+echo -e "rus\neng\nzxc" | wofi -
+echo -e "rus\neng\nzxc" | wofi -d
+sleep 2 && tesseract <(flameshot gui -r)
+sleep 2 && tesseract <("$(flameshot gui -r)") -l eng
+tesseract tmp.png -l rus
+tesseract tmp.png -l eng
+tesseract tmp.png
+tesseract tmp.png tmp.txt
+nix-shell -p tesseract5
+nclear && nboot 
+sudo du -sh /nix/store/
+sudo -i
+tesseract --list-langs
+tesseract tmp.png tmp.txt --psm 3
+tesseract tmp.png tmp --psm 3
+tesseract tmp.png tess --psm 3
+tesseract tmp.png psm0 --psm 0
+tesseract tmp.png psm1 --psm 1
+tesseract tmp.png psm2 --psm 2
+tesseract tmp.png psm3 --psm 3
+tesseract tmp.png psm4 --psm 4
+tesseract tmp.png psm5 --psm 5
+tesseract tmp.png psm6 --psm 6
+tesseract tmp.png psm7 --psm 7
+tesseract tmp.png psm8 --psm 8
+tesseract tmp.png psm9 --psm 9
+tesseract tmp.png psm10 --psm 10
+tesseract tmp.png psm11 --psm 11
+tesseract tmp.png psm12 --psm 12
+tesseract tmp.png psm13 --psm 13
+tesseract tmp.png psm14 --psm 14
+tesseract tmp.png psm14
+echo kek > /dev/tty0
+sudo echo kek > /dev/tty0
+expect
+sudo echo kek > /dev/tty
+tesseract <(wl-paste) /dev/tty
+tesseract tmp.png tess
+tesseract tmp.png tess -l $(echo -e eng\nrus | wofi -d)
+tesseract tmp.png tess -l ${$(echo -e eng\nrus | wofi -d):+eng}
+tesseract tmp.png tess -l ${"$(echo -e eng\nrus | wofi -d)":+eng}
+tesseract tmp.png tess -l ${"$(echo -e eng\nrus | wofi -d)":-eng}
+tesseract tmp.png -
+vipe
+nix-shell -p moreutils
+echo (rus eng)
+echo ("rus" "eng")
+$TERMINAL --class=floating_term
+tesseract <(wl-copy) -
+tesseract <(wl-paste) -
+echo $langs 
+echo ${langs}
+langs=(eng rus)
+echo ${langs[*]}
+echo ${langs[*]} | $MENU
+langs=(eng\n rus\n)
+langs=("eng\n" "rus\n")
+langs=("eng" "rus\n")
+\n
+$'\n'
+IFS=$'\n'
+echo $IFS 
+IFS=$(echo -e "\n")
+IFS=<space>
+IFS=$’\n’
+echo -e ${langs[*]}
+echo ${langs[*]} | tr " " "\n"
+langs=("eng" "rus" "eng+rus")
+print "%s\n" "${langs[*]}"
+print "%s\n" ${langs[*]}
+printf "%s\n" "${langs[*]}"
+printf '%s\n' ${langs[*]}
+printf %s\n ${langs[*]}
+printf %s\n ${langs[@]}
+printf "%s\n" ${langs[@]}
+printf "%s\n" ${langs[*]}
+langs=("eng\n" "rus\n" "eng+rus\n")
+echo -e ${langs[*]} | $MENU
+echo -e ${langs[@]} | $MENU
+command -v flameshot 
+./test.sh 
+asdofi
+wev
+nix-shell -p wev
+j
+tesseract tmp.png - | vipe
+tesseract tmp.png - | xdg-open
+tesseract tmp.png - | gio open
+tesseract tmp.png tess | xdg-open tess.txt
+tesseract tmp.png tess | gio open tess.txt
+flameshot gui -c
+printf "%s\n" (eng rus eng+rus)
+printf "%s\n" ${(eng rus eng+rus)[@]}
+printf "%s\n" "${(eng rus eng+rus)[@]}"
+printf "%s\n" "${"(eng rus eng+rus)"[@]}"
+printf "%s\n" ${"(eng rus eng+rus)"[@]}
+echo -e "eng\nrus\neng+rus"
+./screen2text.sh | vipe | wl-copy
+wofi -d
+flameshot gui --path /tmp/screen2text.png
+sleep 3 && grimshot
+sleep 3 && grimshot copy
+sleep 3 && grimshot copy area
+nix-shell -p sway-contrib.grimshot
+sleep 3 && grim -g "$(slurp)" | swappy -f -
+nix-shell -p swappy
+wofi neovim
+./screen2text.sh | EDITOR="alacritty -e nvim" vipe
+usrcfg dt config
+xdg-open nvim.desktop
+xdg-open nvim
+xdg-open neovim
+xdg-open /run/current-system/sw/share/applications/nvim.desktop 
+gio help
+gio launch nvim
+gio mime get plain
+gio mime get text/plain
+gio mime help
+gio mime
+gio mime plain
+gio mime text/plain
+gio list
+gio tree
+flameshot gui --raw | tesseract - - | EDITOR="alacritty --class=floating_term -e nvim" vipe
+htop
+echo $XDG_DATA_HOME 
+echo $XDG_DATA_DIRS 
+stat tmp.png 
+dex
+nix-shell -p dex
+EDITOR="alacritty --class=floating_term -e nvim" flameshot gui --raw | tesseract - - | vipe | wl-copy
+flameshot gui --raw | tesseract - - | EDITOR="gio launch /run/current-system/sw/share/applications/nvim.desktop" vipe | wl-copy
+EDITOR="$float_term" echo $EDITOR | wl-copy
+echo $TERMINAL 
+flameshot gui --raw | tesseract - - | EDITOR="alacritty --class=floating_term -e nvim" vipe | wl-copy
+./screen2text.sh 
+./screen2text.sh alacritty --class=floating_term
+echo $EDITOR 
+./screen2text.sh
+./screen2text.sh &
+: | vipe
+echo $$
+htop 
+en
+printf "%s\n" "${!lang[*]}"
+printf "%s\n" "${lang[*]}"
+printf "%s\n" "${!lang[@]}"
+printf "%s\n" "${#lang[@]}"
+printf "%s\n" "${-lang[@]}"
+printf "%s\n" "${%lang[@]}"
+echo "%s\n" "${lang[@]}"
+echo -e "${lang[@]}\n"
+echo "$(sort <<< "${lang[@]}")"
+vi
+echo "${lang[0]}"
+echo "${lang[1]}"
+lang=(eng rus eng+rus)
+echo "${lang[*]}"
+echo "${lang[@]}"
+printf "%s\n" "${lang[@]}"
+printf "%s\n" "${lang[@]}" | wofi -d
+usrcfg dt ../imv/config
+usrcfg log
+usrcfg dt config 
+usrcfg dt mapping
+usr st
+nboot && reboot 
+nclear && nboot
+usrcfg restore mapping
+usrcfg show
+usrcfg reset HEAD~
+usrcfg add config mapping
+usrcfg st
+usrcfg cm 'Sway: add a pipeline to copy text from a screenshot'
 reboot 
