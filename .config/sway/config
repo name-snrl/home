@@ -8,6 +8,7 @@ set $right l
 
 set $menu wofi
 set $term $TERMINAL
+set $float_term $term --class=floating_term
 set $move $HOME/.config/sway/scripts/move.sh
 set $theme $HOME/.config/sway/scripts/theme.sh
 set $anki $HOME/.config/sway/scripts/anki.sh
@@ -50,20 +51,17 @@ exec {
     systemctl --user import-environment
     systemctl --user start sway-session.target
 
+    swaylock -f
+
     kotatogram-desktop -startintray
     firefox
-    #$term --class=zettel -e nvim ~/Desktop/snrlZettelkasten/
     $HOME/.config/sway/scripts/bash_hist.sh
-
-    # lock on start
-    swaylock -f
 }
 
 ### Workspace assignment
 assign {
     [app_id="mpv"]       0:~
     [app_id="firefox"]   1
-    [app_id="zettel"]    10
 }
 
 ### Individual windows behavior

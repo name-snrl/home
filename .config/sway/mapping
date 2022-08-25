@@ -1,5 +1,5 @@
 # with $mod
-# alphbet block map: 
+# alphbet block map:
 # q - kill window
 # w - lock
 # e - floating term
@@ -10,7 +10,7 @@
 # d - wofi
 # f - fullscreen
 # g - start screencast
-# 
+#
 # o - open link in mpv
 #
 # hjkl - arrows
@@ -20,10 +20,11 @@
 #
 # shift+m - move window to center
 # shift+q - exit sway
-# shift+c - reload sway
+# shift+r - reload sway
 # shift+s - toggle system theme
 # shift+g - end screencast
 # shift+a - clear ankilist
+# shift+c - screen as text
 
 bindsym {
     --to-code {
@@ -38,28 +39,25 @@ bindsym {
 #
 # Basics:
 #
-        # Start a terminal
         $mod+t exec $term
-        $mod+e exec $term --class=floating_term
+        $mod+e exec $float_term
 
-        # Start your launcher
         $mod+d exec $menu
 
-        # Play clipboard in mpv
-        $mod+o exec mpv "$(wl-paste)"
-
-        # Ankilist
+        $mod+o       exec mpv "$(wl-paste)"
         $mod+a       exec $anki add
-        $mod+Shift+a exec $anki clear 
+        $mod+Shift+a exec $anki clear
+        $mod+Shift+c exec "flameshot gui --raw | tesseract - /tmp/screen2text;\
+                          $float_term -e $EDITOR /tmp/screen2text.txt;\
+                          wl-copy -n < /tmp/screen2text.txt"
 
         # No susped lock
-        $mod+w exec systemd-inhibit --what=handle-lid-switch swaylock 
+        $mod+w exec systemd-inhibit --what=handle-lid-switch swaylock
 
-        # Toggle system theme (dark/light)
         $mod+Shift+s exec $theme toggle
 
         $mod+q kill
-        $mod+Shift+c reload
+        $mod+Shift+r reload
         $mod+Shift+q exit
     }
     # Screenshots
