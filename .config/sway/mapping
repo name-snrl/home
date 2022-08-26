@@ -47,7 +47,7 @@ bindsym {
         $mod+o       exec mpv "$(wl-paste)"
         $mod+a       exec $anki add
         $mod+Shift+a exec $anki clear
-        $mod+Shift+c exec "flameshot gui --raw | tesseract - /tmp/screen2text;\
+        $mod+Shift+c exec "set -e; flameshot gui --raw | tesseract - /tmp/screen2text;\
                           $float_term -e $EDITOR /tmp/screen2text.txt;\
                           wl-copy -n < /tmp/screen2text.txt"
 
