@@ -59,6 +59,10 @@ bindsym {
         $mod+q kill
         $mod+Shift+r reload
         $mod+Shift+q exit
+
+        # Screencast
+        $mod+g       exec obs --startrecording --minimize-to-tray
+        $mod+Shift+g exec pkill -2 obs-wrap
     }
     # Screenshots
     Print            exec flameshot gui -r | wl-copy
@@ -66,10 +70,6 @@ bindsym {
     $mod+Print       exec swaymsg -t get_tree | jq -j '.. | select(.type?) |\
                           select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"' |\
                           grim -g - - | wl-copy
-
-    # Screencast
-    $mod+g       exec obs --startrecording --minimize-to-tray
-    $mod+Shift+g exec pkill -2 obs-wrap
 #
 # Hardware:
 #
