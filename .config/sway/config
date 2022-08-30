@@ -51,8 +51,6 @@ exec {
     systemctl --user import-environment
     systemctl --user start sway-session.target
 
-    swaylock -f
-
     kotatogram-desktop -startintray
     firefox
     $HOME/.config/sway/scripts/bash_hist.sh
