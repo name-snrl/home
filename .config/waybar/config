@@ -112,6 +112,7 @@
 
     "battery#icon": {
         "bat": "BAT1",
+        "interval": 1,
         "format": "{icon}",
         "rotate": 90,
         "format-icons": {
