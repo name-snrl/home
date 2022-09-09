@@ -128,7 +128,6 @@ user_pref("browser.uitour.url", "");
 // Privacy
 //
 user_pref("privacy.donottrackheader.enabled", true);
-user_pref("privacy.trackingprotection.enabled", true); // test
 user_pref("network.prefetch-next", false); // disable link prefetching
 
 // click tracking
