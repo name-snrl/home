@@ -48,7 +48,7 @@ bindsym {
         $mod+a       exec $anki add
         $mod+Shift+a exec $anki clear
         $mod+Shift+c exec "set -e; flameshot gui --raw | tesseract - /tmp/screen2text;\
-                          $float_term -e $EDITOR /tmp/screen2text.txt;\
+                          $float_term -e vi /tmp/screen2text.txt;\
                           wl-copy -n < /tmp/screen2text.txt"
 
         # No susped lock
