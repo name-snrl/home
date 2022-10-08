@@ -133,7 +133,6 @@ user_pref("network.prefetch-next", false); // disable link prefetching
 // click tracking
 user_pref("browser.send_pings", false);
 user_pref("browser.send_pings.require_same_host", true);
-user_pref("network.http.sendRefererHeader", 0); // test
 
 // disable video statistics
 user_pref("media.video_stats.enabled", false);
