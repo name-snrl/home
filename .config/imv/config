@@ -18,7 +18,7 @@ overlay_text = [${imv_width}x${imv_height}] [${imv_current_index}/${imv_file_cou
 <Ctrl+w> = exec sed -i "s@output.*fill@output \* bg $imv_current_file fill@g" ~/.config/sway/config
 <Ctrl+g> = exec gimp $imv_current_file > /dev/null 2>&1 &
 
-h = pan 50 0
-j = pan 0 -50
-k = pan 0 50
-l = pan -50 0
+h = pan -50 0
+j = pan 0 50
+k = pan 0 -50
+l = pan 50 0
