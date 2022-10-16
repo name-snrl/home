@@ -44,19 +44,20 @@ if [ ${#parameters[@]} -eq 5 ]; then
 
     case $command in
         top)
-            swaymsg "move up"
+            swaymsg "mark --add _, focus up,    swap container with mark _, focus up,    unmark _"
+
             ;;
 
         bottom)
-            swaymsg "move down"
+            swaymsg "mark --add _, focus down,  swap container with mark _, focus down,  unmark _"
             ;;
 
         left)
-            swaymsg "move left"
+            swaymsg "mark --add _, focus left,  swap container with mark _, focus left,  unmark _"
             ;;
 
         right)
-            swaymsg "move right"
+            swaymsg "mark --add _, focus right, swap container with mark _, focus right, unmark _"
             ;;
 
         center)

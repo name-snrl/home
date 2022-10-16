@@ -16,7 +16,6 @@
 # hjkl - arrows
 #
 # zxcvbn - for tray apps
-# m - move window to center
 #
 # shift+m - move window to center
 # shift+q - exit sway
@@ -96,7 +95,6 @@ bindsym {
         $mod+$up    focus up
         $mod+$right focus right
 
-        $mod+m       exec $move center
         $mod+Shift+m exec $move center
 
         $mod+Shift+$left  exec $move left
@@ -157,13 +155,12 @@ mode "resize/move" {
             Shift+$up    move up    40px
             Shift+$right move right 40px
 
-            m            exec $move center
             $mod+Shift+m exec $move center
 
-            $mod+Shift+$left  exec $move left
-            $mod+Shift+$down  exec $move bottom
-            $mod+Shift+$up    exec $move top
-            $mod+Shift+$right exec $move right
+            $mod+Shift+$left  move left
+            $mod+Shift+$down  move down
+            $mod+Shift+$up    move up
+            $mod+Shift+$right move right
         }
 
         1 resize set 50ppt  50ppt
