@@ -39,8 +39,8 @@ window#waybar {
 #workspaces button.focused {
   font-size:               16px;
   color:                   #81a1c1;
-  border-top:              2px solid #81a1c1;
-  border-bottom:           2px solid #81a1c1;
+  border-top:              1px solid #81a1c1;
+  border-bottom:           1px solid #81a1c1;
 }
 
 #workspaces button.urgent {
