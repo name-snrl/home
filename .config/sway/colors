@@ -11,7 +11,7 @@ set $red      #d36265
 
 # Set Decorations           border     background  text       indicator  child border
 client.focused              $trans     $frost2     $white0    $frost2
-client.focused_inactive     $trans     $nord1      $white0    $nord1
-client.focused_tab_title    $trans     $nord1      $white0    $nord1
-client.unfocused            $trans     $nord1      $white0    $nord1
+client.focused_inactive     $trans     $trans      $white0    $trans
+client.focused_tab_title    $trans     $trans      $white0    $trans
+client.unfocused            $trans     $trans      $white0    $trans
 client.urgent               $trans     $red        $white0    $red
