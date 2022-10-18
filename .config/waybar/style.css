@@ -9,11 +9,7 @@
 window#waybar {
   font-size:               15px;
   color:                   #d3d8df;
-  border-bottom:           2px solid #4c5866;
-  border-left:             2px solid #4c5866;
-  border-right:            2px solid #4c5866;
   background:              #2b323b;
-  opacity:                 0.90; 
 }
 
 #custom-label {
