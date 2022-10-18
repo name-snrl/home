@@ -19,8 +19,8 @@ include mapping
 gaps                    inner 5
 popup_during_fullscreen leave_fullscreen
 
-default_border          pixel 2
-default_floating_border pixel 2
+default_border          pixel 1
+default_floating_border pixel 1
 
 focus_follows_mouse     no
 focus_wrapping          no
