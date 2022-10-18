@@ -5,11 +5,11 @@ tac - > tmp && mv tmp "$HOME"/.bash_history
 beg=( j et sf nvim imv mpv git
     dt tk pg vi vim # aliases
     tree cd du rm cp mv ls mkdir touch chmod
-    wl-copy wl-paste wget tar zip unzip
+    wl-copy wl-paste tar zip unzip
     time man tldr less
     fd rg grep
     bat cat
-    nmcli
+    wget curl
     pkill pgrep
     swaymsg )
 for i in "${beg[@]}"; do
