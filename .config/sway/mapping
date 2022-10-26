@@ -9,7 +9,9 @@
 # s - toggle sticky
 # d - wofi
 # f - fullscreen
-# g - start screencast
+# y - start screencast
+# u - start screencast(muted)
+# i - end screencast
 #
 # o - open link in mpv
 #
@@ -21,7 +23,6 @@
 # shift+q - exit sway
 # shift+r - reload sway
 # shift+s - toggle system theme
-# shift+g - end screencast
 # shift+a - clear ankilist
 # shift+c - screen as text
 
@@ -60,8 +61,9 @@ bindsym {
         $mod+Shift+q exit
 
         # Screencast
-        $mod+g       exec obs --startrecording --minimize-to-tray
-        $mod+Shift+g exec pkill -2 obs-wrap
+        $mod+y exec obs --startrecording --minimize-to-tray --collection default
+        $mod+u exec obs --startrecording --minimize-to-tray --collection muted
+        $mod+i exec pkill -2 obs-wrap
     }
     # Screenshots
     Print            exec flameshot gui -r | wl-copy
