@@ -1,4 +1,4 @@
-xkb_symbols {
+xkb_symbols "lv3_us" {
 
     include "us(basic)"
     name[Group1]= "English (US)";

@@ -1,4 +1,4 @@
-xkb_symbols {
+xkb_symbols "lv3_ru" {
 
     include "ru(winkeys)"
     name[Group1]= "Russian";
