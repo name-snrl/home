@@ -1,6 +1,6 @@
 @-moz-document domain("www.google.com") {
   html {
-    background:        #2e3440!important;
+    background:         -moz-Dialog !important;
   }
 }
 
@@ -15,17 +15,17 @@
                url("about:privatebrowsing") {
 
   body {
-    background-color:  #2e3440!important;
-    background-image:        url(wp.jpg);
-    background-position:          center;
-    background-size:                 30%;
-    background-repeat:         no-repeat;
+    background-color:   -moz-Dialog !important;
+    background-image:              url(wp.jpg);
+    background-position:                center;
+    background-size:                       30%;
+    background-repeat:               no-repeat;
   }
 
 }
 
 @-moz-document url("about:blank") {
   body {
-    background-color:  #2e3440!important;
+    background-color:   -moz-Dialog !important;
   }
 }

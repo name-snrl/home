@@ -3,7 +3,7 @@
 #tabbrowser-tabpanels,
 browser[type="content-primary"],
 browser[type="content"] > html {
-  background: #2e3440!important;
+  background: -moz-Dialog !important;
 }
 
 /* don't show a window with a microphone indicator
