@@ -59,12 +59,12 @@ exec {
 ### Workspace assignment
 assign {
     [app_id="mpv"]       0:~
-    [app_id="firefox"]   1
+    [app_id="^firefox$"]   1
 }
 
 ### Individual windows behavior
 no_focus {
-    [app_id="org.qutebrowser.qutebrowser" title="nvim-md-preview.html"]
+    [app_id="firefox-md-preview"]
 }
 for_window {
 
@@ -96,7 +96,7 @@ exec $theme startup
 #bar swaybar_command waybar
 
 # Wallpaper
-output * bg /home/name_snrl/desktop/pictures/wp/wallhaven-j3dg1m.jpg fill
+output * bg /home/name_snrl/desktop/pictures/wp/wallhaven-k7787d.png fill
 
 # Cursor 
 seat seat0 xcursor_theme 'Numix-Cursor-Light' 24
