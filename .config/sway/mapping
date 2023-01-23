@@ -9,10 +9,8 @@
 # s - toggle sticky
 # d - wofi
 # f - fullscreen
-# y - start screencast
-# u - start screencast(muted)
-# i - end screencast
 #
+# i - kooha
 # o - open link in mpv
 #
 # hjkl - arrows
@@ -45,6 +43,7 @@ bindsym {
         $mod+d exec $menu
 
         $mod+o       exec mpv "$(wl-paste)"
+        $mod+i       exec kooha
         $mod+a       exec $anki add
         $mod+Shift+a exec $anki clear
         $mod+Shift+c exec "set -e; flameshot gui --raw | tesseract - /tmp/screen2text;\
@@ -59,11 +58,6 @@ bindsym {
         $mod+q kill
         $mod+Shift+r reload
         $mod+Shift+q exit
-
-        # Screencast
-        $mod+y exec obs --startrecording --minimize-to-tray --collection default
-        $mod+u exec obs --startrecording --minimize-to-tray --collection muted
-        $mod+i exec pkill -2 obs-wrap
     }
     # Screenshots
     Print            exec flameshot gui -r | wl-copy
