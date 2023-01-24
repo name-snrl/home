@@ -69,7 +69,7 @@ no_focus {
 for_window {
 
     [app_id="anki"]                   floating enable
-    [app_id="io.github.seadve.Kooha"] floating enable, move position 80 ppt 0 ppt, exec $move right
+    [app_id="io.github.seadve.Kooha"] floating enable, sticky disable, move position 80 ppt 0 ppt, exec $move right
     [app_id="imv"]                    floating enable
     [app_id="authentication-agent-1"] floating enable
     [app_id="xdg-desktop-portal-gtk"] floating enable, resize set 75 ppt 85 ppt 
