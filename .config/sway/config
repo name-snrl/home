@@ -47,6 +47,7 @@ input "1739:0:Synaptics_tm2962-001" events disabled
 
 #------------------------------------ Apps ------------------------------------#
 ### Autostart
+include tw-desktop
 exec {
     systemctl --user import-environment
     systemctl --user start sway-session.target
