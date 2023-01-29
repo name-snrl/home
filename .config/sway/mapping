@@ -30,7 +30,7 @@ bindsym {
 # Apps:
 #
         # tray
-        $mod+z exec kotatogram-desktop && sleep 0.3 && swaymsg input 'type:keyboard' xkb_switch_layout 1
+        $mod+z exec kotatogram-desktop
         $mod+x exec qbittorrent
         # $mod+c exec
 
