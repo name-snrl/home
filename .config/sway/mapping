@@ -146,10 +146,10 @@ mode "resize/move" {
             $up    resize grow   height 10px
             $right resize grow   width  10px
 
-            Shift+$left  move left  40px
-            Shift+$down  move down  40px
-            Shift+$up    move up    40px
-            Shift+$right move right 40px
+            Shift+$left  move left  5px
+            Shift+$down  move down  5px
+            Shift+$up    move up    5px
+            Shift+$right move right 5px
 
             $mod+Shift+m exec $move center
 
