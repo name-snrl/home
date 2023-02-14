@@ -4,31 +4,51 @@
   font-family:             monospace;
   box-shadow:              none;
   transition-duration:     0s;
+  padding:                 5px 0;
 }
 
 window#waybar {
   font-size:               15px;
   color:                   #d3d8df;
-  background:              #2b323b;
 }
 
-#custom-label {
-  text-shadow:             0 0 2px Black;
-  margin:                  0 5px;
-  color:                   #4e72b9;
-  /* Arch label
-  color:                   #0088cc;*/
+.modules-left,
+.modules-center,
+.modules-right {
+  padding:                 0;
 }
 
-#custom-separator {
-  margin:                  0 10px;
-  color:                   #4c5866;
+#clock.date {
+  color:                   #bf616a;
+}
+
+#clock {
+  color:                   #d08770;
+}
+
+#custom-weather{
+  color:                   #d3b578;
+}
+
+#language {
+  border-top:              1px solid #4c5866;
+  border-bottom:           1px solid #4c5866;
+}
+
+#mode {
+  background:              #d36265;
+  border-radius:           5px;
 }
 
 #workspaces button {
   font-size:               13px;
   color:                   #d3d8df;
-  padding:                 0 5px;
+  padding:                 0;
+  margin:                  0;
+}
+
+#workspaces button.persistent {
+  color:                   #4c5866;
 }
 
 #workspaces button:hover {
@@ -47,32 +67,6 @@ window#waybar {
   background:              Orange;
 }
 
-#mode {
-  background:              #d36265;
-  padding:                 0 5px;
-  margin:                  5px 0 5px 15px;
-  border-radius:           5px;
-}
-
-#pulseaudio,
-#backlight, 
-#battery,
-#temperature, 
-#custom-headphone_txt {
-  margin:                  0 12px 0 2px;
-}
-
-#backlight.icon, 
-#battery.icon, 
-#temperature.icon, 
-#custom-headphone_icon {
-  margin:                  0 2px 0 12px;
-}
-
-#pulseaudio.icon {
-  margin:                  0 2px 0 0;
-}
-
 #custom-headphone_icon {
   color:                   #5297cf;
 }
@@ -81,16 +75,12 @@ window#waybar {
   color:                   #d36265;
 }
 
-#pulseaudio.icon {
-}
-
 #backlight.icon {
   color:                   #e7e18c;
 }
 
 #battery.icon {
   color:                   #5baebf;
-  margin:                  0 -2px 2px 8px;
 }
 
 @keyframes blink {
@@ -101,7 +91,6 @@ window#waybar {
 
 #temperature.critical {
   background:                  Red;
-  margin:                      5px 12px 5px 2px;
   border-radius:               5px;
 
   animation-name:              blink;
@@ -112,7 +101,6 @@ window#waybar {
 
 #battery.critical:not(.charging) {
   background:                  Red;
-  margin:                      5px 12px 5px 2px;
   border-radius:               5px;
 
   animation-name:              blink;

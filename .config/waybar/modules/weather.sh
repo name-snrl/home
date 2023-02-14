@@ -9,6 +9,6 @@ else
 fi
 
 result="$(curl -s "https://thisdavej.azurewebsites.net/api/weather/current?\
-loc=$loc&deg=C" | jq -r '[.skytext, .temperature] | join(" ")')"
+loc=$loc&deg=C" | jq -r '.temperature? // empty')"
 
-echo "$result°C"
+echo "$result"

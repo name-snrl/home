@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-
-
-bat=$(dbus-send --print-reply=literal --system --dest=org.bluez "/org/bluez/hci0/dev_`upower -d | rg headset | rg -o \([0-9A-Fa-f]{2}[_]\){5}\([0-9A-Fa-f]{2}\)`" org.freedesktop.DBus.Properties.Get string:"org.bluez.Battery1" string:"Percentage" | awk '{print $3}')
-while [ 1 ]
-do
-echo $bat
-done
