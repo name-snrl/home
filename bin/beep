@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-exec pw-play /run/current-system/sw/share/sounds/freedesktop/stereo/complete.oga
