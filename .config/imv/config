@@ -1,6 +1,5 @@
 [options]
 background = 1b1f26
-recursively = true
 scaling_mode = shrink
 
 width = 1280
