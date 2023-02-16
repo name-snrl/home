@@ -98,7 +98,7 @@ exec $theme startup
 #bar swaybar_command waybar
 
 # Wallpaper
-output * bg /home/name_snrl/desktop/pictures/wp/wallhaven-y88z2g.jpg fill
+output * bg /nix/store/lvwhsdk7fabv7j0ph2pb18djs38gvlx4-wallhaven-wqd9mr.png fill
 
 # Cursor 
 seat seat0 xcursor_theme 'Numix-Cursor-Light' 24
