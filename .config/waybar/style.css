@@ -26,13 +26,8 @@ window#waybar {
   color:                   #d08770;
 }
 
-#custom-weather{
+#custom-weather {
   color:                   #d3b578;
-}
-
-#language {
-  border-top:              1px solid #4c5866;
-  border-bottom:           1px solid #4c5866;
 }
 
 #mode {
@@ -45,6 +40,10 @@ window#waybar {
   color:                   #d3d8df;
   padding:                 0;
   margin:                  0;
+}
+
+#workspaces {
+  border-top:              1px solid #4c5866;
 }
 
 #workspaces button.persistent {
@@ -65,6 +64,14 @@ window#waybar {
 
 #workspaces button.urgent {
   background:              Orange;
+}
+
+#tray {
+  border-bottom:           1px solid #4c5866;
+}
+
+#language {
+  border-bottom:           1px solid #4c5866;
 }
 
 #custom-headphone_icon {

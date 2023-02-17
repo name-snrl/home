@@ -5,14 +5,12 @@
         "clock#date",
         "clock",
         "custom/weather",
-        "sway/language",
-        "tray",
-    ],
-    "modules-center": [
         "sway/mode",
         "sway/workspaces",
     ],
     "modules-right": [
+        "tray",
+        "sway/language",
         "pulseaudio#icon",
         "pulseaudio",
         "backlight#icon",
