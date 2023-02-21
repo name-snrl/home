@@ -14,6 +14,6 @@ browser[type="content"] > html {
 
 /* normal colors for the toolbar when switching to a dark theme
  * https://bugzilla.mozilla.org/show_bug.cgi?id=1711275 */
-.browser-toolbar {
-  --toolbar-bgimage: none;
+#nav-bar.browser-toolbar {
+  --toolbar-bgcolor: -moz-dialog;
 }
