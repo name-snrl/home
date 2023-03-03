@@ -1,7 +1,9 @@
 font=mono
 
 clock
-color=00000099
+screenshot
+effect-blur=3x3
+effect-vignette=0.6:0
 
 indicator
 indicator-caps-lock
@@ -37,5 +39,3 @@ bs-hl-color=dfeaf5
 caps-lock-key-hl-color=4c566a
 caps-lock-bs-hl-color=dfeaf5
 separator-color=00000000
-
-fade-in=1
