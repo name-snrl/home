@@ -46,9 +46,10 @@ bindsym {
         $mod+i       exec kooha
         $mod+a       exec $anki add
         $mod+Shift+a exec $anki clear
-        $mod+Shift+c exec "set -e; flameshot gui --raw | tesseract - /tmp/screen2text;\
-                          $float_term -e vi /tmp/screen2text.txt;\
-                          wl-copy -n < /tmp/screen2text.txt"
+        $mod+Shift+c exec "set -e; \
+            flameshot gui --raw | tesseract - /tmp/screen2text; \
+            $float_term -e vi /tmp/screen2text.txt; \
+            wl-copy -n < /tmp/screen2text.txt"
 
         # No susped lock
         $mod+w exec systemd-inhibit --what=handle-lid-switch swaylock
@@ -59,12 +60,22 @@ bindsym {
         $mod+Shift+r reload
         $mod+Shift+q exit
     }
+    # kb layout
+    --release {
+        ISO_Next_Group exec fcitx5-remote -n | grep -q mozc && \
+            swaymsg input 'type:keyboard' xkb_switch_layout 0 && \
+            fcitx5-remote -c
+        Hiragana_Katakana exec \
+            swaymsg input 'type:keyboard' xkb_switch_layout 0 && \
+            fcitx5-remote -o && fcitx5-remote -s mozc
+    }
+
     # Screenshots
     Print            exec flameshot gui -r | wl-copy
     $mod+Shift+Print exec grim - | wl-copy
-    $mod+Print       exec swaymsg -t get_tree | jq -j '.. | select(.type?) |\
-                          select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"' |\
-                          grim -g - - | wl-copy
+    $mod+Print       exec swaymsg -t get_tree | jq -j '.. | select(.type?) | \
+        select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"' | \
+        grim -g - - | wl-copy
 #
 # Hardware:
 #

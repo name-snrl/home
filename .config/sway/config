@@ -68,7 +68,7 @@ for_window {
     [app_id="xdg-desktop-portal-gtk"] floating enable, resize set 75 ppt 85 ppt 
     [app_id="qbittorrent"]            floating enable, sticky enable
     [app_id="floating_term"]          floating enable, sticky enable, resize set 50 ppt 50 ppt
-    [app_id="kotatogramdesktop"]      floating enable, sticky enable, resize set 930 px 740 px, exec swaymsg input 'type:keyboard' xkb_switch_layout 1
+    [app_id="kotatogramdesktop"]      floating enable, sticky enable, resize set 930 px 740 px, exec swaymsg input 'type:keyboard' xkb_switch_layout 1 && fcitx5-remote -c
 
     [app_id="anki" title="- Anki$"]                    floating disable
     [app_id="anki" title="^Browse"]                    resize set 70 ppt 100 ppt
@@ -90,7 +90,7 @@ exec $theme startup
 #bar swaybar_command waybar
 
 # Wallpaper
-output * bg /nix/store/lvwhsdk7fabv7j0ph2pb18djs38gvlx4-wallhaven-wqd9mr.png fill
+output * bg /nix/store/nrl3bykgn8xy8sq7lgjpckk5399qwq7d-wallhaven-8oev1j.jpg fill
 
 # Cursor 
 seat seat0 xcursor_theme 'Numix-Cursor-Light' 24
