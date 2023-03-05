@@ -79,20 +79,22 @@ bindsym {
 #
 # Hardware:
 #
-    XF86AudioMicMute     exec wpctl set-mute @DEFAULT_SOURCE@ toggle
-    XF86AudioMute        exec wpctl set-mute @DEFAULT_SINK@ toggle
-    XF86AudioRaiseVolume exec wpctl set-volume -l 1 @DEFAULT_SINK@ 5%+
-    XF86AudioLowerVolume exec wpctl set-volume -l 1 @DEFAULT_SINK@ 5%-
+    --locked {
+        XF86AudioMicMute     exec wpctl set-mute @DEFAULT_SOURCE@ toggle
+        XF86AudioMute        exec wpctl set-mute @DEFAULT_SINK@ toggle
+        XF86AudioRaiseVolume exec wpctl set-volume -l 1 @DEFAULT_SINK@ 5%+
+        XF86AudioLowerVolume exec wpctl set-volume -l 1 @DEFAULT_SINK@ 5%-
 
-    XF86MonBrightnessDown exec light -U 5
-    XF86MonBrightnessUp   exec light -A 5
+        XF86MonBrightnessDown exec light -U 5
+        XF86MonBrightnessUp   exec light -A 5
 #
 # Media:
 #
-    XF86AudioPlay  exec playerctl play-pause
-    XF86AudioPause exec playerctl play-pause
-    XF86AudioPrev  exec playerctl previous
-    XF86AudioNext  exec playerctl next
+        XF86AudioPlay  exec playerctl play-pause
+        XF86AudioPause exec playerctl play-pause
+        XF86AudioPrev  exec playerctl previous
+        XF86AudioNext  exec playerctl next
+    }
 #
 # Moving around:
 #
