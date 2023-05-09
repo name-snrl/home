@@ -40,14 +40,7 @@ input "type:touchpad" events disabled
 #------------------------------------ Apps ------------------------------------#
 ### Autostart
 include tw-desktop
-exec {
-    systemctl --user import-environment
-    systemctl --user start sway-session.target
-
-    kotatogram-desktop -startintray
-    firefox
-    $HOME/.config/sway/scripts/bash_hist.sh
-}
+exec 'systemctl --user import-environment; systemctl --user start sway-session.target'
 
 ### Workspace assignment
 assign {
@@ -90,7 +83,7 @@ exec $theme startup
 #bar swaybar_command waybar
 
 # Wallpaper
-output * bg /nix/store/nrl3bykgn8xy8sq7lgjpckk5399qwq7d-wallhaven-8oev1j.jpg fill
+output * bg /nix/store/1cqgl9y0y1gj5b6bfwsgkdnax5gjj6gs-wallhaven-q6r25d.jpg fill
 
 # Cursor 
 seat seat0 xcursor_theme 'Numix-Cursor-Light' 24
