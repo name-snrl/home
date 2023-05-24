@@ -82,8 +82,8 @@
 
     "pulseaudio#icon": {
         "format": "{icon}",
-        "format-icons": ["奄", "奔", "墳"],
-        "format-muted": "婢",
+        "format-icons": ["󰕿", "󰖀", "󰕾"],
+        "format-muted": "󰝟",
         "tooltip": false
     },
  
@@ -93,7 +93,7 @@
 
     "backlight#icon": {
         "format": "{icon}",
-        "format-icons": ["", "", ""],
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
         "tooltip": false
     },
 
@@ -115,7 +115,7 @@
         "format-icons": {
             "default": ["", "", "", ""],
             "plugged": "",
-            "charging": ""
+            "charging": "󰄾"
         },
         "tooltip": false
     },
@@ -154,7 +154,7 @@
     "custom/weather": {
         //"exec": "$HOME/.config/waybar/modules/weather.sh Chelyabinsk",
         "exec": "$HOME/.config/waybar/modules/weather.sh",
-        "format": "望\n{}",
+        "format": "󰖔\n{}",
         "interval": 600,
         "tooltip": false
     },
