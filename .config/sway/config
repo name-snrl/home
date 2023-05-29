@@ -50,7 +50,7 @@ assign {
 
 ### Individual windows behavior
 no_focus {
-    [app_id="firefox-md-preview"]
+    [title="Peek preview"]
 }
 for_window {
 
