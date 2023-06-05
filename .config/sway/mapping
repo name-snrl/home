@@ -61,14 +61,8 @@ bindsym {
         $mod+Shift+q exit
     }
     # kb layout
-    --release {
-        ISO_Next_Group exec fcitx5-remote -n | grep -q mozc && \
-            swaymsg input 'type:keyboard' xkb_switch_layout 0 && \
-            fcitx5-remote -c
-        Hiragana_Katakana exec \
-            swaymsg input 'type:keyboard' xkb_switch_layout 0 && \
-            fcitx5-remote -o && fcitx5-remote -s mozc
-    }
+    Hiragana_Katakana      exec fcitx5-remote -s mozc
+    $mod+Hiragana_Katakana exec fcitx5-remote -s keyboard-ru-srp
 
     # Screenshots
     Print            exec flameshot gui -r | wl-copy

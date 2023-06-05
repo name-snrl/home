@@ -10,7 +10,6 @@
     ],
     "modules-right": [
         "tray",
-        "sway/language",
         "pulseaudio#icon",
         "pulseaudio",
         "backlight#icon",
@@ -56,12 +55,6 @@
     "sway/mode": {
         "format": "{}",
         "tooltip": false
-    },
-
-    "sway/language": {
-        "format": "{}",
-        "tooltip": false,
-        "on-click": "swaymsg input 'type:keyboard' xkb_switch_layout next"
     },
 
     "sway/window": {

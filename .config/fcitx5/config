@@ -1,8 +1,6 @@
 [Hotkey]
-# Trigger Input Method
-TriggerKeys=
 # Enumerate when press trigger key repeatedly
-EnumerateWithTriggerKeys=True
+EnumerateWithTriggerKeys=False
 # Temporally switch between first and current Input Method
 AltTriggerKeys=
 # Enumerate Input Method Forward
@@ -29,6 +27,9 @@ PrevCandidate=
 NextCandidate=
 # Toggle embedded preedit
 TogglePreedit=
+
+[Hotkey/TriggerKeys]
+0=Control+Control_R
 
 [Behavior]
 # Active By Default

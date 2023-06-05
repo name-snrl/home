@@ -1,0 +1,9 @@
+[keyboard-us]
+Description="Keyboard - English (US)"
+Language=en
+Label=en
+
+[keyboard-ru-srp]
+Description="Keyboard - Russian - Serbian (Russia)"
+Language=ru
+Label=ru
