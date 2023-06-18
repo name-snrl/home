@@ -17,12 +17,13 @@
 #
 # zxcvbn - for tray apps
 #
-# shift+m - move window to center
 # shift+q - exit sway
 # shift+r - reload sway
-# shift+s - toggle system theme
+# shift+t - toggle thinkpad embedded keyboard
 # shift+a - clear ankilist
+# shift+s - toggle system theme
 # shift+c - screen as text
+# shift+m - move window to center
 
 bindsym {
     --to-code {
@@ -53,6 +54,7 @@ bindsym {
 
         # No susped lock
         $mod+w exec systemd-inhibit --what=handle-lid-switch swaylock
+        $mod+Shift+t exec swaymsg input "1:1:Extra_Buttons" events toggle
 
         $mod+Shift+s exec $theme toggle
 
