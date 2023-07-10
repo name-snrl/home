@@ -53,15 +53,16 @@ no_focus {
 }
 for_window {
 
-    [app_id="anki"]                   floating enable
-    [app_id="imv"]                    floating enable
-    [app_id="authentication-agent-1"] floating enable
-    [app_id="xdg-desktop-portal-gtk"] floating enable, resize set 75 ppt 85 ppt 
-    [app_id="qbittorrent"]            floating enable, sticky enable
-    [app_id="floating_term"]          floating enable, sticky enable, resize set 50 ppt 50 ppt
-    [app_id="kotatogramdesktop"]      floating enable, sticky enable, resize set 930 px 740 px
-    [app_id="io.github.seadve.Kooha"] floating enable, sticky disable, move position 80 ppt 0 ppt, exec $move right
-    [app_id="dragon"]                 floating enable, sticky disable, move position 80 ppt 0 ppt, exec $move right
+    [app_id="anki"]                                    floating enable
+    [app_id="imv"]                                     floating enable
+    [app_id="authentication-agent-1"]                  floating enable
+    [title="Choose Files — Portal"]                    resize set 75 ppt 85 ppt 
+    [app_id="org.freedesktop.impl.portal.desktop.kde"] floating enable, move position center
+    [app_id="qbittorrent"]                             floating enable, sticky enable
+    [app_id="floating_term"]                           floating enable, sticky enable, resize set 50 ppt 50 ppt
+    [app_id="kotatogramdesktop"]                       floating enable, sticky enable, resize set 930 px 740 px
+    [app_id="io.github.seadve.Kooha"]                  floating enable, sticky disable, move position 80 ppt 0 ppt, exec $move right
+    [app_id="dragon"]                                  floating enable, sticky disable, move position 80 ppt 0 ppt, exec $move right
 
     [app_id="anki" title="- Anki$"]                    floating disable
     [app_id="anki" title="^Browse"]                    resize set 70 ppt 100 ppt
