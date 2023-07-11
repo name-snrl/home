@@ -61,8 +61,8 @@ for_window {
     [app_id="qbittorrent"]                             floating enable, sticky enable
     [app_id="floating_term"]                           floating enable, sticky enable, resize set 50 ppt 50 ppt
     [app_id="kotatogramdesktop"]                       floating enable, sticky enable, resize set 930 px 740 px
-    [app_id="io.github.seadve.Kooha"]                  floating enable, sticky disable, move position 80 ppt 0 ppt, exec $move right
-    [app_id="dragon"]                                  floating enable, sticky disable, move position 80 ppt 0 ppt, exec $move right
+    [app_id="io.github.seadve.Kooha"]                  floating enable, sticky enable, move position 80 ppt 0 ppt, exec $move right
+    [app_id="dragon"]                                  floating enable, sticky enable, move position 80 ppt 0 ppt, exec $move right
 
     [app_id="anki" title="- Anki$"]                    floating disable
     [app_id="anki" title="^Browse"]                    resize set 70 ppt 100 ppt
