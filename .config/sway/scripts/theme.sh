@@ -22,8 +22,8 @@ dark_theme () {
     gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
     # GTK
-    eval "$write gtk-theme 'Graphite-Dark-nord'"
-    eval "$write icon-theme 'Papirus-Dark'"
+    eval "$write gtk-theme 'Graphite-Dark-compact-nord'"
+    eval "$write icon-theme 'Tela-circle-nord-dark'"
 
     # mako
     makoctl set-mode default
@@ -37,11 +37,11 @@ dark_theme () {
 
 light_theme () {
     # Light theme
-    gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
+    gsettings set org.gnome.desktop.interface color-scheme 'default'
 
     # GTK
-    eval "$write gtk-theme 'Graphite-Light-nord'"
-    eval "$write icon-theme 'Papirus'"
+    eval "$write gtk-theme 'Graphite-Light-compact-nord'"
+    eval "$write icon-theme 'Tela-circle-nord'"
 
     # mako
     makoctl set-mode light
@@ -54,7 +54,7 @@ case "${1}" in
 
         defaults
 
-        if [ "$(eval "$read gtk-theme")" == "'Graphite-Light-nord'" ]; then
+        if [ "$(eval "$read gtk-theme")" == "'Graphite-Light-compact-nord'" ]; then
             light_theme
         else
             dark_theme
@@ -62,7 +62,7 @@ case "${1}" in
         ;;
 
     toggle)
-        if [ "$(eval "$read gtk-theme")" == "'Graphite-Light-nord'" ]; then
+        if [ "$(eval "$read gtk-theme")" == "'Graphite-Light-compact-nord'" ]; then
             dark_theme
         else
             light_theme
