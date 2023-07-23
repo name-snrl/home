@@ -37,9 +37,8 @@ input "type:pointer" accel_profile "flat"
 input "type:touchpad" events disabled
 
 #------------------------------------ Apps ------------------------------------#
-### Autostart
-include tw-desktop
 exec 'systemctl --user import-environment; systemctl --user start sway-session.target'
+include tw-desktop
 
 ### Workspace assignment
 assign {
