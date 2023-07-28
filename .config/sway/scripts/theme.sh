@@ -23,7 +23,7 @@ dark_theme () {
 
     # GTK
     eval "$write gtk-theme 'Graphite-Dark-compact-nord'"
-    eval "$write icon-theme 'Tela-circle-nord-dark'"
+    eval "$write icon-theme 'Papirus-Dark'"
 
     # mako
     makoctl set-mode default
@@ -41,7 +41,7 @@ light_theme () {
 
     # GTK
     eval "$write gtk-theme 'Graphite-Light-compact-nord'"
-    eval "$write icon-theme 'Tela-circle-nord'"
+    eval "$write icon-theme 'Papirus-Light'"
 
     # mako
     makoctl set-mode light
