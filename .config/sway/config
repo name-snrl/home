@@ -53,7 +53,6 @@ no_focus {
 for_window {
 
     [app_id="anki"]                   floating enable
-    [app_id="imv"]                    floating enable
     [app_id="authentication-agent-1"] floating enable
     [app_id="xdg-desktop-portal-gtk"] floating enable, resize set 60 ppt 70 ppt 
     [app_id="qbittorrent"]            floating enable, sticky enable

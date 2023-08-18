@@ -1,0 +1,5 @@
+fullscreen = yes
+info = yes
+recursive = yes
+all = yes
+exec = sed -i "s@output.*fill@output \* bg % fill@g" ~/.config/sway/config
