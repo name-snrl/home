@@ -56,7 +56,8 @@ user_pref("browser.uiCustomization.state", "{\"placements\":{\"widget-overflow-f
 user_pref("extensions.webextensions.keepStorageOnUninstall", false);
 user_pref("extensions.webextensions.keepUuidOnUninstall", false);
 
-
+// Translation
+user_pref("browser.translations.enable", false);
 
 // Spellchecking
 user_pref("layout.spellcheckDefault", 2);
