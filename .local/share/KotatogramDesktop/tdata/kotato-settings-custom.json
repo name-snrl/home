@@ -7,10 +7,8 @@
     "adaptive_bubbles": false,
     "always_show_scheduled": false,
     "always_show_top_userpic": false,
-    "auto_scroll_unfocused": false,
     "big_emoji_outline": false,
     "block_users_in_groups": true,
-    "chat_list_lines": 2,
     "confirm_before_calls": true,
     "custom_app_icon": 1,
     "disable_chat_themes": true,
@@ -20,7 +18,6 @@
     "emoji_sidebar_right_click": false,
     "ffmpeg_multithread": true,
     "ffmpeg_thread_count": 0,
-    "file_dialog_type": 1,
     "folders": {
         "count_unmuted_only": false,
         "default": {
@@ -53,17 +50,14 @@
     "net_speed_boost": 0,
     "profile_top_mute": true,
     "recent_stickers_limit": 200,
-    "remember_compress_images": true,
+    "remember_compress_images": false,
     "replaces": [
     ],
-    "scales": [
-    ],
     "show_chat_id": 2,
-    "show_phone_in_drawer": true,
-    "sticker_height": 170,
+    "sticker_height": 200,
     "sticker_scale_both": true,
     "telegram_sites_autologin": true,
     "use_telegram_panel_icon": false,
-    "userpic_corner_type": 3,
+    "userpic_corner_radius": -1,
     "view_profile_on_top": false
 }
