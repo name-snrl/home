@@ -85,4 +85,3 @@ output * bg /nix/store/sc1ma51pgvqizham0hkkzjp2rirb7nwz-wallhaven-collection/wal
 
 # Cursor 
 seat seat0 xcursor_theme 'Numix-Cursor-Light' 24
-seat * hide_cursor when-typing enable
