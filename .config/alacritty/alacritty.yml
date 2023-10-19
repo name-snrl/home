@@ -772,9 +772,9 @@ key_bindings:
   #- { key: Copy,                                        action: Copy               }
   #- { key: L,         mods: Control,                    action: ClearLogNotice     }
   #- { key: L,         mods: Control, mode: ~Vi|~Search, chars: "\x0c"              }
-  - { key: PageUp,    mods: Shift,   mode: ~Alt,        action: ScrollHalfPageUp  }
+  - { key: PageUp,    mods: Shift,   mode: ~Alt,        action: ScrollHalfPageUp   }
   - { key: PageDown,  mods: Shift,   mode: ~Alt,        action: ScrollHalfPageDown }
-  #- { key: Home,      mods: Shift,   mode: ~Alt,        action: ScrollToTop       }
+  #- { key: Home,      mods: Shift,   mode: ~Alt,        action: ScrollToTop        }
   #- { key: End,       mods: Shift,   mode: ~Alt,        action: ScrollToBottom     }
 
   # Vi Mode
@@ -810,6 +810,9 @@ key_bindings:
   #- { key: Left,                        mode: Vi|~Search, action: Left                    }
   #- { key: Right,                       mode: Vi|~Search, action: Right                   }
   #- { key: Key0,                        mode: Vi|~Search, action: First                   }
+
+  # Keyboard input log doesn't include some keys
+  # https://github.com/alacritty/alacritty/issues/4111
   - { key: 5,      mods: Shift,         mode: Vi|~Search, action: Last                    }
   - { key: 7,      mods: Shift,         mode: Vi|~Search, action: FirstOccupied           }
   #- { key: H,      mods: Shift,         mode: Vi|~Search, action: High                    }
@@ -821,6 +824,9 @@ key_bindings:
   #- { key: B,      mods: Shift,         mode: Vi|~Search, action: WordLeft                }
   #- { key: W,      mods: Shift,         mode: Vi|~Search, action: WordRight               }
   #- { key: E,      mods: Shift,         mode: Vi|~Search, action: WordRightEnd            }
+
+  # Keyboard input log doesn't include some keys
+  # https://github.com/alacritty/alacritty/issues/4111
   - { key: 6,      mods: Shift,         mode: Vi|~Search, action: Bracket                 }
   #- { key: Slash,                       mode: Vi|~Search, action: SearchForward           }
   #- { key: Slash,  mods: Shift,         mode: Vi|~Search, action: SearchBackward          }
@@ -828,6 +834,7 @@ key_bindings:
   #- { key: N,      mods: Shift,         mode: Vi|~Search, action: SearchPrevious          }
 
   # Search Mode
+  - { key: V,      mods: Control, mode: Search|Vi,  action: Paste                 }
   #- { key: Return,                mode: Search|Vi,  action: SearchConfirm         }
   #- { key: Escape,                mode: Search,     action: SearchCancel          }
   #- { key: C,      mods: Control, mode: Search,     action: SearchCancel          }
@@ -843,11 +850,12 @@ key_bindings:
   # (Windows, Linux, and BSD only)
   - { key: U,              mods: Control|Shift, mode: ~Vi,        action: ScrollHalfPageUp   }
   - { key: D,              mods: Control|Shift, mode: ~Vi,        action: ScrollHalfPageDown }
-  #- { key: V,              mods: Control|Shift, mode: ~Vi,        action: Paste              }
   - { key: P,              mods: Control|Shift, mode: ~Vi,        action: Paste              }
-  #- { key: C,              mods: Control|Shift,                   action: Copy               }
   - { key: Y,              mods: Control|Shift,                   action: Copy               }
   #- { key: F,              mods: Control|Shift, mode: ~Search,    action: SearchForward      }
+
+  # Keyboard input log doesn't include some keys
+  # https://github.com/alacritty/alacritty/issues/4111
   - { key: 53,              mods: Control|Shift, mode: ~Search,    action: SearchForward      }
   #- { key: B,              mods: Control|Shift, mode: ~Search,    action: SearchBackward     }
   - { key: C,              mods: Control|Shift, mode: Vi|~Search, action: ClearSelection     }
