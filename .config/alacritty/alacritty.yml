@@ -834,6 +834,7 @@ key_bindings:
   #- { key: N,      mods: Shift,         mode: Vi|~Search, action: SearchPrevious          }
 
   # Search Mode
+  - { key: I,      mods: Control, mode: Search,     action: ToggleViMode          }
   - { key: V,      mods: Control, mode: Search|Vi,  action: Paste                 }
   #- { key: Return,                mode: Search|Vi,  action: SearchConfirm         }
   #- { key: Escape,                mode: Search,     action: SearchCancel          }
