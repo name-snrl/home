@@ -83,8 +83,8 @@ bindsym {
         XF86AudioRaiseVolume exec wpctl set-volume -l 1 @DEFAULT_SINK@ 5%+
         XF86AudioLowerVolume exec wpctl set-volume -l 1 @DEFAULT_SINK@ 5%-
 
-        XF86MonBrightnessDown exec light -U 5
-        XF86MonBrightnessUp   exec light -A 5
+        XF86MonBrightnessDown exec busctl --user call org.clight.clight /org/clight/clight org.clight.clight DecBl d 0.05
+        XF86MonBrightnessUp   exec busctl --user call org.clight.clight /org/clight/clight org.clight.clight IncBl d 0.05
 #
 # Media:
 #
