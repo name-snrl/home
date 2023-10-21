@@ -10,7 +10,8 @@
 # d - wofi
 # f - fullscreen
 #
-# i - kooha
+# i - wl-screenrec
+# shift+i - wl-screenrec --audio
 # o - open link in mpv
 #
 # hjkl - arrows
@@ -44,7 +45,8 @@ bindsym {
         $mod+d exec $menu
 
         $mod+o       exec mpv "$(wl-paste)"
-        $mod+i       exec kooha
+        $mod+i       exec pkill --signal SIGINT wl-screenrec || wl-screenrec --low-power=off
+        $mod+Shift+i exec pkill --signal SIGINT wl-screenrec || wl-screenrec --low-power=off --audio
         $mod+a       exec $anki add
         $mod+Shift+a exec $anki clear
         $mod+Shift+c exec "set -e; \
