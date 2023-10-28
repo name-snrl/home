@@ -1,9 +1,8 @@
 font=mono
 
 clock
-screenshot
-effect-blur=3x3
-effect-vignette=0.6:0
+image=$HOME/.config/swaylock/screenlock.png
+effect-vignette=0.6:1
 
 indicator
 indicator-caps-lock
