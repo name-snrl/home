@@ -5,7 +5,7 @@ notify() {
         --dest=org.freedesktop.Notifications \
         --object-path=/org/freedesktop/Notifications \
         --method=org.freedesktop.Notifications.Notify \
-        -- "" "0" "" "$1" "$2" "[]" "{}" "-1"
+        -- "" "0" "" "$1" "$2" "[]" "{}" "-1" &>/dev/null
 }
 
 case $1 in
