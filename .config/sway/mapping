@@ -6,7 +6,7 @@ bindsym --to-code {
     $mod+e exec $float_term
 
     $mod+d exec $menu
-    $mod+a exec ${XDG_CONFIG_HOME:-$HOME/.config}/sway/scripts/actions.sh
+    $mod+a exec ${XDG_CONFIG_HOME:-$HOME/.config}/sway/scripts/actions
 
     $mod+q kill
     $mod+Shift+r reload
