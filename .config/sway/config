@@ -9,9 +9,7 @@ set $right l
 set $menu fuzzel
 set $term $TERMINAL
 set $float_term $term --app-id=floating_term
-set $move $HOME/.config/sway/scripts/move.sh
-set $theme $HOME/.config/sway/scripts/theme.sh
-set $anki $HOME/.config/sway/scripts/anki.sh
+set $move ${XDG_CONFIG_HOME:-$HOME/.config}/sway/scripts/move.sh
 
 include mapping
 
@@ -77,11 +75,10 @@ for_window {
 
 #--------------------------------- Appearance ---------------------------------#
 include colors
-exec $theme startup
-#bar swaybar_command waybar
+exec ${XDG_CONFIG_HOME:-$HOME/.config}/sway/scripts/theme.sh startup
 
 # Wallpaper
-output * bg /nix/store/sc1ma51pgvqizham0hkkzjp2rirb7nwz-wallhaven-collection/wallhaven-x8ye3z.jpg fill
+output * bg /nix/store/jhxhzfbgw3kh8z4v2p29fnc093i8chnc-wallhaven-x8ye3z.jpg fill
 
 # Cursor 
 seat seat0 xcursor_theme 'Numix-Cursor-Light' 24
