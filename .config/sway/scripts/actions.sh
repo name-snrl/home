@@ -42,7 +42,7 @@ actions=(
 )
 
 case "$(printf "%s\n" "${actions[@]}" | fuzzel --dmenu --index --layer=overlay)" in
-    0) notify Mpv "Trying to open $(wl-paste)!" && mpv "$(wl-paste)" ;;
+    0) notify Mpv "Trying to open $(wl-paste -p)!" && mpv "$(wl-paste -p)" ;;
     1) systemd-inhibit --what=handle-lid-switch swaylock ;;
     2) swaymsg input "1:1:Extra_Buttons" events toggle ;;
     3) "$scripts"/anki.sh add ;;
