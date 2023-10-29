@@ -1,4 +1,4 @@
 timeout 240 'swaylock -f'
-timeout 360 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
+timeout 360 'busctl --system call org.clightd.clightd /org/clightd/clightd/Dpms org.clightd.clightd.Dpms Set ssi "$WAYLAND_DISPLAY" "$XDG_RUNTIME_DIR" "1"' resume 'busctl --system call org.clightd.clightd /org/clightd/clightd/Dpms org.clightd.clightd.Dpms Set ssi "$WAYLAND_DISPLAY" "$XDG_RUNTIME_DIR" "0"'
 timeout 1200 'systemctl suspend'
 before-sleep 'swaylock -f'
