@@ -40,23 +40,23 @@ _anki() {
 }
 
 actions=(
-    'Clipboard to mpv'
-    'Lock screen with lid-switch inhibition'
-    'Toggle thinkpad embedded keyboard'
-    'Add a word to ankilist'
-    'Clear ankilist'
-    'Start/stop screen recording'
-    'Start/stop screen recording with audio'
-    'Toggle system theme'
-    'Recognize text on the screen'
-    'Flameshot'
-    'Screenshot'
-    'Window screenshot'
-    'Delayed window screenshot (3 sec)'
-    'Find a file using fzf for dragon'
+    'Clipboard to mpv\0icon\x1fmpv'
+    'Lock screen with lid-switch inhibition\0icon\x1femblem-locked'
+    'Toggle thinkpad embedded keyboard\0icon\x1fkeyboard'
+    'Add a word to ankilist\0icon\x1fanki'
+    'Clear ankilist\0icon\x1fanki'
+    'Start/stop screen recording\0icon\x1frecord'
+    'Start/stop screen recording with audio\0icon\x1frecord'
+    'Toggle system theme\0icon\x1fpreferences-desktop-plasma-theme'
+    'Recognize text on the screen\0icon\x1fdialog-text-and-font'
+    'Flameshot\0icon\x1fflameshot'
+    'Screenshot\0icon\x1fwindow_fullscreen'
+    'Window screenshot\0icon\x1fwindow_fullscreen'
+    'Delayed window screenshot (3 sec)\0icon\x1fwindow_fullscreen'
+    'Find a file using fzf for dragon\0icon\x1ffilefind'
 )
 
-case "$(printf "%s\n" "${actions[@]}" | fuzzel --dmenu --index --layer=overlay)" in
+case "$(printf "%b\n" "${actions[@]}" | fuzzel --dmenu --index --layer=overlay)" in
     0) notify Mpv "Trying to open $(wl-paste)!" && mpv "$(wl-paste)" ;;
     1) systemd-inhibit --what=handle-lid-switch swaylock ;;
     2) swaymsg input "1:1:Extra_Buttons" events toggle ;;
@@ -70,5 +70,5 @@ case "$(printf "%s\n" "${actions[@]}" | fuzzel --dmenu --index --layer=overlay)"
     10) grim - | wl-copy && notify Screenshot Done! ;;
     11) _win_screenshot ;;
     12) sleep 3 && _win_screenshot ;;
-    13) $term -F bash -c 'swaymsg -q exec "dragon -T $(nix run self#fzf)"' ;; # TODO add preview to fzf
+    13) $term -F bash -c 'swaymsg -q exec "dragon -T $(nix run self#fzf)"' ;; # TODO add preview to fzf w8 for https://github.com/junegunn/fzf/issues/2544
 esac
