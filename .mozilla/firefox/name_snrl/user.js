@@ -22,6 +22,7 @@ user_pref("browser.download.improvements_to_download_panel", false); // ask what
 user_pref("browser.download.start_downloads_in_tmp_dir", true); // use tmp if open file with
 
 // fullscreen
+user_pref("browser.fullscreen.autohide", false);
 user_pref("full-screen-api.transition-duration.enter", "0");
 user_pref("full-screen-api.transition-duration.leave", "0");
 user_pref("full-screen-api.warning.timeout", 0);
