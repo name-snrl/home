@@ -33,21 +33,9 @@ user_pref("layout.css.prefers-color-scheme.content-override", 2);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("browser.uiCustomization.state", '{
   "currentVersion": 19,
-  "dirtyAreaCache": [
-    "unified-extensions-area",
-    "nav-bar",
-    "toolbar-menubar",
-    "TabsToolbar",
-    "PersonalToolbar"
-  ],
-  "newElementCount": 2,
   "placements": {
-    "PersonalToolbar": [
-      "personal-bookmarks"
-    ],
     "TabsToolbar": [
       "tabbrowser-tabs",
-      "new-tab-button",
       "alltabs-button"
     ],
     "nav-bar": [
@@ -66,29 +54,14 @@ user_pref("browser.uiCustomization.state", '{
       "downloads-button",
       "unified-extensions-button"
     ],
-    "toolbar-menubar": [
-      "menubar-items"
-    ],
     "unified-extensions-area": [
-      "ff2mpv_yossarian_net-browser-action",
+      "_d7742d87-e61d-4b78-b8a1-b469842139fa_-browser-action",
       "jid1-qofqdk4qzufgwq_jetpack-browser-action",
-      "vimmatic_i-beam_org-browser-action",
       "jid1-tsgsxbhncspbwq_jetpack-browser-action",
       "simple-translate_sienori-browser-action",
       "ublock0_raymondhill_net-browser-action"
-    ],
-    "widget-overflow-fixed-list": []
-  },
-  "seen": [
-    "save-to-pocket-button",
-    "ff2mpv_yossarian_net-browser-action",
-    "jid1-qofqdk4qzufgwq_jetpack-browser-action",
-    "vimmatic_i-beam_org-browser-action",
-    "jid1-tsgsxbhncspbwq_jetpack-browser-action",
-    "simple-translate_sienori-browser-action",
-    "ublock0_raymondhill_net-browser-action",
-    "developer-button"
-  ]
+    ]
+  }
 }');
 
 //
