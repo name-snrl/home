@@ -4,6 +4,7 @@ source "$(dirname "${BASH_SOURCE[0]}")"/lib.sh
 
 term=${TERMINAL:-footclient}
 float_term="${FLOAT_TERM:-$term --app-id=floating_term}"
+screenrec_cache_file="${XDG_CACHE_HOME:-~/.cache}/wl-screenrec.mp4"
 
 _recognize_text() {
     set -e
@@ -14,15 +15,41 @@ _recognize_text() {
 
 _win_screenshot() {
     swaymsg -t get_tree |
-        jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"' |
-        grim -g - - |
-        wl-copy
+        jq -j '.. | select(.type?) | select(.focused).rect | \
+        "\(.x),\(.y) \(.width)x\(.height)"' | grim -g - - | wl-copy
     notify Screenshot Done!
 }
 
+_run_screenrec() {
+    cmd="wl-screenrec --low-power=off --filename $screenrec_cache_file"
+    case $1 in
+        -a)
+            device="$(pw-dump |
+                jq -r '.[] | select(.type == "PipeWire:Interface:Metadata") \
+                | .metadata.[] | select(.key == "default.audio.sink") \
+                | .value.name')"
+            full_pa_name="$device.monitor"
+            wl-screenrec --low-power=off --audio --audio-device "$full_pa_name"
+            ;;
+        *) $cmd ;;
+    esac
+}
+
 _kill_screenrec() {
-    pkill --signal SIGINT wl-screenrec &&
+    if pkill --signal SIGINT wl-screenrec; then
+        date="$(date +%s)"
+        out="$HOME/clips/screencast_$date.mp4"
+        duration="$(ffprobe -show_entries format=duration \
+            -of default=noprint_wrappers=1:nokey=1 \
+            "$screenrec_cache_file")"
+        diff="$(perl -e "print $duration - 2")"
+
+        mkdir -p ~/clips
+        ffmpeg -to "$diff" -i "$screenrec_cache_file" -c copy "$out"
         notify "Screen recording" Done!
+    else
+        return 1
+    fi
 }
 
 _anki() {
@@ -62,8 +89,8 @@ case "$(printf "%b\n" "${actions[@]}" | fuzzel --dmenu --index --layer=overlay)"
     2) swaymsg input "1:1:Extra_Buttons" events toggle ;;
     3) _anki add ;;
     4) _anki clear ;;
-    5) _kill_screenrec || wl-screenrec --low-power=off ;;
-    6) _kill_screenrec || wl-screenrec --low-power=off --audio ;;
+    5) _kill_screenrec || _run_screenrec ;;
+    6) _kill_screenrec || _run_screenrec -a ;;
     7) theme-toggle ;;
     8) _recognize_text ;;
     9) flameshot gui -r | wl-copy ;;
