@@ -1,4 +1,9 @@
-timeout 240 'swaylock -f'
+# lock
+lock 'swaylock -f'
+timeout 240 'loginctl lock-session "$XDG_SESSION_ID"'
+# DPMS
 timeout 360 'busctl --system call org.clightd.clightd /org/clightd/clightd/Dpms org.clightd.clightd.Dpms Set ssi "$WAYLAND_DISPLAY" "$XDG_RUNTIME_DIR" "1"' resume 'busctl --system call org.clightd.clightd /org/clightd/clightd/Dpms org.clightd.clightd.Dpms Set ssi "$WAYLAND_DISPLAY" "$XDG_RUNTIME_DIR" "0"'
-timeout 1200 'systemctl suspend'
-before-sleep 'swaylock -f'
+# sleep
+before-sleep 'loginctl lock-session "$XDG_SESSION_ID"'
+idlehint 600 # +IdleActionSec in logind.conf
+after-resume 'busctl --system call org.clightd.clightd /org/clightd/clightd/Dpms org.clightd.clightd.Dpms Set ssi "$WAYLAND_DISPLAY" "$XDG_RUNTIME_DIR" "0"'
