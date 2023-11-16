@@ -13,12 +13,6 @@ _recognize_text() {
     wl-copy -n </tmp/screen2text.txt
 }
 
-_lib_inhibit() {
-    lock='systemctl --user stop swayidle.service; swaylock'
-    systemd-inhibit --what=handle-lid-switch bash -c "$lock" &&
-        systemctl --user start swayidle.service
-}
-
 _win_screenshot() {
     swaymsg -t get_tree |
         jq -j '.. | select(.type?) | select(.focused).rect | \
@@ -92,7 +86,7 @@ actions=(
 
 case "$(printf "%b\n" "${actions[@]}" | fuzzel --dmenu --index --layer=overlay)" in
     0) notify Mpv "Trying to open $(wl-paste)!" && mpv "$(wl-paste)" ;;
-    1) _lib_inhibit ;;
+    1) systemd-inhibit --what=handle-lid-switch swaylock ;;
     2) swaymsg input "1:1:Extra_Buttons" events toggle ;;
     3) _anki add ;;
     4) _anki clear ;;
