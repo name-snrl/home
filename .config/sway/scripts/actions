@@ -27,6 +27,7 @@ _win_screenshot() {
 }
 
 _run_screenrec() {
+    rm "$screenrec_cache_file"
     cmd="wl-screenrec --low-power=off --filename $screenrec_cache_file"
     case $1 in
         -a)
