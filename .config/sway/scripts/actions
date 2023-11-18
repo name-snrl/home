@@ -15,9 +15,8 @@ _recognize_text() {
 
 _win_screenshot() {
     swaymsg -t get_tree |
-        jq -j '.. | select(.type?) | select(.focused).rect | \
-        "\(.x),\(.y) \(.width)x\(.height)"' | grim -g - - | wl-copy
-    notify Screenshot Done!
+        jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"' |
+        grim -g - - | wl-copy && notify Screenshot Done!
 }
 
 _run_screenrec() {
