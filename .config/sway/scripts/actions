@@ -25,11 +25,9 @@ _run_screenrec() {
     case $1 in
         -a)
             device="$(pw-dump |
-                jq -r '.[] | select(.type == "PipeWire:Interface:Metadata") \
-                | .metadata.[] | select(.key == "default.audio.sink") \
-                | .value.name')"
+                jq -r '.[] | select(.type == "PipeWire:Interface:Metadata") | .metadata.[] | select(.key == "default.audio.sink") | .value.name')"
             full_pa_name="$device.monitor"
-            wl-screenrec --low-power=off --audio --audio-device "$full_pa_name"
+            $cmd --audio --audio-device "$full_pa_name"
             ;;
         *) $cmd ;;
     esac
@@ -39,14 +37,14 @@ _kill_screenrec() {
     if pkill --signal SIGINT wl-screenrec; then
         date="$(date +%s)"
         out="$HOME/clips/screencast_$date.mp4"
-        duration="$(ffprobe -show_entries format=duration \
+        duration="$(sleep 2; ffprobe -show_entries format=duration \
             -of default=noprint_wrappers=1:nokey=1 \
             "$screenrec_cache_file")"
         diff="$(perl -e "print $duration - 2")"
 
         mkdir -p ~/clips
-        ffmpeg -to "$diff" -i "$screenrec_cache_file" -c copy "$out"
-        notify "Screen recording" Done!
+        ffmpeg -to "$diff" -i "$screenrec_cache_file" -c copy "$out" &&
+            notify "Screen recording" Done!
     else
         return 1
     fi
