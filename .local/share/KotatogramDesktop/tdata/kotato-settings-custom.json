@@ -33,7 +33,7 @@
     },
     "fonts": {
         "main": "",
-        "monospaced": "",
+        "monospaced": "JetBrains Mono Light",
         "semibold": "",
         "semibold_is_bold": false,
         "size": 0,
