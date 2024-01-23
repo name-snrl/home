@@ -1,3 +1,8 @@
+[general]
 fullscreen = yes
-info = yes
-exec = sed -i "s@output.*fill@output \* bg % fill@g" ~/.config/sway/config
+
+[info]
+mode = full
+
+[keys]
+e = exec sed -i "s@output.*fill@output \* bg % fill@g" ~/.config/sway/config
