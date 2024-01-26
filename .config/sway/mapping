@@ -19,8 +19,8 @@ bindsym --to-code {
         XF86AudioRaiseVolume exec wpctl set-volume -l 1 @DEFAULT_SINK@ 5%+
         XF86AudioLowerVolume exec wpctl set-volume -l 1 @DEFAULT_SINK@ 5%-
 
-        XF86MonBrightnessDown exec busctl --user call org.clight.clight /org/clight/clight org.clight.clight DecBl d 0.05
-        XF86MonBrightnessUp   exec busctl --user call org.clight.clight /org/clight/clight org.clight.clight IncBl d 0.05
+        XF86MonBrightnessDown exec busctl --user call org.clight.clight /org/clight/clight org.clight.clight DecBl d 0.02
+        XF86MonBrightnessUp   exec busctl --user call org.clight.clight /org/clight/clight org.clight.clight IncBl d 0.02
 
         # Media
         XF86Launch5  exec playerctl previous
