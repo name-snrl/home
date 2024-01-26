@@ -42,7 +42,7 @@ bindsym --to-code {
     $mod+Shift+$right exec $move right
 
     # Workspaces
-    $mod+grave workspace 0:~
+    $mod+escape workspace 0:~
     $mod+1 workspace number 1
     $mod+2 workspace number 2
     $mod+3 workspace number 3
