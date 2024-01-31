@@ -72,7 +72,6 @@ set $right l
 
 set $menu fuzzel
 set $term $TERMINAL
-set $move ${XDG_CONFIG_HOME:-$HOME/.config}/sway/scripts/move
 
 bindsym --to-code {
     $mod+t exec $term
@@ -105,12 +104,12 @@ bindsym --to-code {
     $mod+$up    focus up
     $mod+$right focus right
 
-    $mod+Shift+m exec $move center
+    $mod+Shift+m move position center
 
-    $mod+Shift+$left  exec $move left
-    $mod+Shift+$down  exec $move bottom
-    $mod+Shift+$up    exec $move top
-    $mod+Shift+$right exec $move right
+    $mod+Shift+$left  move left
+    $mod+Shift+$down  move bottom
+    $mod+Shift+$up    move top
+    $mod+Shift+$right move right
 
     # Workspaces
     $mod+1 workspace number 1
@@ -153,7 +152,7 @@ mode "resize/move" bindsym --to-code {
     Shift+$up    move up    5px
     Shift+$right move right 5px
 
-    $mod+Shift+m exec $move center
+    $mod+Shift+m move position center
 
     $mod+Shift+$left  move left
     $mod+Shift+$down  move down
