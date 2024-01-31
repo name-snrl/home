@@ -137,7 +137,6 @@ bindsym --to-code {
     # Layout stuff
     $mod+Shift+space floating toggle
     $mod+space       focus mode_toggle
-    $mod+s           sticky toggle
     $mod+f           fullscreen
     $mod+r           mode "resize/move"
 }
@@ -146,24 +145,6 @@ mode "resize/move" bindsym --to-code {
     $down  resize shrink height 10px
     $up    resize grow   height 10px
     $right resize grow   width  10px
-
-    Shift+$left  move left  5px
-    Shift+$down  move down  5px
-    Shift+$up    move up    5px
-    Shift+$right move right 5px
-
-    $mod+Shift+m move position center
-
-    $mod+Shift+$left  move left
-    $mod+Shift+$down  move down
-    $mod+Shift+$up    move up
-    $mod+Shift+$right move right
-
-    1 resize set 50ppt  50ppt
-    2 resize set 75ppt  75ppt
-    3 resize set 20ppt  100ppt
-    4 resize set 50ppt  100ppt
-    5 resize set 100ppt 100ppt
 
     # Return to default mode
     Return mode "default"
