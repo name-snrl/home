@@ -1,4 +1,6 @@
-#------------------------------------ Base ------------------------------------#
+exec 'systemctl --user import-environment; systemctl --user start sway-session.target'
+
+# WM configuration
 workspace_layout        tabbed
 focus_follows_mouse     no
 
@@ -18,10 +20,18 @@ input "type:keyboard" {
 input "type:pointer" accel_profile "flat"
 input "type:touchpad" events disabled
 
-#------------------------------------ Apps ------------------------------------#
-exec 'systemctl --user import-environment; systemctl --user start sway-session.target'
+#--------------------------------- Appearance ---------------------------------#
+exec ${XDG_CONFIG_HOME:-$HOME/.config}/sway/scripts/theme startup
 
-### Workspace assignment
+# Wallpaper
+output * bg /nix/store/jhxhzfbgw3kh8z4v2p29fnc093i8chnc-wallhaven-x8ye3z.jpg fill
+
+# Cursor 
+seat seat0 xcursor_theme 'Numix-Cursor-Light' 24
+
+#------------------------------------ Apps ------------------------------------#
+
+# Workspace assignment
 assign {
     [app_id="mpv"]        1
     [app_id="^firefox$"]  1
@@ -29,7 +39,7 @@ assign {
     [app_id="tawasal"]    2
 }
 
-### Individual windows behavior
+# Individual windows behavior
 no_focus {
     [title="mpv"]
 }
@@ -51,15 +61,6 @@ for_window {
     [window_role="dialog"]       floating enable
     [window_type="menu"]         floating enable
 }
-
-#--------------------------------- Appearance ---------------------------------#
-exec ${XDG_CONFIG_HOME:-$HOME/.config}/sway/scripts/theme startup
-
-# Wallpaper
-output * bg /nix/store/jhxhzfbgw3kh8z4v2p29fnc093i8chnc-wallhaven-x8ye3z.jpg fill
-
-# Cursor 
-seat seat0 xcursor_theme 'Numix-Cursor-Light' 24
 
 #-------------------------------- Key bindings --------------------------------#
 set $mod Mod4
