@@ -1,6 +1,7 @@
 bindsym --to-code {
     $mod+z exec kotatogram-desktop
     $mod+x exec qbittorrent
+    $mod+c exec tawasal-desktop 
 
     $mod+t exec $term
     $mod+e exec $float_term

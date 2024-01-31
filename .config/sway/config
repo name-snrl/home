@@ -33,7 +33,6 @@ input "type:touchpad" events disabled
 
 #------------------------------------ Apps ------------------------------------#
 exec 'systemctl --user import-environment; systemctl --user start sway-session.target'
-include tw-desktop
 
 ### Workspace assignment
 assign {
@@ -53,6 +52,7 @@ for_window {
     [app_id="qbittorrent"]            floating enable, sticky enable
     [app_id="floating_term"]          floating enable, sticky enable, resize set 50 ppt 50 ppt
     [app_id="kotatogram"]             floating enable, sticky enable, resize set 50 ppt 70 ppt
+    [app_id="tawasal"]                floating enable, sticky enable, resize set 50 ppt 70 ppt
     [app_id="dragon"]                 floating enable, sticky enable, move position 80 ppt 0 ppt, exec $move right
 
     [app_id="anki" title="- Anki$"]             floating disable
@@ -60,6 +60,7 @@ for_window {
     [title="Choose Files"]                      resize set 60 ppt 70 ppt
     [app_id="qbittorrent" title="^qBittorrent"] resize set 80 ppt 90 ppt
     [app_id="kotatogram" title="Media viewer"]  fullscreen disable, resize set 100 ppt 100 ppt
+    [app_id="tawasal" title="Media viewer"]     fullscreen disable, resize set 100 ppt 100 ppt
 
     # xwayland
     [window_role="task_dialog"]  floating enable
