@@ -38,8 +38,10 @@ exec 'systemctl --user import-environment; systemctl --user start sway-session.t
 
 ### Workspace assignment
 assign {
-    [app_id="mpv"]       1
-    [app_id="^firefox$"] 1
+    [app_id="mpv"]        1
+    [app_id="^firefox$"]  1
+    [app_id="kotatogram"] 2
+    [app_id="tawasal"]    2
 }
 
 ### Individual windows behavior
