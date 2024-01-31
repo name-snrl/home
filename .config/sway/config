@@ -129,6 +129,10 @@ bindsym {
     $mod+Shift+0 move container to workspace number 10
 
     # Layout stuff
+    $mod+w split horizontal
+    $mod+s split vertical
+    $mod+e split none
+
     $mod+Shift+space floating toggle
     $mod+space       focus mode_toggle
     $mod+f           fullscreen
