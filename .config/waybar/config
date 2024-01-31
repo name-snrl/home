@@ -38,7 +38,6 @@
         "disable-scroll": true,
         "format": "{name}",
         "persistent-workspaces": {
-        "0:~": [],
         "1": [],
         "2": [],
         "3": [],
