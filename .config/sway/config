@@ -67,7 +67,7 @@ set $mod Mod4
 set $menu fuzzel
 set $term $TERMINAL
 
-bindsym --to-code {
+bindsym {
     $mod+t exec $term
     $mod+d exec $menu
     $mod+a exec ${XDG_CONFIG_HOME:-$HOME/.config}/sway/scripts/actions
@@ -135,7 +135,7 @@ bindsym --to-code {
     $mod+r           mode "resize"
 }
 mode "resize" {
-    bindsym --to-code {
+    bindsym {
         h resize shrink width  10px
         j resize shrink height 10px
         k resize grow   height 10px
