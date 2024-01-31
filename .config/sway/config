@@ -43,9 +43,6 @@ assign {
 }
 
 ### Individual windows behavior
-no_focus {
-    [title="Peek preview"]
-}
 for_window {
 
     [app_id="anki"]                   floating enable
