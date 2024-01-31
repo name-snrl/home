@@ -132,15 +132,17 @@ bindsym --to-code {
     $mod+Shift+space floating toggle
     $mod+space       focus mode_toggle
     $mod+f           fullscreen
-    $mod+r           mode "resize/move"
+    $mod+r           mode "resize"
 }
-mode "resize/move" bindsym --to-code {
-    h resize shrink width  10px
-    j resize shrink height 10px
-    k resize grow   height 10px
-    l resize grow   width  10px
+mode "resize" {
+    bindsym --to-code {
+        h resize shrink width  10px
+        j resize shrink height 10px
+        k resize grow   height 10px
+        l resize grow   width  10px
 
-    # Return to default mode
-    Return mode "default"
-    Escape mode "default"
+        # Return to default mode
+        Return mode "default"
+        Escape mode "default"
+    }
 }
