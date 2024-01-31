@@ -14,11 +14,13 @@ set $move ${XDG_CONFIG_HOME:-$HOME/.config}/sway/scripts/move
 include mapping
 
 # WM configuration
+workspace_layout        tabbed
+focus_follows_mouse     no
+
+font                    monospace 0
 default_border          none
 default_floating_border none
 default_dim_inactive    0.30
-focus_wrapping          no
-focus_follows_mouse     no
 
 #output DP-1 resolution 1920x1080@144Hz position 1920,0
 
