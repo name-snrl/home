@@ -40,9 +40,8 @@ assign {
 }
 
 # Individual windows behavior
-no_focus {
-    [title="mpv"]
-}
+no_focus [app_id="no_focus"]
+
 for_window {
     [app_id="authentication-agent-1"] floating enable, move center
     [app_id="xdg-desktop-portal-gtk"] floating enable, move center

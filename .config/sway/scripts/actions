@@ -82,7 +82,7 @@ actions=(
 
 case "$(printf "%b\n" "${actions[@]}" | fuzzel --dmenu --index --layer=overlay)" in
     0) notify Mpv "Trying to open $(wl-paste)!" && mpv "$(wl-paste)" ;;
-    1) notify Mpv "Trying to open $(wl-paste)!" && mpv --pause "$(wl-paste)" ;;
+    1) notify Mpv "Trying to open $(wl-paste)!" && mpv --wayland-app-id=no_focus --pause "$(wl-paste)" ;;
     2) systemd-inhibit --what=handle-lid-switch:sleep swaylock ;;
     3) _anki add ;;
     4) _anki clear ;;
