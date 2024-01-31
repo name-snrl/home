@@ -68,7 +68,6 @@ actions=(
     'Clipboard to mpv\0icon\x1fmpv'
     'Clipboard to mpv and pause\0icon\x1fmpv'
     'Lock screen with lid-switch inhibition\0icon\x1femblem-locked'
-    'Toggle thinkpad embedded keyboard\0icon\x1fkeyboard'
     'Add a word to ankilist\0icon\x1fanki'
     'Clear ankilist\0icon\x1fanki'
     'Start/stop screen recording\0icon\x1frecord'
@@ -86,16 +85,15 @@ case "$(printf "%b\n" "${actions[@]}" | fuzzel --dmenu --index --layer=overlay)"
     0) notify Mpv "Trying to open $(wl-paste)!" && mpv "$(wl-paste)" ;;
     1) notify Mpv "Trying to open $(wl-paste)!" && mpv --pause "$(wl-paste)" ;;
     2) systemd-inhibit --what=handle-lid-switch:sleep swaylock ;;
-    3) swaymsg input "1:1:Extra_Buttons" events toggle ;;
-    4) _anki add ;;
-    5) _anki clear ;;
-    6) _kill_screenrec || _run_screenrec ;;
-    7) _kill_screenrec || _run_screenrec -a ;;
-    8) theme-toggle ;;
-    9) _recognize_text ;;
-    10) flameshot gui -r | wl-copy ;;
-    11) grim - | wl-copy && notify Screenshot Done! ;;
-    12) _win_screenshot ;;
-    13) sleep 3 && _win_screenshot ;;
-    14) $term -F bash -c 'swaymsg -q exec "dragon -T $(nix run self#fzf)"' ;; # TODO add preview to fzf w8 for https://github.com/junegunn/fzf/issues/2544
+    3) _anki add ;;
+    4) _anki clear ;;
+    5) _kill_screenrec || _run_screenrec ;;
+    6) _kill_screenrec || _run_screenrec -a ;;
+    7) theme-toggle ;;
+    8) _recognize_text ;;
+    9) flameshot gui -r | wl-copy ;;
+    10) grim - | wl-copy && notify Screenshot Done! ;;
+    11) _win_screenshot ;;
+    12) sleep 3 && _win_screenshot ;;
+    13) $term -F bash -c 'swaymsg -q exec "dragon -T $(nix run self#fzf)"' ;; # TODO add preview to fzf w8 for https://github.com/junegunn/fzf/issues/2544
 esac
