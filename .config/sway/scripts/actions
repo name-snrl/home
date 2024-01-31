@@ -3,13 +3,12 @@
 source "$(dirname "${BASH_SOURCE[0]}")"/lib.sh
 
 term=${TERMINAL:-footclient}
-float_term="${FLOAT_TERM:-$term --app-id=floating_term}"
 screenrec_cache_file="${XDG_CACHE_HOME:-~/.cache}/wl-screenrec.mp4"
 
 _recognize_text() {
     set -e
     flameshot gui --raw | tesseract - /tmp/screen2text
-    $float_term -e vi /tmp/screen2text.txt
+    $term -e vi /tmp/screen2text.txt
     wl-copy -n </tmp/screen2text.txt
 }
 

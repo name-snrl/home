@@ -1,7 +1,5 @@
 bindsym --to-code {
     $mod+t exec $term
-    $mod+e exec $float_term
-
     $mod+d exec $menu
     $mod+a exec ${XDG_CONFIG_HOME:-$HOME/.config}/sway/scripts/actions
 
