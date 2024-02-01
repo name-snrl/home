@@ -79,6 +79,10 @@ bindsym {
     $mod+y exec wl-paste | cliphist -max-items=10 store
     $mod+p exec bash -c 's=$(cliphist list | $menu -d); if [[ -n $s ]]; then echo "$s" | cliphist decode | wl-copy; fi'
 
+    # Scratchpad
+    $mod+minus move scratchpad
+    $mod+tab   scratchpad show
+
     --locked {
         # Hardware
         XF86Tools            exec wpctl set-mute @DEFAULT_SOURCE@ toggle
