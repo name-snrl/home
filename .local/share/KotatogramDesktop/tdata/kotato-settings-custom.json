@@ -9,7 +9,6 @@
     "always_show_top_userpic": false,
     "big_emoji_outline": false,
     "block_users_in_groups": true,
-    "confirm_before_calls": true,
     "custom_app_icon": 1,
     "disable_chat_themes": true,
     "disable_tray_counter": false,
@@ -58,6 +57,8 @@
     "sticker_scale_both": true,
     "telegram_sites_autologin": true,
     "use_telegram_panel_icon": false,
-    "userpic_corner_radius": -1,
+    "userpic_corner_radius": 0,
+    "userpic_corner_radius_forum": 30,
+    "userpic_corner_radius_forum_use_default": false,
     "view_profile_on_top": false
 }
