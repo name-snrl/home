@@ -23,6 +23,9 @@ input "type:touchpad" events disabled
 #--------------------------------- Appearance ---------------------------------#
 exec ${XDG_CONFIG_HOME:-$HOME/.config}/sway/scripts/theme startup
 
+# make a tab visible when the current tab's window is in a split layout
+client.focused_inactive #5f676a #5f676a #5f676a
+
 # Wallpaper
 output * bg /nix/store/jhxhzfbgw3kh8z4v2p29fnc093i8chnc-wallhaven-x8ye3z.jpg fill
 
