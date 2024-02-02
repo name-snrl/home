@@ -49,8 +49,8 @@ for_window {
     [app_id="dragon"]                 floating enable, sticky enable, move position 0 ppt 0 ppt
 
     [title="Choose Files"]                     floating enable, move center, resize set 60 ppt 70 ppt
-    [app_id="kotatogram" title="Media viewer"] fullscreen disable
-    [app_id="tawasal" title="Media viewer"]    fullscreen disable
+    [app_id="kotatogram" title="Media viewer"] fullscreen disable, resize set 100 ppt 100 ppt
+    [app_id="tawasal" title="Media viewer"]    fullscreen disable, resize set 100 ppt 100 ppt
 
     # xwayland
     [window_role="task_dialog"]  floating enable
