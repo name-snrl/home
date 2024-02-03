@@ -94,5 +94,5 @@ case "$(printf "%b\n" "${actions[@]}" | fuzzel --dmenu --index --layer=overlay)"
     10) grim - | wl-copy && notify Screenshot Done! ;;
     11) _win_screenshot ;;
     12) sleep 3 && _win_screenshot ;;
-    13) $term -F bash -c 'swaymsg -q exec "dragon -T $(nix run self#fzf)"' ;; # TODO add preview to fzf w8 for https://github.com/junegunn/fzf/issues/2544
+    13) $term -F fzf-dragon ;;
 esac
