@@ -134,7 +134,7 @@ bindsym {
 
     $mod+w split horizontal
     $mod+s split vertical
-    $mod+e split none
+    $mod+e split none, layout tabbed
 
     $mod+control+h resize shrink width  10px
     $mod+control+j resize shrink height 10px
