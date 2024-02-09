@@ -72,6 +72,7 @@ set $term $TERMINAL
 bindsym {
     $mod+t exec $term
     $mod+d exec $menu
+    $mod+o exec pkill --signal SIGUSR1 waybar-wrapped
     $mod+a exec ${XDG_CONFIG_HOME:-$HOME/.config}/sway/scripts/actions
 
     $mod+q kill
