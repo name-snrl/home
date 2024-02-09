@@ -6,7 +6,6 @@
         "clock",
         "custom/weather",
         "sway/mode",
-        "sway/workspaces",
     ],
     "modules-right": [
         "tray",
@@ -33,18 +32,6 @@
     //    "format": "<span weight='heavy' size='xx-large'></span>",
     //    "tooltip": false
     //},
-
-    "sway/workspaces": {
-        "disable-scroll": true,
-        "format": "{name}",
-        "persistent-workspaces": {
-        "1": [],
-        "2": [],
-        "3": [],
-        "4": [],
-        "5": [],
-        }
-    },
 
     "sway/mode": {
         "format": "{}",
