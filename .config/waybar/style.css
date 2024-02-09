@@ -1,45 +1,55 @@
 * {
-  border:                  none;
-  border-radius:           0;
-  font-family:             monospace;
-  box-shadow:              none;
-  transition-duration:     0s;
-  padding:                 5px 0;
+  font-family:           monospace;
+  transition-duration:          0s;
+  padding:                   0 5px;
 }
 
 window#waybar {
-  font-size:               15px;
+  background:              transparent;
+  font-size:               20px;
   color:                   #d3d8df;
 }
 
-.modules-left,
-.modules-center,
-.modules-right {
-  padding:                 0;
+#clock.date,
+#clock,
+#custom-weather,
+#tray,
+#pulseaudio,
+#backlight,
+#temperature,
+#bluetooth,
+#battery {
+  background:    @theme_base_color;
+}
+
+#tray {
+  margin:               0 0 0 20px;
+  border-top-right-radius:    10px;
+  border-top-left-radius:     10px;
 }
 
 #clock.date {
+  border-bottom-left-radius:  10px;
   color:                   #bf616a;
 }
 
-#clock {
+#clock:not(.date) {
+  border-bottom-right-radius: 10px;
   color:                   #d08770;
 }
 
 #custom-weather {
+  margin:                 0 20px 0;
+  border-top-right-radius:    10px;
+  border-top-left-radius:     10px;
   color:                   #d3b578;
 }
 
-#mode {
-  background:              #d36265;
-  border-radius:           5px;
+#pulseaudio.icon {
+  border-top-left-radius:     10px;
 }
 
-#tray {
-  border-bottom:           1px solid #4c5866;
-}
-
-#custom-headphone_icon {
+#bluetooth.icon {
   color:                   #5297cf;
 }
 
@@ -55,9 +65,13 @@ window#waybar {
   color:                   #5baebf;
 }
 
+#battery:not(.icon) {
+  border-top-right-radius:    10px;
+}
+
 @keyframes blink {
   to {
-    background:          transparent;
+    background:    @theme_base_color;
   }
 }
 

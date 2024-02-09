@@ -1,14 +1,32 @@
-{
-    "position": "left",
+[{
+    "mode": "hide",
+    "position": "top",
 
-    "modules-left": [
+    "modules-center": [
         "clock#date",
         "clock",
-        "custom/weather",
-        "sway/mode",
     ],
-    "modules-right": [
-        "tray",
+
+    "clock#date": {
+        "format": "{:%a %d %b}",
+        "interval": 1,
+        "today-format": "<b><big>{}</big></b>",
+        "tooltip-format": "<big>{:%Y %B}</big>\n\n{calendar}"
+    },
+
+    "clock": {
+        "format": "{:%I:%M:%S%p}",
+        "interval": 1,
+        "today-format": "<b><big>{}</big></b>",
+        "tooltip-format": "<big>{:%Y %B}</big>\n\n{calendar}"
+    }
+},
+{
+    "mode": "hide",
+    "position": "bottom",
+
+    "modules-center": [
+        "custom/weather",
         "pulseaudio#icon",
         "pulseaudio",
         "backlight#icon",
@@ -17,31 +35,12 @@
         "custom/headphone_txt",
         "temperature#icon",
         "temperature",
+        "bluetooth#icon",
+        "bluetooth",
         "battery#icon",
         "battery",
+        "tray",
     ],
-
-    // Modules configuration
-    "custom/label": {
-        "format": "<span weight='heavy' size='xx-large'></span>",
-        "tooltip": false
-    },
-
-    // Arch
-    //"custom/label": {
-    //    "format": "<span weight='heavy' size='xx-large'></span>",
-    //    "tooltip": false
-    //},
-
-    "sway/mode": {
-        "format": "{}",
-        "tooltip": false
-    },
-
-    "sway/window": {
-        "max-length": 70,
-        "tooltip": false,
-    },
 
     "tray": {
         "icon-size": 21,
@@ -49,7 +48,7 @@
     },
 
     "pulseaudio": {
-        "format": "{volume}",
+        "format": "{volume}%",
         "format-muted": "off",
         "tooltip": false
     },
@@ -62,7 +61,7 @@
     },
  
     "backlight": {
-        "format": "{percent}",
+        "format": "{percent}%",
     },
 
     "backlight#icon": {
@@ -71,10 +70,9 @@
         "tooltip": false
     },
 
-
     "battery": {
         "bat": "BAT1",
-        "format": "{capacity}",
+        "format": "{capacity}%",
         "states": {
             "critical": 15
         },
@@ -110,40 +108,26 @@
         "tooltip": false
     },
 
-    "clock#date": {
-        "format": "{:%a\n%d\n%b}",
-        "interval": 1,
-        "today-format": "<b><big>{}</big></b>",
-        "tooltip-format": "<big>{:%Y %B}</big>\n\n{calendar}"
-    },
-
-    "clock": {
-        "format": "{:%I\n%M\n%S\n%p}",
-        "interval": 1,
-        "today-format": "<b><big>{}</big></b>",
-        "tooltip-format": "<big>{:%Y %B}</big>\n\n{calendar}"
-    },
-
-
     "custom/weather": {
         //"exec": "$HOME/.config/waybar/modules/weather.sh Chelyabinsk",
         "exec": "$HOME/.config/waybar/modules/weather.sh",
-        "format": "󰖔\n{}",
+        "format": "󰖔{}°",
         "interval": 600,
         "tooltip": false
     },
 
-    //"custom/headphone_icon": {
-    //    "exec": "$HOME/.config/waybar/modules/headphones_bat.sh",
-    //    "interval": once,
-    //    "format": "",
-    //    "tooltip": false
-    //},
+    "bluetooth": {
+        "format": "",
+        "format-connected": "{device_battery_percentage}%",
+        "format-device-preference": [ "JBL TUNE660NC", "HHKB-Studio1" ],
+        "tooltip": false
+    },
 
-    //"custom/headphone_txt": {
-    //    "exec": "$HOME/.config/waybar/modules/headphones_bat.sh",
-    //    "interval": once,
-    //    "format": "{}",
-    //    "tooltip": false
-    //}
-}
+    "bluetooth#icon": {
+        "format": "",
+        "format-connected": "{icon}",
+        "format-device-preference": [ "JBL TUNE660NC", "HHKB-Studio1" ],
+        "format-icons": [ "" ],
+        "tooltip": false
+    }
+}]
