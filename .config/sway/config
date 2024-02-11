@@ -21,6 +21,14 @@ input "type:pointer" accel_profile "flat"
 input "type:touchpad" events disabled
 
 #--------------------------------- Appearance ---------------------------------#
+bar {
+    id waybar
+    swaybar_command none
+    mode hide
+    hidden_state hide
+    modifier none
+}
+
 exec ${XDG_CONFIG_HOME:-$HOME/.config}/sway/scripts/theme startup
 
 # make a tab visible when the current tab's window is in a split layout
@@ -72,7 +80,7 @@ set $term $TERMINAL
 bindsym {
     $mod+t exec $term
     $mod+d exec $menu
-    $mod+o exec pkill --signal SIGUSR1 waybar-wrapped
+    $mod+o bar hidden_state toggle
     $mod+a exec ${XDG_CONFIG_HOME:-$HOME/.config}/sway/scripts/actions
 
     $mod+q kill

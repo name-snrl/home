@@ -1,4 +1,6 @@
 [{
+    "ipc": true,
+    "id": "waybar",
     "mode": "hide",
     "position": "top",
 
@@ -22,6 +24,8 @@
     }
 },
 {
+    "ipc": true,
+    "id": "waybar",
     "mode": "hide",
     "position": "bottom",
 
