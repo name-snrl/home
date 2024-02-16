@@ -118,8 +118,8 @@ bindsym {
     $mod+l focus right
 
     $mod+Shift+h move left
-    $mod+Shift+j move bottom
-    $mod+Shift+k move top
+    $mod+Shift+j move down
+    $mod+Shift+k move up
     $mod+Shift+l move right
     $mod+Shift+m move position center
 
