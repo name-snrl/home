@@ -77,8 +77,6 @@ window#waybar {
 
 #temperature.critical {
   background:                  Red;
-  border-radius:               5px;
-
   animation-name:              blink;
   animation-duration:          1s;
   animation-direction:         alternate;
@@ -87,8 +85,6 @@ window#waybar {
 
 #battery.critical:not(.charging) {
   background:                  Red;
-  border-radius:               5px;
-
   animation-name:              blink;
   animation-duration:          1s;
   animation-direction:         alternate;
