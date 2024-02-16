@@ -31,8 +31,6 @@
 
     "modules-center": [
         "custom/weather",
-        "pulseaudio#icon",
-        "pulseaudio",
         "backlight#icon",
         "backlight",
         "custom/headphone_icon",
@@ -43,6 +41,7 @@
         "bluetooth",
         "battery#icon",
         "battery",
+        "pulseaudio",
         "tray",
     ],
 
@@ -52,15 +51,13 @@
     },
 
     "pulseaudio": {
-        "format": "{volume}%",
-        "format-muted": "off",
-        "tooltip": false
-    },
-
-    "pulseaudio#icon": {
-        "format": "{icon}",
+        "format": "{icon} {volume}% {format_source}",
+        "format-muted": "󰝟  {format_source}",
         "format-icons": ["󰕿", "󰖀", "󰕾"],
-        "format-muted": "󰝟",
+        "format-bluetooth": "󰋋 {volume}% {format_source}",
+        "format-bluetooth-muted": "󰟎 {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
         "tooltip": false
     },
  
