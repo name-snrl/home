@@ -3,6 +3,7 @@
     "id": "waybar",
     "mode": "hide",
     "position": "top",
+    "width": 10,
 
     "modules-center": [
         "clock#date",
@@ -28,6 +29,7 @@
     "id": "waybar",
     "mode": "hide",
     "position": "bottom",
+    "width": 10,
 
     "modules-center": [
         "custom/weather",
@@ -47,7 +49,7 @@
 
     "tray": {
         "icon-size": 21,
-        "spacing": 5
+        "spacing": 15
     },
 
     "pulseaudio": {

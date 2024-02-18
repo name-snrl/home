@@ -1,13 +1,12 @@
 * {
   font-family:           monospace;
+  font-size:                  20px;
+  color:                   #d3d8df;
   transition-duration:          0s;
-  padding:                   0 5px;
 }
 
 window#waybar {
-  background:              transparent;
-  font-size:               20px;
-  color:                   #d3d8df;
+  background:          transparent;
 }
 
 #clock.date,
@@ -20,10 +19,12 @@ window#waybar {
 #bluetooth,
 #battery {
   background:    @theme_base_color;
+  padding:                   0 5px;
 }
 
 #tray {
   border-top-right-radius:    10px;
+  padding:                  0 10px;
 }
 
 #clock.date {
