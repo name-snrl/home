@@ -4,7 +4,7 @@
 // You should restart app to see changes
 
 {
-    "adaptive_bubbles": false,
+    "adaptive_bubbles": true,
     "always_show_scheduled": false,
     "always_show_top_userpic": false,
     "big_emoji_outline": false,
