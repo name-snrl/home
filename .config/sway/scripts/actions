@@ -7,7 +7,7 @@ screenrec_cache_file="${XDG_CACHE_HOME:-~/.cache}/wl-screenrec.mp4"
 
 _recognize_text() {
     set -e
-    flameshot gui --raw | tesseract - /tmp/screen2text
+    grim -g "$(slurp)" - | tesseract - /tmp/screen2text
     $term -e vi /tmp/screen2text.txt
     wl-copy -n </tmp/screen2text.txt
 }
@@ -73,10 +73,10 @@ actions=(
     'Start/stop screen recording with audio\0icon\x1frecord'
     'Toggle system theme\0icon\x1fpreferences-desktop-plasma-theme'
     'Recognize text on the screen\0icon\x1fdialog-text-and-font'
-    'Flameshot\0icon\x1fflameshot'
     'Screenshot\0icon\x1fwindow_fullscreen'
+    'Delayed screenshot (5 sec)\0icon\x1fwindow_fullscreen'
     'Window screenshot\0icon\x1fwindow_fullscreen'
-    'Delayed window screenshot (3 sec)\0icon\x1fwindow_fullscreen'
+    'Delayed window screenshot (5 sec)\0icon\x1fwindow_fullscreen'
     'Find a file using fzf for dragon\0icon\x1ffilefind'
 )
 
@@ -90,9 +90,9 @@ case "$(printf "%b\n" "${actions[@]}" | fuzzel --dmenu --index --layer=overlay)"
     6) _kill_screenrec || _run_screenrec -a ;;
     7) theme-toggle ;;
     8) _recognize_text ;;
-    9) flameshot gui -r | wl-copy ;;
-    10) grim - | wl-copy && notify Screenshot Done! ;;
+    9) grim - | satty -f - --copy-command wl-copy ;;
+    10) sleep 5; grim - | satty -f - --copy-command wl-copy ;;
     11) _win_screenshot ;;
-    12) sleep 3 && _win_screenshot ;;
+    12) sleep 5; _win_screenshot ;;
     13) $term -F fzf-dragon ;;
 esac
