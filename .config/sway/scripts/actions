@@ -26,9 +26,9 @@ _run_screenrec() {
             device="$(pw-dump |
                 jq -r '.[] | select(.type == "PipeWire:Interface:Metadata") | .metadata.[] | select(.key == "default.audio.sink") | .value.name')"
             full_pa_name="$device.monitor"
-            $cmd --audio --audio-device "$full_pa_name"
+            exec $cmd --audio --audio-device "$full_pa_name"
             ;;
-        *) $cmd ;;
+        *) exec $cmd ;;
     esac
 }
 
@@ -81,18 +81,18 @@ actions=(
 )
 
 case "$(printf "%b\n" "${actions[@]}" | fuzzel --dmenu --index --layer=overlay)" in
-    0) notify Mpv "Trying to open $(wl-paste)!" && mpv "$(wl-paste)" ;;
-    1) notify Mpv "Trying to open $(wl-paste)!" && mpv --wayland-app-id='mpv no_focus' --pause "$(wl-paste)" ;;
-    2) systemd-inhibit --what=handle-lid-switch:sleep swaylock ;;
+    0) notify Mpv "Trying to open $(wl-paste)!" && exec mpv "$(wl-paste)" ;;
+    1) notify Mpv "Trying to open $(wl-paste)!" && exec mpv --wayland-app-id='mpv no_focus' --pause "$(wl-paste)" ;;
+    2) exec systemd-inhibit --what=handle-lid-switch:sleep swaylock ;;
     3) _anki add ;;
     4) _anki clear ;;
     5) _kill_screenrec || _run_screenrec ;;
     6) _kill_screenrec || _run_screenrec -a ;;
     7) theme-toggle ;;
     8) _recognize_text ;;
-    9) grim - | satty -f - --copy-command wl-copy ;;
-    10) sleep 5; grim - | satty -f - --copy-command wl-copy ;;
+    9) exec satty -f - --copy-command wl-copy < <(grim -) ;;
+    10) sleep 5; exec satty -f - --copy-command wl-copy < <(grim -) ;;
     11) _win_screenshot ;;
     12) sleep 5; _win_screenshot ;;
-    13) $term -F fzf-dragon ;;
+    13) exec $term -F fzf-dragon ;;
 esac
