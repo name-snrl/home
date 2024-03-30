@@ -31,6 +31,7 @@ user_pref("extensions.htmlaboutaddons.discover.enabled", false);
 // appearance
 user_pref("layout.css.prefers-color-scheme.content-override", 2);
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+user_pref("browser.tabs.inTitlebar", 0);
 user_pref("browser.uiCustomization.state", '{
   "currentVersion": 19,
   "placements": {
