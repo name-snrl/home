@@ -3,8 +3,8 @@ lock 'pgrep -l swaylock || swaylock -f'
 unlock 'pkill -SIGUSR1 swaylock'
 timeout 240 'loginctl lock-session "$XDG_SESSION_ID"'
 # DPMS
-timeout 360 'systemctl --user stop wluma.service; swaymsg "output * power off"' resume 'swaymsg "output * power on"; systemctl --user start wluma.service'
+timeout 360 'sway "output * power off"' resume 'sway "output * power on"'
 # sleep
 before-sleep 'loginctl lock-session "$XDG_SESSION_ID"'
 idlehint 600 # +IdleActionSec in logind.conf
-after-resume 'swaymsg "output * power on"; systemctl --user start wluma.service'
+after-resume 'sway "output * power on"'
