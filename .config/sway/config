@@ -78,8 +78,8 @@ set $term $TERMINAL
 
 bindsym {
     $mod+t exec $term
-    $mod+d exec $menu
-    $mod+o bar hidden_state toggle
+    $mod+r exec $menu
+    $mod+d bar hidden_state toggle
     $mod+a exec ${XDG_CONFIG_HOME:-$HOME/.config}/sway/scripts/actions
 
     $mod+q kill
