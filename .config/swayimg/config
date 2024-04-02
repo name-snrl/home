@@ -1,5 +1,6 @@
 [general]
 fullscreen = yes
+antialiasing = yes
 
 [info]
 mode = full
