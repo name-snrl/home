@@ -1,10 +1,10 @@
 # lock
 lock 'swaylock'
 unlock 'pkill -SIGUSR1 swaylock'
-timeout 240 'loginctl lock-session "$XDG_SESSION_ID"'
+timeout 240 'swaylock -f && echo locked with swaylock'
 # DPMS
 timeout 360 'sway "output * power off"' resume 'sway "output * power on"'
 # sleep
-before-sleep 'loginctl lock-session "$XDG_SESSION_ID"'
+before-sleep 'swaylock -f && echo locked with swaylock'
 idlehint 600 # +IdleActionSec in logind.conf
 after-resume 'sway "output * power on"'
