@@ -1,5 +1,5 @@
 # lock
-lock 'swaylock -f'
+lock 'swaylock'
 unlock 'pkill -SIGUSR1 swaylock'
 timeout 240 'loginctl lock-session "$XDG_SESSION_ID"'
 # DPMS
