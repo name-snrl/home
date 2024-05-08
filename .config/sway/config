@@ -4,7 +4,9 @@ exec 'systemctl --user import-environment; systemctl --user start sway-session.t
 workspace_layout        tabbed
 focus_follows_mouse     no
 
-font                    monospace 0
+# w8ing room for new feature: proper way to hide titlebar
+# https://github.com/swaywm/sway/issues/7409
+font                    monospace 0.1
 default_border          none
 default_floating_border none
 default_dim_inactive    0.30
