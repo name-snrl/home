@@ -29,7 +29,7 @@ NextCandidate=
 TogglePreedit=
 
 [Hotkey/TriggerKeys]
-0=Alt+Shift+Super+F7
+0=Super+space
 
 [Behavior]
 # Active By Default
