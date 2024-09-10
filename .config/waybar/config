@@ -112,8 +112,8 @@
     },
 
     "custom/weather": {
-        //"exec": "$HOME/.config/waybar/modules/weather.sh Chelyabinsk",
-        "exec": "$HOME/.config/waybar/modules/weather.sh",
+        "exec": "$HOME/.config/waybar/modules/weather.sh Chelyabinsk",
+        //"exec": "$HOME/.config/waybar/modules/weather.sh",
         "format": "󰖔{}°",
         "interval": 600,
         "tooltip": false
