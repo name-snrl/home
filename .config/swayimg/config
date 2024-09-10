@@ -1,9 +1,11 @@
 [general]
-fullscreen = yes
+size = fullscreen
+
+[viewer]
 antialiasing = yes
 
 [info]
-mode = full
+show = yes
 
-[keys]
+[keys.viewer]
 e = exec sed -i "s@output.*fill@output \* bg % fill@g" ~/.config/sway/config
