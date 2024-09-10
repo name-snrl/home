@@ -1,4 +1,4 @@
-font=mono
+font=monospace
 
 clock
 image=$HOME/.config/swaylock/screenlock.png
