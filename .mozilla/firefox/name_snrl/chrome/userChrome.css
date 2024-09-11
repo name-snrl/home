@@ -1,9 +1,10 @@
+/* turn off that stupid flash when the page starts loading */
 #browser vbox#appcontent tabbrowser,
 #content,
 #tabbrowser-tabpanels,
 browser[type="content-primary"],
 browser[type="content"] > html {
-  background: -moz-Dialog !important;
+  background-color:  -moz-Dialog !important;
 }
 
 /* don't show a window with a microphone indicator
@@ -15,5 +16,5 @@ browser[type="content"] > html {
 /* normal colors for the toolbar when switching to a dark theme
  * https://bugzilla.mozilla.org/show_bug.cgi?id=1711275 */
 #nav-bar.browser-toolbar {
-  --toolbar-bgcolor: -moz-dialog;
+  background-color:  transparent !important;
 }

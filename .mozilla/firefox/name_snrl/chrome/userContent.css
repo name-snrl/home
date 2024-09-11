@@ -1,31 +1,11 @@
-@-moz-document domain("www.google.com") {
-  html {
-    background:         -moz-Dialog !important;
-  }
-}
-
-@-moz-document domain("yandex.ru") {
-  .mail-Page-Body {
-    font: 18px/1.5 sans-serif!important;
-  }
-}
-  
 @-moz-document url("about:home"),
                url("about:newtab"),
                url("about:privatebrowsing") {
-
   body {
     background-color:   -moz-Dialog !important;
-    background-image:              url(wp.png);
-    background-position:                center;
-    background-size:                       30%;
-    background-repeat:               no-repeat;
-  }
-
-}
-
-@-moz-document url("about:blank") {
-  body {
-    background-color:       #252a33 !important;
+    background-image:   url(wp.png) !important;
+    background-position:     center !important;
+    background-size:            30% !important;
+    background-repeat:    no-repeat !important;
   }
 }
