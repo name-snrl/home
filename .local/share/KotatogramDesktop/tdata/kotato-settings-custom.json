@@ -31,13 +31,9 @@
         }
     },
     "fonts": {
-        "main": "",
         "monospaced": "JetBrains Mono NL Light",
-        "semibold": "",
         "semibold_is_bold": false,
-        "size": 0,
-        "use_original_metrics": false,
-        "use_system_font": true
+        "size": 0
     },
     "forward_force_old_unquoted": false,
     "forward_grouping_mode": 0,
@@ -46,7 +42,6 @@
     "forward_remember_mode": true,
     "forward_retain_selection": false,
     "monospace_large_bubbles": true,
-    "net_speed_boost": 0,
     "profile_top_mute": true,
     "recent_stickers_limit": 200,
     "remember_compress_images": false,

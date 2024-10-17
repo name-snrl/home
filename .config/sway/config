@@ -37,7 +37,7 @@ exec ${XDG_CONFIG_HOME:-$HOME/.config}/sway/scripts/theme startup
 client.focused_inactive #5f676a #5f676a #5f676a
 
 # Wallpaper
-output * bg /nix/store/jhxhzfbgw3kh8z4v2p29fnc093i8chnc-wallhaven-x8ye3z.jpg fill
+output * bg /nix/store/91g854csqg8pgh4zin71raw033ngz9pn-wallhaven-2kvlj9.jpg fill
 
 # Cursor 
 seat seat0 xcursor_theme 'Numix-Cursor-Light' 24
@@ -50,6 +50,7 @@ assign {
     [app_id="^firefox$"]  1
     [app_id="kotatogram"] 2
     [app_id="tawasal"]    2
+    [app_id="qemu"]       3
 }
 
 # Individual windows behavior

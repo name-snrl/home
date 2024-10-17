@@ -1,6 +1,6 @@
 [als.webcam]
 video = 0
-thresholds = { 0 = "night", 9 = "dark", 16 = "dim", 25 = "low", 35 = "moderate", 45 = "normal", 60 = "bright", 75 = "outdoors" }
+thresholds = { 0 = "night", 10 = "dark", 25 = "dim", 40 = "normal", 55 = "bright", 70 = "outdoors" }
 
 [[output.backlight]]
 name = "eDP-1"
